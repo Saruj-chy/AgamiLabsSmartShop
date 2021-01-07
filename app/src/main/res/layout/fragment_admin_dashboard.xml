@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    >
+
+    <LinearLayout
+        android:layout_width="120dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:background="#54F1E2E2"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_nagation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            />
+        <ImageButton
+            android:id="@+id/image_btn_add"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_btn_add"
+            android:background="@android:color/transparent"
+
+            />
+
+
+    </LinearLayout>
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/darker_gray"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            >
+            <TextView
+                android:id="@+id/text_Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AgamiLabs"
+                android:textSize="25dp"
+                android:textAllCaps="false"
+                android:textColor="@android:color/black"
+                android:paddingLeft="20dp"
+                android:paddingBottom="10dp"
+                android:layout_above="@+id/text_Domain"
+                android:layout_alignParentLeft="true"
+                />
+            <TextView
+                android:id="@+id/text_Domain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="agamilabs.slack.com"
+                android:textAllCaps="false"
+                android:textSize="15dp"
+                android:paddingLeft="20dp"
+                android:paddingBottom="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="20dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:text="Smart POS"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:gravity="start|center"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="15dp"
+                android:background="@android:color/darker_gray"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            android:layout_marginLeft="70dp"
+            >
+            <LinearLayout
+                android:id="@+id/linear_layout_dashboard"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Dashboard"
+                    android:textSize="18dp"
+                    android:gravity="start|center"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linear_layout_new_sale"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="New Sale"
+                    android:textSize="18dp"
+                    android:gravity="start|center"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linear_layout_sale_invoices"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Sale Invoices"
+                    android:textSize="18dp"
+                    android:gravity="start|center"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linear_layout_stock_report"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Stock Report"
+                    android:textSize="18dp"
+                    android:gravity="start|center"
+                    />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="20dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:text="Smart e-Commerce"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:gravity="start|center"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="15dp"
+                android:background="@android:color/darker_gray"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3.3"
+            android:orientation="vertical"
+            android:layout_marginLeft="70dp"
+            >
+            <LinearLayout
+                android:id="@+id/linear_layout_dashboard_ecommerce"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Dashboard"
+                    android:textSize="18dp"
+                    android:gravity="start|center"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linear_layout_order_reports"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Order Reports"
+                    android:textSize="18dp"
+                    android:gravity="start|center"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linear_layout_inbox"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Inbox"
+                    android:textSize="18dp"
+                    android:gravity="start|center"
+                    />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="20dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:text="Promotion"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:gravity="start|center"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="15dp"
+                android:background="@android:color/darker_gray"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="3"
+            android:layout_marginLeft="70dp"
+
+            >
+            <LinearLayout
+                android:id="@+id/linear_layout_campaign"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Campaign"
+                    android:textSize="18dp"
+                    android:gravity="start|center"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linear_layout_recharge"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Recharge"
+                    android:textSize="18dp"
+                    android:gravity="start|center"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
