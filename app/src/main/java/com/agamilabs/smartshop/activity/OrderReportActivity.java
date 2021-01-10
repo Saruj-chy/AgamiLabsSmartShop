@@ -7,14 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
 
 import com.agamilabs.smartshop.R;
 import com.agamilabs.smartshop.adapter.OrderReportAdapter;
-import com.agamilabs.smartshop.adapter.StockReportAdapter;
 import com.agamilabs.smartshop.model.OrderReportModel;
-import com.agamilabs.smartshop.model.StockReportModel;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -30,15 +26,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OrderReportActivity extends AppCompatActivity {
-    private String ORDER_URL = "http://192.168.1.3/android/AgamiLab/smart_shop/order_summary.json";
-
+    private String ORDER_SUMMARY_URL = "http://192.168.1.4/android/AgamiLab/smart_shop/order_summary.json";
 
     private RecyclerView mOrderRecyclerView;
     private List<OrderReportModel> mOrderList;
+    private OrderReportAdapter mOrderAdapter;
 
-    private OrderReportAdapter mStockAdapter ;
-
-    List<String> categoryList = new ArrayList<>() ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +55,7 @@ public class OrderReportActivity extends AppCompatActivity {
 
 
     private void loadProducts() {
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, ORDER_URL,
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, ORDER_SUMMARY_URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -89,16 +82,14 @@ public class OrderReportActivity extends AppCompatActivity {
                                     }
                                     mOrderList.add(aNavigationModel);
                                 }
-
-
                             }
                             Log.e("TAG", "mOrderList: "+ mOrderList) ;
 
-                            mStockAdapter = new OrderReportAdapter(getApplicationContext(), mOrderList);
-                            mOrderRecyclerView.setAdapter(mStockAdapter);
+                            mOrderAdapter = new OrderReportAdapter(getApplicationContext(), mOrderList);
+                            mOrderRecyclerView.setAdapter(mOrderAdapter);
                             GridLayoutManager manager = new GridLayoutManager(getApplicationContext(), 1, GridLayoutManager.VERTICAL, false);
                             mOrderRecyclerView.setLayoutManager(manager);
-                            mStockAdapter.notifyDataSetChanged();
+                            mOrderAdapter.notifyDataSetChanged();
 
                         } catch (JSONException e) {
                             e.printStackTrace();

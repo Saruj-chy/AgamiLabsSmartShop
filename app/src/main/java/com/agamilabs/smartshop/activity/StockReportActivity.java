@@ -43,9 +43,9 @@ import java.util.List;
 
 public class StockReportActivity extends AppCompatActivity {
 
-    private String STOCK_URL = "http://192.168.1.5/android/AgamiLab/smart_shop/stock.json";
-    private String CATEGORY_URL = "http://192.168.1.5/android/AgamiLab/smart_shop/category.json";
-//    private String STOCK_URL = "http://192.168.1.5/android/AgamiLab/agami-logbook/view_section.php";
+    private String STOCK_URL = "http://192.168.1.3/android/AgamiLab/smart_shop/stock.json";
+    private String CATEGORY_URL = "http://192.168.1.3/android/AgamiLab/smart_shop/category.json";
+//    private String STOCK_URL = "http://192.168.1.3/android/AgamiLab/agami-logbook/view_section.php";
 
 
     private RecyclerView mStockRecyclerView;

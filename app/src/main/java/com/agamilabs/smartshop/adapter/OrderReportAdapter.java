@@ -31,8 +31,6 @@ import java.util.Locale;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class OrderReportAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-
-
     private Context mCtx;
     private List<OrderReportModel> mItemList;
     OrderReportModel mOrderReport ;
@@ -40,15 +38,11 @@ public class OrderReportAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     long elapsedDays, elapsedHours, elapsedMinutes, elapsedSeconds ;
     int timeNumber;
 
-
     public OrderReportAdapter(Context mCtx, List<OrderReportModel> mItemList) {
         this.mCtx = mCtx;
         this.mItemList = mItemList;
-
         this.notifyDataSetChanged();
     }
-
-
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -61,7 +55,6 @@ public class OrderReportAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         mOrderReport = mItemList.get(position);
-
         ((OrderReportAdapter.StockReportViewHolder) holder).bind(mOrderReport, position);
 
     }
@@ -100,31 +93,21 @@ public class OrderReportAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         }
 
         public void bind(OrderReportModel mOrderReport, int position) {
+            String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+            String currentTime = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
 
             if(mOrderReport.getUfirstname().equalsIgnoreCase("") && mOrderReport.getUlastname().equalsIgnoreCase("")){
                 mUserName.setText(mOrderReport.getForcontact());
             }else{
                 mUserName.setText(mOrderReport.getUfirstname() + " "+ mOrderReport.getUlastname());
             }
-
-
             mUserAddress.setText(mOrderReport.forstreet+", "+mOrderReport.forcity+"-"+mOrderReport.forpostcode);
             mUserContact.setText(mOrderReport.getForcontact());
 
-
-            //mPostStatus
-            String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
-            String currentTime = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
-
-
-
-
             mOrderId.setText("Order Id: "+ mOrderReport.getCartorderid());
             mDeliveryType.setText("Home Delivery");
-//            mDeliveryType.setTextColor(Color.GREEN);
 
-            //delivery date
-            Log.e("TAG","Date:  "+ new Date() );
+
             try {
                 String currentDateTimeString = DateFormat.getDateTimeInstance().format(simpleDateFormat.parse(mOrderReport.getDelivarydatetime()));
                 mDeiveryDate.setText("Due Date: "+currentDateTimeString);
@@ -143,9 +126,6 @@ public class OrderReportAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                 }
             });
 
-
-
-
             //coundown time
             runnable = new Runnable() {
                 @Override
@@ -160,8 +140,6 @@ public class OrderReportAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                 }
             };
             handler.postDelayed(runnable, 0);
-
-
         }
         public void printPostStatus(String cartdatetime, String currentDate, String currentTime, int position) {
             Date startDate = null;
@@ -172,7 +150,6 @@ public class OrderReportAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-
 
             CalculateTimer(startDate, endDate);
 
@@ -191,12 +168,8 @@ public class OrderReportAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                     break;
                 default:
                     break;
-
             }
-
             notifyItemChanged(position);
-
-
         }
         public void printCountDownTimer(String deliverydatetime, String currentDate, String currentTime, int position) {
             if(deliverydatetime.length() > 0){
@@ -208,7 +181,6 @@ public class OrderReportAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
-
 
                 CalculateTimer(startDate, endDate);
 
@@ -229,27 +201,14 @@ public class OrderReportAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                         mCountDownTime.setText(" Delivery time Expired");
                         break;
                     default:
-
                         break;
-
                 }
-
-//                mCountDownTime.setText("  "+elapsedDays+" days "+  elapsedHours+ " hr "+elapsedMinutes+" mins "+ elapsedSeconds +" secs");
                 notifyItemChanged(position);
             }
-
-
         }
 
         public void CalculateTimer ( Date startDate, Date endDate){
-            //milliseconds
             long different = endDate.getTime() - startDate.getTime();
-
-//            System.out.println("startDate : " + startDate);
-//            System.out.println("endDate : "+ endDate);
-
-
-
             long secondsInMilli = 1000;
             long minutesInMilli = secondsInMilli * 60;
             long hoursInMilli = minutesInMilli * 60;
@@ -267,18 +226,16 @@ public class OrderReportAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                 timeNumber = 4 ;
             }
 
-             elapsedDays = different / daysInMilli;
+            elapsedDays = different / daysInMilli;
             different = different % daysInMilli;
 
-             elapsedHours =(different / hoursInMilli);
+            elapsedHours =(different / hoursInMilli);
             different = different % hoursInMilli;
 
-             elapsedMinutes = (different / minutesInMilli);
+            elapsedMinutes = (different / minutesInMilli);
             different = different % minutesInMilli;
 
-             elapsedSeconds = (different / secondsInMilli);
-
-//            System.out.println("elapsedSeconds : " + elapsedSeconds +" elapsedMinutes:  "+ elapsedMinutes );
+            elapsedSeconds = (different / secondsInMilli);
         }
     }
 
