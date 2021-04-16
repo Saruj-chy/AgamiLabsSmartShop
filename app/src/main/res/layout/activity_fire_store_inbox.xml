@@ -11,6 +11,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone"
         tools:ignore="MissingConstraints" />
+
+   <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/user_chat_recyclerview"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

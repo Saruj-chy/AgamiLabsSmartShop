@@ -1,21 +1,19 @@
 package com.agamilabs.smartshop.FireInboxShow;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.agamilabs.smartshop.R;
 import com.agamilabs.smartshop.controller.AppController;
 import com.agamilabs.smartshop.model.BatikromUserMsgModel;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.CollectionReference;
@@ -37,6 +35,7 @@ public class FireStoreInboxActivity extends AppCompatActivity {
     private DocumentReference userRef ;
     private CollectionReference userMsgRef ;
     private TextView mTextView ;
+    private RecyclerView mUserChatMsgRecyclerview;
 
     private String USER_ID = "116056194772555530699" ;
     private String DOCUMENT_ID = "7hUH4zrS9GzKnBgQTSqj" ;
@@ -49,6 +48,7 @@ public class FireStoreInboxActivity extends AppCompatActivity {
         setContentView(R.layout.activity_fire_store_inbox);
 
         mTextView = findViewById(R.id.textView) ;
+        mUserChatMsgRecyclerview = findViewById(R.id.user_chat_recyclerview) ;
         userRef = FirebaseFirestore.getInstance().collection("batikrom-users").document(USER_ID);
         userMsgRef = FirebaseFirestore.getInstance().collection("batikrom-message-collection").document("userChats").collection(USER_ID);
 
@@ -56,17 +56,52 @@ public class FireStoreInboxActivity extends AppCompatActivity {
         userMsgList = new ArrayList<>() ;
 //        loadBatikromUsers();
 
-        loadBatikromMsgCollection() ;
+//        loadBatikromMsgCollection() ;
+        loadBatikromMsgCollection1() ;
         AppController.getAppController().getInAppNotifier().log("response", "userMsgList " );
 
     }
 
+    private void loadBatikromMsgCollection1() {
+        userMsgRef.orderBy("lastupdatetime", Query.Direction.DESCENDING)
+                .addSnapshotListener(this, new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(QuerySnapshot queryDocumentSnapshots, FirebaseFirestoreException e) {
+                if (e != null) {
+                    return;
+                }
+                Log.e("CHECK", "queryDocumentSnapshots:  "+ queryDocumentSnapshots+ " e: "+e  ) ;
+                for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+                    BatikromUserMsgModel products = documentSnapshot.toObject(BatikromUserMsgModel.class);
+
+                    Log.e("CHECK", "documentSnapshot:  "+ documentSnapshot ) ;
+
+                    String id = documentSnapshot.getId() ;
+                    Log.d("TAG", "ID: "+id) ;
+                    userMsgList.add(new BatikromUserMsgModel(
+                            documentSnapshot.getId(),
+                            products.getLastupdatetime(),
+                            products.getUnseen_message()
+                    ));
+
+                }
+
+                Log.e("response", "list: "+ userMsgList ) ;
+
+                AppController.getAppController().getInAppNotifier().log("listInside", "userMsgList: "+ userMsgList );
+                PostProductListAdapter adapter = new PostProductListAdapter(getApplicationContext(), userMsgList);
+                mUserChatMsgRecyclerview.setAdapter(adapter);
+                GridLayoutManager manager = new GridLayoutManager(getApplicationContext(), 1, GridLayoutManager.VERTICAL, false);
+                mUserChatMsgRecyclerview.setLayoutManager(manager);
+
+            }
+        });
+
+        Log.e("response", "list outside: "+ userMsgList ) ;
+    }
+
 
     private void loadBatikromMsgCollection() {
-
-
-
-
         userMsgRef.orderBy("lastupdatetime", Query.Direction.DESCENDING)
 //        userMsgRef.orderBy("timeStamp", Query.Direction.ASCENDING)
                 .get()
@@ -102,7 +137,7 @@ public class FireStoreInboxActivity extends AppCompatActivity {
                                                 mTextView.setText("Time: " +dateFormat2 );
 //                                                mTextView.setText(documentID +"\n"+ document.get("lastupdatetime").toString()+" \n  "+ document.get("unseen_message")+"\n"+ date ) ;
 
-                                                AppController.getAppController().getInAppNotifier().log("listInside", "userMsgList: "+ userMsgList );
+
 
                                             } else {
                                                 AppController.getAppController().getInAppNotifier().log("response", "No such document");
@@ -111,7 +146,11 @@ public class FireStoreInboxActivity extends AppCompatActivity {
                                             AppController.getAppController().getInAppNotifier().log("response", "get failed with "+ task.getException());
                                         }
 //                                        AppController.getAppController().getInAppNotifier().log("list", "userMsgList: "+ userMsgList );
-
+//                                        AppController.getAppController().getInAppNotifier().log("listInside", "userMsgList: "+ userMsgList );
+//                                        PostProductListAdapter adapter = new PostProductListAdapter(getApplicationContext(), userMsgList);
+//                                        mUserChatMsgRecyclerview.setAdapter(adapter);
+//                                        GridLayoutManager manager = new GridLayoutManager(getApplicationContext(), 1, GridLayoutManager.VERTICAL, false);
+//                                        mUserChatMsgRecyclerview.setLayoutManager(manager);
                                     }
 
                                 });
@@ -121,14 +160,13 @@ public class FireStoreInboxActivity extends AppCompatActivity {
 
                             }
 
+
+
                         } else {
                             AppController.getAppController().getInAppNotifier().log("task", "Error getting documents: "+task.getException());
                         }
                     }
                 });
-
-
-
     }
 
     private void loadBatikromUsers() {
