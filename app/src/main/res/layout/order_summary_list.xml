@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -13,6 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
         android:elevation="3dp"
         app:cardElevation="3dp"
         android:clickable="true"
@@ -35,7 +36,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:paddingTop="15dp"
                 android:paddingBottom="10dp"
                 android:orientation="horizontal">
@@ -48,6 +49,7 @@
                     android:layout_weight="9"
                     android:gravity="center"
                     android:orientation="vertical">
+
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/image_logo_order"
                         android:layout_width="50dp"
@@ -56,10 +58,9 @@
 
 
                         android:src="@drawable/smart_shop"
-                        app:civ_border_width="3dp"
                         app:civ_border_color="@color/primary_light"
                         app:civ_border_overlay="true"
-                        />
+                        app:civ_border_width="3dp" />
 
 
 
@@ -78,6 +79,7 @@
                         android:id="@+id/relative_user_name_order"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
                         >
 
                         <TextView
@@ -89,8 +91,9 @@
                             android:layout_alignParentLeft="true"
                             android:layout_toStartOf="@+id/image_call_order"
                             android:layout_toLeftOf="@+id/image_call_order"
-                            android:text="Sarose Datta "
-                            android:textSize="20dp"
+                            android:text="Sarose Datta"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
                             android:textStyle="bold" />
 
                         <ImageButton
@@ -121,7 +124,9 @@
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        >
                         <TextView
                             android:id="@+id/text_contact_order"
                             android:layout_width="match_parent"
@@ -186,6 +191,11 @@
                     android:text="Due Date:  "
                     android:textSize="16dp"
                     android:visibility="gone"
+                    />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_timeline_order"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     />
 
             </LinearLayout>

@@ -8,7 +8,7 @@ public class StockReportModel {
     public  String itemname;
     public String  initialqty, remainingqty, salerate, prate, stockamount ;
     public String stockinqty, stockoutqty ;
-    public String reorderpoint ;
+    public String reorderpoint, cattext ;
 
     public StockReportModel() {
     }
@@ -58,6 +58,9 @@ public class StockReportModel {
         return stockoutqty;
     }
 
+    public String getCattext() {
+        return cattext;
+    }
 
     @Override
     public String toString() {

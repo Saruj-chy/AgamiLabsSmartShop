@@ -29,6 +29,7 @@
     <bool name="cameraPreviewShouldFillView">true</bool>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="customer_list">Select Customer</string>
 
 
     <string-array name="reorder_point_array">
@@ -38,5 +39,40 @@
         <item>Reorder Level Green</item>
 
     </string-array>
+
+
+    <string name="dashboard">Dashboard</string>
+    <string name="new_sale">New Sale</string>
+    <string name="sale_invoices">Sale Invoices</string>
+    <string name="stock_report">Stock Report</string>
+    <string name="online_orders">Online Orders</string>
+    <string name="shop_inbox">Shop Inbox</string>
+    <string name="campaign">Campaign</string>
+    <string name="recharge">Recharge</string>
+
+    <string-array name="pos_array">
+        <item>@string/dashboard</item>
+        <item>@string/new_sale</item>
+        <item>@string/sale_invoices</item>
+        <item>@string/stock_report</item>
+    </string-array>
+    <string-array name="ecommerce_array">
+        <item>@string/dashboard</item>
+        <item>@string/online_orders</item>
+        <item>@string/shop_inbox</item>
+    </string-array>
+    <string-array name="promotion_array">
+        <item>@string/campaign</item>
+        <item>@string/recharge</item>
+    </string-array>
+
+
+    //anoumous details, delete after testing
+    <string name="description_1">"The limited-edition special S 65 Final Edition model from Mercedes-AMG marks the pinnacle of the 6.0-litre V12 biturbo engine’s long success story on board the S-Class Saloon"</string>
+    <string name="description_2">"The first fully electric Mercedes-Benz combines minimalistic design with performance and fun driving properties – all with zero local emissions. Describing the EQC in one word? Quite a challenge"</string>
+    <string name="description_3">"More space, more power, more goose pimples – the new Mercedes-AMG GT 4-door model delivers driving experiences in new dimensions and extends the AMG model family."</string>
+    <string name="description_4">"The sporty STRONGER THAN TIME Edition. One of the six sporty exclusive finishes from G manufaktur. Inside, enjoy the Nappa leather in titanium grey pearl"</string>
+    <string name="description_5">"The C 63 S is the bedrock of Mercedes-AMG. Drivers and fans love it because it is one of a kind in its segment. Its signature feature is the immensely powerful eight-cylinder engine "</string>
+
 
 </resources>

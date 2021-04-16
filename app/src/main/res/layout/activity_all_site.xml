@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".aaaaaaaaaa.AllSiteActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        >
+
+        <LinearLayout
+            android:id="@+id/linear_layout_01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            >
+            <ImageView
+                android:id="@+id/image_facebook"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:src="@drawable/facebook"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp"
+                />
+            <ImageView
+                android:id="@+id/image_instragram"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:src="@drawable/instagram"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_layout_02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linear_layout_01"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            >
+            <ImageView
+                android:id="@+id/image_skype"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:src="@drawable/skype"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp"
+                />
+            <ImageView
+                android:id="@+id/image_twitter"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:src="@drawable/twitter"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_layout_03"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/linear_layout_02"
+            android:layout_marginTop="30dp"
+
+            >
+            <ImageView
+                android:id="@+id/image_youtube"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:src="@drawable/youtube"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp"
+                />
+            <ImageView
+                android:id="@+id/image_smart_shop"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:src="@drawable/smart_shop"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

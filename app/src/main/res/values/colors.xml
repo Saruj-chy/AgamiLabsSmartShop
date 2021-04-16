@@ -23,17 +23,21 @@
     <color name="icons">#FFFFFF</color>
     <color name="divider">#B6B6B6</color>
     <color name="lightgray">#DFE3E2</color>
-    <color name="lightgrayDeep">#DFE3E2</color>
-<!--    <color name="lightgrayDeep">#C0C3C2</color>-->
+    <color name="darkblue">#001FCD</color>
+    <color name="holoblue">#97B3EA</color>
+
+
+    <color name="green">#008000</color>
 
 
 
-<!--    color outdoor-->
+    <!--    color outdoor-->
     <color name="colorSecondary">#880e4f</color>
     <color name="colorSecondaryLight">#bc477b</color>
     <color name="colorSecondaryDark">#560027</color>
-    <color name="red">#FD0808</color>
 
-
+    <color name="toolbar_themed">#22704e77</color>
+    <color name="toolbar_background">@color/white</color>
+    <color name="toolbar_title_text_color">@color/colorPrimary</color>
 
 </resources>

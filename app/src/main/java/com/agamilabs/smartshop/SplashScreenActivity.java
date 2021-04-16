@@ -6,11 +6,16 @@ import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ProgressBar;
+
+import com.agamilabs.smartshop.database.DatabaseHandler;
+import com.agamilabs.smartshop.database.DbHelper;
+import com.agamilabs.smartshop.database.MySharedPreferenceManager;
 
 public class SplashScreenActivity extends AppCompatActivity {
     ProgressBar splashProgress;
@@ -18,42 +23,51 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     private boolean action = false;
 
-    int count =0;
+    int count = 0;
+
+    private DatabaseHandler mDbHandler;
+    private MySharedPreferenceManager mySharedPreferenceManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        supportRequestWindowFeature(Window.FEATURE_NO_TITLE) ;
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-
+        mDbHandler = new DatabaseHandler(this);
+        mySharedPreferenceManager = new MySharedPreferenceManager(this);
 
         splashProgress = findViewById(R.id.splashProgress);
         playProgress();
 
-        Button entryBtn = findViewById(R.id.entryBtn) ;
-        entryBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent mySuperIntent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(mySuperIntent);
-                count = 1;
-                SPLASH_TIME = 0 ;
-                finish();
-                action = true ;
-                Log.d("TAG", "action1: "+action) ;
-            }
-        });
+//        Button entryBtn = findViewById(R.id.entryBtn);
+//        entryBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent mySuperIntent = new Intent(getApplicationContext(), MainActivity.class);
+//                startActivity(mySuperIntent);
+//                count = 1;
+//                SPLASH_TIME = 0;
+//                finish();
+//                action = true;
+//                Log.d("TAG", "action1: " + action);
+//            }
+//        });
 
 
-
-
-        new Handler().postDelayed(new Runnable() {
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                if(action==false){
-                    Log.d("TAG", "action2: "+action) ;
-                    Intent mySuperIntent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(mySuperIntent);
+                if (!action) {
+                    Log.d("TAG", "action2: " + action);
+
+                    if(mySharedPreferenceManager.isLoggedIn()){
+                        Intent mySuperIntent = new Intent(getApplicationContext(), ShopAdminHome.class);
+                        startActivity(mySuperIntent);
+                    }else{
+                        Intent mySuperIntent = new Intent(getApplicationContext(), LoginActivity.class);
+                        startActivity(mySuperIntent);
+                    }
 
                     finish();
                 }
@@ -62,8 +76,8 @@ public class SplashScreenActivity extends AppCompatActivity {
             }
         }, SPLASH_TIME);
 
-        Log.d("TAG", "action: "+action) ;
-        Log.d("TAG", "splashtime: "+SPLASH_TIME) ;
+        Log.d("TAG", "action: " + action);
+        Log.d("TAG", "splashtime: " + SPLASH_TIME);
 
     }
 

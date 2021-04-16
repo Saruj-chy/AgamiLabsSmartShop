@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.SmothViewPagerActivity">
+
+    <include
+        android:id="@+id/toolbar_custom"
+        layout="@layout/layout_appbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.core.widget.NestedScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_custom"
+        >
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+           <RelativeLayout
+               android:id="@+id/relative_smoth"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_alignParentTop="true"
+               android:layout_alignParentLeft="true"
+               android:layout_alignParentRight="true"
+
+               >
+
+               <com.airbnb.lottie.LottieAnimationView
+                   android:id="@+id/lottie_animation"
+                   android:layout_width="?android:attr/actionBarSize"
+                   android:layout_alignParentRight="true"
+                   android:layout_marginRight="20dp"
+                   android:background="@drawable/ic_baseline_check_circle"
+                   android:visibility="gone"
+                   android:layout_height="?android:attr/actionBarSize"
+                   app:lottie_loop="false" />
+
+               <LinearLayout
+                   android:id="@+id/linear_smoth"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   android:layout_marginTop="5dp"
+                   android:layout_marginLeft="5dp"
+                   android:layout_marginRight="5dp"
+                   android:background="@drawable/border_solid"
+                   android:layout_below="@+id/lottie_animation">
+
+                   <TextView
+                       android:id="@+id/text_smoth_title"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+
+                       android:layout_marginLeft="10dp"
+                       android:layout_marginRight="10dp"
+
+
+                       android:paddingTop="5dp"
+                       android:paddingBottom="5dp"
+                       android:text="Order Report"
+                       android:textColor="@color/black"
+                       android:textSize="20dp"
+                       android:textStyle="bold"
+                       />
+                   <View
+                       android:layout_width="match_parent"
+                       android:layout_height="1dp"
+                       android:background="@color/lightgray"
+                       android:layout_marginLeft="8dp"
+                       android:layout_marginRight="10dp"
+                       />
+
+                   <TextView
+                       android:id="@+id/text_smoth_details"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:text="@string/description_1"
+                       android:textSize="12dp"
+                       android:textColor="@color/black"
+
+                       android:paddingTop="5dp"
+                       android:paddingLeft="10dp"
+                       android:paddingBottom="5dp"
+                       android:paddingRight="5dp"
+                       android:layout_marginLeft="10dp"
+                       android:layout_marginRight="10dp"
+
+                       android:justificationMode="inter_word"
+
+                       />
+
+               </LinearLayout>
+
+
+               <com.av.smoothviewpager.Smoolider.SmoothViewpager
+                   android:id="@+id/smoth_viewpager"
+                   android:layout_width="match_parent"
+                   android:layout_height="200dp"
+                   android:layout_below="@+id/linear_smoth"
+                   android:paddingRight="10dp"
+                   android:clipToPadding = "false"
+                   android:layout_alignParentLeft="true"
+                   android:layout_alignParentRight="true"
+
+                   />
+
+           </RelativeLayout>
+
+           <androidx.cardview.widget.CardView
+               android:id="@+id/cardview_pos"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_alignParentLeft="true"
+               android:layout_alignParentRight="true"
+               android:elevation="3dp"
+               android:layout_marginLeft="5dp"
+               android:layout_marginRight="5dp"
+               app:cardUseCompatPadding="true"
+               android:layout_below="@+id/relative_smoth"
+               >
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+
+                   >
+
+                   <TextView
+                       android:id="@+id/text_pos_title"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+
+                       android:layout_marginLeft="10dp"
+                       android:layout_marginRight="10dp"
+
+
+                       android:paddingTop="5dp"
+                       android:paddingBottom="5dp"
+                       android:text="Point-of-Sale"
+                       android:textColor="@color/black"
+                       android:textSize="20dp"
+                       android:textStyle="bold"
+                       />
+                   <View
+                       android:layout_width="match_parent"
+                       android:layout_height="1dp"
+                       android:background="@color/lightgray"
+                       android:layout_marginLeft="8dp"
+                       android:layout_marginRight="10dp"
+                       />
+
+                   <androidx.recyclerview.widget.RecyclerView
+                       android:id="@+id/recycler_pos"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+
+                       />
+
+
+               </LinearLayout>
+
+           </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:id="@+id/cardview_ecommerce"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_alignParentLeft="true"
+               android:layout_alignParentRight="true"
+               android:elevation="3dp"
+               android:layout_marginLeft="5dp"
+               android:layout_marginRight="5dp"
+               app:cardUseCompatPadding="true"
+               android:layout_below="@+id/cardview_pos"
+               >
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+
+                   >
+
+                   <TextView
+                       android:id="@+id/text_ecommerce_title"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+
+                       android:layout_marginLeft="10dp"
+                       android:layout_marginRight="10dp"
+
+
+                       android:paddingTop="5dp"
+                       android:paddingBottom="5dp"
+                       android:text="e-Commerce"
+                       android:textColor="@color/black"
+                       android:textSize="20dp"
+                       android:textStyle="bold"
+                       />
+                   <View
+                       android:layout_width="match_parent"
+                       android:layout_height="1dp"
+                       android:background="@color/lightgray"
+                       android:layout_marginLeft="8dp"
+                       android:layout_marginRight="10dp"
+                       />
+
+                   <androidx.recyclerview.widget.RecyclerView
+                       android:id="@+id/recycler_ecommerce"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+
+                       />
+
+
+               </LinearLayout>
+
+           </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:id="@+id/cardview_promotion"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_alignParentLeft="true"
+               android:layout_alignParentRight="true"
+               android:elevation="3dp"
+               android:layout_marginLeft="5dp"
+               android:layout_marginRight="5dp"
+               app:cardUseCompatPadding="true"
+               android:layout_below="@+id/cardview_ecommerce"
+               >
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+
+                   >
+
+                   <TextView
+                       android:id="@+id/text_promotion_title"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+
+                       android:layout_marginLeft="10dp"
+                       android:layout_marginRight="10dp"
+
+
+                       android:paddingTop="5dp"
+                       android:paddingBottom="5dp"
+                       android:text="Promotion"
+                       android:textColor="@color/black"
+                       android:textSize="20dp"
+                       android:textStyle="bold"
+                       />
+                   <View
+                       android:layout_width="match_parent"
+                       android:layout_height="1dp"
+                       android:background="@color/lightgray"
+                       android:layout_marginLeft="8dp"
+                       android:layout_marginRight="10dp"
+                       />
+
+                   <androidx.recyclerview.widget.RecyclerView
+                       android:id="@+id/recycler_promotion"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+
+                       />
+
+
+               </LinearLayout>
+
+           </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:id="@+id/cardview_recent_notification"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_alignParentLeft="true"
+               android:layout_alignParentRight="true"
+               android:elevation="3dp"
+               android:layout_marginLeft="5dp"
+               android:layout_marginRight="5dp"
+               app:cardUseCompatPadding="true"
+               android:layout_below="@+id/cardview_promotion"
+               >
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+
+                   >
+
+                   <TextView
+                       android:id="@+id/text_notification_title"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+
+                       android:layout_marginLeft="10dp"
+                       android:layout_marginRight="10dp"
+
+
+                       android:paddingTop="5dp"
+                       android:paddingBottom="5dp"
+                       android:text="Recent Notification"
+                       android:textColor="@color/black"
+                       android:textSize="20dp"
+                       android:textStyle="bold"
+                       />
+                   <View
+                       android:layout_width="match_parent"
+                       android:layout_height="1dp"
+                       android:background="@color/lightgray"
+                       android:layout_marginLeft="8dp"
+                       android:layout_marginRight="10dp"
+                       />
+
+                   <androidx.recyclerview.widget.RecyclerView
+                       android:id="@+id/recycler_notification"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+
+                       />
+
+
+               </LinearLayout>
+
+           </androidx.cardview.widget.CardView>
+
+       </RelativeLayout>
+   </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

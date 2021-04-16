@@ -35,4 +35,10 @@
         android:onClick="launchLogin"
         android:text="Launch Login Module" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="LaunchBottomSheetActivity"
+        android:text="Test Persistent Bottom Sheet " />
+
 </LinearLayout>

@@ -1,33 +1,71 @@
 {
   "project_info": {
-    "project_number": "943853513823",
-    "project_id": "smartshop-ccd7e",
-    "storage_bucket": "smartshop-ccd7e.appspot.com"
+    "project_number": "655668093048",
+    "firebase_url": "https://betikromapp-ed6a8.firebaseio.com",
+    "project_id": "betikromapp-ed6a8",
+    "storage_bucket": "betikromapp-ed6a8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:943853513823:android:f4d5a91210792b59aa7fea",
+        "mobilesdk_app_id": "1:655668093048:android:288796dde6b49dd7c40d8d",
         "android_client_info": {
-          "package_name": "com.agamilabs.smartshop"
+          "package_name": "com.agamilabs.betikrom"
         }
       },
       "oauth_client": [
         {
-          "client_id": "943853513823-5f7nnhicaf93liqnb4ioievatn7e57qc.apps.googleusercontent.com",
+          "client_id": "655668093048-p70juil4olicjv9siubut79kjho2n6p5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.agamilabs.betikrom",
+            "certificate_hash": "125e804c3c3b2f375488fafeba59d3daaf91fdb8"
+          }
+        },
+        {
+          "client_id": "655668093048-dnslcnjlf56vgdp9tbn7pbqk7g5o3hef.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyARq3MCSMEybyxfql2CP6vPhOKa71nCm6c"
+          "current_key": "AIzaSyA90_iZnSI4kAontOU17sEa1XzzCAvzcWQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "943853513823-5f7nnhicaf93liqnb4ioievatn7e57qc.apps.googleusercontent.com",
+              "client_id": "655668093048-7likom5nonseevoalflq0ack47gqon80.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:655668093048:android:838124b24f00f734c40d8d",
+        "android_client_info": {
+          "package_name": "com.agamilabs.smartshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "655668093048-dnslcnjlf56vgdp9tbn7pbqk7g5o3hef.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA90_iZnSI4kAontOU17sEa1XzzCAvzcWQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "655668093048-7likom5nonseevoalflq0ack47gqon80.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
