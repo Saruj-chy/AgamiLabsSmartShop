@@ -1,4 +1,4 @@
-package com.agamilabs.smartshop.model;
+package com.agamilabs.smartshop.FireInboxShow;
 
 public class BatikromUserMsgModel {
     String documentId;
