@@ -47,7 +47,8 @@
         <activity android:name=".InvoiceActivity" />
         <activity android:name=".InvoiceViewerActivity" />
         <activity android:name=".BaseScannerActivity" />
-        <activity android:name=".FullScannerActivity" /> <!-- <activity android:name=".activity.SmothViewPagerActivity"/> -->
+        <activity android:name=".FullScannerActivity" />
+        <!-- <activity android:name=".activity.SmothViewPagerActivity"/> -->
 <!--        <activity android:name=".activity.SmothViewPagerActivity">-->
         <activity android:name=".FireInboxShow.FireStoreInboxActivity">
             <intent-filter>

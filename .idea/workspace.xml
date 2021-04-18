@@ -29,7 +29,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc8dd32c-8a3b-4768-8eed-147a1c0a05c5" name="Default Changelist" comment="" />
+    <list default="true" id="cc8dd32c-8a3b-4768-8eed-147a1c0a05c5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

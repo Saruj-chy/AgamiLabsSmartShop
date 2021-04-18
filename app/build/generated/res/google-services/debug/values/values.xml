@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">655668093048-dnslcnjlf56vgdp9tbn7pbqk7g5o3hef.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://betikromapp-ed6a8.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">655668093048</string>
+    <string name="google_api_key" translatable="false">AIzaSyA90_iZnSI4kAontOU17sEa1XzzCAvzcWQ</string>
+    <string name="google_app_id" translatable="false">1:655668093048:android:838124b24f00f734c40d8d</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA90_iZnSI4kAontOU17sEa1XzzCAvzcWQ</string>
+    <string name="google_storage_bucket" translatable="false">betikromapp-ed6a8.appspot.com</string>
+    <string name="project_id" translatable="false">betikromapp-ed6a8</string>
+</resources>
