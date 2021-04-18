@@ -7,8 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import com.agamilabs.smartshop.controller.AppController;
-import com.agamilabs.smartshop.model.NotifyModel;
 
 import java.util.ArrayList;
 import java.util.Arrays;
