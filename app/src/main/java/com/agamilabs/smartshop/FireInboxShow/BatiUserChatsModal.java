@@ -1,17 +1,17 @@
 package com.agamilabs.smartshop.FireInboxShow;
 
-public class BatikromUserMsgModel {
+public class BatiUserChatsModal {
     String documentId;
     Object lastupdatetime ;
     int unseen_message ;
 
-    public BatikromUserMsgModel(String documentId, Object lastupdatetime, int unseen_message) {
+    public BatiUserChatsModal(String documentId, Object lastupdatetime, int unseen_message) {
         this.documentId = documentId;
         this.lastupdatetime = lastupdatetime;
         this.unseen_message = unseen_message;
     }
 
-    public BatikromUserMsgModel() {
+    public BatiUserChatsModal() {
     }
 
     public String getDocumentId() {

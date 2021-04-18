@@ -2,17 +2,18 @@ package com.agamilabs.smartshop.FireInboxShow;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.util.Log;
-import android.view.View;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 import com.agamilabs.smartshop.R;
 import com.agamilabs.smartshop.controller.AppController;
+import com.agamilabs.smartshop.controller.AppImageLoader;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
@@ -29,20 +30,25 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class FireStoreInboxActivity extends AppCompatActivity {
 
+    private RecyclerView mUserChatMsgRecyclerview;
+    private CircleImageView mClientImage;
+
+    private BatikromUserAdapter mBatiUserAdapter;
+
+
     private DocumentReference userRef ;
     private CollectionReference userMsgRef, msgUserChatsRef, msgChatsRef ;
-    private TextView mTextView ;
-    private RecyclerView mUserChatMsgRecyclerview;
 
     private String USER_ID = "116056194772555530699" ;
     private String DOCUMENT_ID = "7hUH4zrS9GzKnBgQTSqj" ;
     private String bati_name, bati_email, bati_photo ;
-    private List<BatikromUserMsgModel> userMsgList ;
-    private List<BatiUserChatsModel> userChatsList ;
+    private List<BatiUserChatsModal> mBatiUserChatsList;
+    private List<BatiChatsModal> mBatiChatsList;
 
 
     @Override
@@ -50,26 +56,143 @@ public class FireStoreInboxActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fire_store_inbox);
 
-        mTextView = findViewById(R.id.textView) ;
+        Toolbar toolbar = findViewById(R.id.firestore_toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Smart Shop");
+
         mUserChatMsgRecyclerview = findViewById(R.id.user_chat_recyclerview) ;
+        mClientImage = findViewById(R.id.circle_image_client) ;
         userRef = FirebaseFirestore.getInstance().collection("batikrom-users").document(USER_ID);
         userMsgRef = FirebaseFirestore.getInstance().collection("batikrom-message-collection");
         msgUserChatsRef = userMsgRef.document("userChats").collection(USER_ID);
         msgChatsRef = userMsgRef.document("chats").collection("chats");
 
 
-        userMsgList = new ArrayList<>() ;
+        mBatiUserChatsList = new ArrayList<>() ;
+        mBatiChatsList = new ArrayList<>() ;
 
 
-//        loadBatikromUsers();
+        loadBatikromUsers();
+        initializeAdapter() ;
+
+
+
+
+
+
+
+
+
 //        loadBatikromMsgCollection1() ;
-        loadBatikromMsgCollection() ;
-        AppController.getAppController().getInAppNotifier().log("response", "userMsgList " );
-
-        loadBatiMsgChatsCollection() ;
-
+//        AppController.getAppController().getInAppNotifier().log("response", "userMsgList " );
+//
+//        loadBatiMsgChatsCollection() ;
+//        loadBatiMsgUserChatsCollection() ;
 
     }
+
+    private void initializeAdapter() {
+        AppController.getAppController().getInAppNotifier().log("adapter", "mBatiChatsList: "+ mBatiChatsList+"   mBatiUserChatsList:  "+mBatiUserChatsList );
+        mBatiUserAdapter = new BatikromUserAdapter(getApplicationContext(), mBatiUserChatsList, mBatiChatsList);
+        mUserChatMsgRecyclerview.setAdapter(mBatiUserAdapter);
+        GridLayoutManager manager = new GridLayoutManager(getApplicationContext(), 1, GridLayoutManager.VERTICAL, false);
+        mUserChatMsgRecyclerview.setLayoutManager(manager);
+    }
+
+    private void loadBatikromUsers() {
+
+        userRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    AppController.getAppController().getInAppNotifier().log("document", document+""   );
+                    if (document.exists()) {
+                        bati_name = document.get("name")+"" ;
+                        bati_email = document.get("email")+"" ;
+                        bati_photo= document.get("photo")+"" ;
+
+                        AppImageLoader.loadImageInView(bati_photo, R.drawable.profile_image, (ImageView)mClientImage);
+//                        loadBatiMsgUserChatsCollection() ;
+//                        loadBatiMsgChatsCollection() ;
+
+                        loadBatiUserChatsCollection();
+
+                        AppController.getAppController().getInAppNotifier().log("response", "mBatiUserChatsList: " + mBatiUserChatsList+"  mBatiChatsList: "+ mBatiChatsList    );
+//                        mTextView.setText(bati_name+" " + bati_email +  "  " + bati_photo  );
+                    } else {
+//                        AppController.getAppController().getInAppNotifier().log("response", "No such document");
+                    }
+                } else {
+//                    AppController.getAppController().getInAppNotifier().log("response", "get failed with "+ task.getException());
+                }
+            }
+        });
+    }
+
+    private void loadBatiUserChatsCollection() {
+        msgUserChatsRef.orderBy("lastupdatetime", Query.Direction.DESCENDING)
+//                .limit(1)
+                .addSnapshotListener(this, new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(QuerySnapshot queryDocumentSnapshots, FirebaseFirestoreException e) {
+                        if (e != null) {
+                            return;
+                        }
+                        for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+                            BatiUserChatsModal products = documentSnapshot.toObject(BatiUserChatsModal.class);
+
+                            mBatiUserChatsList.add(new BatiUserChatsModal(
+                                    documentSnapshot.getId(),
+                                    products.getLastupdatetime(),
+                                    products.getUnseen_message()
+                            ));
+
+                        }
+                        loadBatiChatsCollection(mBatiUserChatsList) ;
+                    }
+                });
+    }
+
+    private void loadBatiChatsCollection(List<BatiUserChatsModal> mBatiUserChatsList) {
+//        AppController.getAppController().getInAppNotifier().log("batiUserChats", "loadBatiChatsCollection: "+ mBatiUserChatsList );
+        msgChatsRef
+//                .limit(1)
+                .addSnapshotListener(this, new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(QuerySnapshot queryDocumentSnapshots, FirebaseFirestoreException e) {
+                        if (e != null) {
+                            return;
+                        }
+                        Log.e("CHECK", "queryDocumentSnapshots:  "+ queryDocumentSnapshots+ " e: "+e  ) ;
+                        for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+
+                            List<String> usersList = (List<String>) documentSnapshot.get("users");
+
+                           for (int i=0; i<mBatiUserChatsList.size(); i++){
+                               if(mBatiUserChatsList.get(i).getDocumentId().equals(documentSnapshot.getId()) ){
+                                   AppController.getAppController().getInAppNotifier().log("docID", "documentID: "+ documentSnapshot.getId() );
+                                   mBatiChatsList.add(new BatiChatsModal(
+                                           documentSnapshot.getId(),
+                                           usersList
+                                   )) ;
+                               }
+                           }
+
+
+                        }
+
+
+                        AppController.getAppController().getInAppNotifier().log("docSnap", "mBatiChatsList: "+ mBatiChatsList+"   mBatiUserChatsList:  "+mBatiUserChatsList );
+//                        initializeAdapter();
+                        mBatiUserAdapter.notifyDataSetChanged();
+
+
+                    }
+                });
+
+    }
+
 
     private void loadBatiMsgChatsCollection() {
         msgChatsRef
@@ -82,59 +205,35 @@ public class FireStoreInboxActivity extends AppCompatActivity {
                         }
                         Log.e("CHECK", "queryDocumentSnapshots:  "+ queryDocumentSnapshots+ " e: "+e  ) ;
                         for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
-                            BatiUserChatsModel products = documentSnapshot.toObject(BatiUserChatsModel.class);
 
-
-                            Map<String, Object> chatsMap = documentSnapshot.getData();
-                            for (Map.Entry<String, Object> entry : chatsMap.entrySet()) {
-                                if (entry.getKey().equals("users")) {
-                                    Log.e("chatsMap", entry.getValue().toString());
-
-//                                    userChatsList.add(new BatiUserChatsModel(
-//                                            entry.getValue().toString(),
-//                                            documentSnapshot.getId()
-//                                    ));
-                                }
-                            }
-
-
-                            Log.e("chatsMap", chatsMap.get("0").toString() );
-
-//                            String[] array = (String[]) chatsMap.get("users");
-//                            String userStr = chatsMap.get(0). ;
-//
-//                            Log.e("chatsMap","2 "+ userStr);
-
-
-//                            BatiUserChatsModel products = documentSnapshot.toObject(BatiUserChatsModel.class);
-//
-//                            Log.e("CHECK", "documentSnapshot:  "+ documentSnapshot ) ;
-//
-                            String id = documentSnapshot.getId() ;
-                            Log.e("chatsMap", "ID: "+id) ;
-//                            userChatsList.add(new BatiUserChatsModel(
-//                                    documentSnapshot.getId(),
-//                                    chatsMap.get("users")
-//                            ));
+                            List<String> usersList = (List<String>) documentSnapshot.get("users");
+                            mBatiChatsList.add(new BatiChatsModal(
+                                    documentSnapshot.getId(),
+                                    usersList
+                            )) ;
 
                         }
+                        AppController.getAppController().getInAppNotifier().log("response", "mBatiChatsList 1:  "+ mBatiChatsList );
 
-                        Log.e("response", "list: "+ userChatsList ) ;
-                        mUserChatMsgRecyclerview.setVisibility(View.GONE);
-                        mTextView.setVisibility(View.VISIBLE);
-                        mTextView.setText(userChatsList+"");
+//                        Log.e("response", "list: "+ userChatsList ) ;
+//                        mUserChatMsgRecyclerview.setVisibility(View.GONE);
+//                        mTextView.setVisibility(View.VISIBLE);
+//                        mTextView.setText(userChatsList+"");
 
-//                        AppController.getAppController().getInAppNotifier().log("listInside", "userMsgList: "+ userMsgList );
-//                        PostProductListAdapter adapter = new PostProductListAdapter(getApplicationContext(), userMsgList);
+//                        PostProductListAdapter adapter = new PostProductListAdapter(getApplicationContext(), userChatsList);
 //                        mUserChatMsgRecyclerview.setAdapter(adapter);
 //                        GridLayoutManager manager = new GridLayoutManager(getApplicationContext(), 1, GridLayoutManager.VERTICAL, false);
 //                        mUserChatMsgRecyclerview.setLayoutManager(manager);
 
                     }
                 });
-    }
 
-    private void loadBatikromMsgCollection() {
+        AppController.getAppController().getInAppNotifier().log("response", "mBatiChatsList:  "+ mBatiChatsList );
+
+    }
+    private void loadBatiMsgUserChatsCollection() {
+
+
         msgUserChatsRef.orderBy("lastupdatetime", Query.Direction.DESCENDING)
 //                .limit(1)
                 .addSnapshotListener(this, new EventListener<QuerySnapshot>() {
@@ -143,15 +242,10 @@ public class FireStoreInboxActivity extends AppCompatActivity {
                 if (e != null) {
                     return;
                 }
-                Log.e("CHECK", "queryDocumentSnapshots:  "+ queryDocumentSnapshots+ " e: "+e  ) ;
                 for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
-                    BatikromUserMsgModel products = documentSnapshot.toObject(BatikromUserMsgModel.class);
+                    BatiUserChatsModal products = documentSnapshot.toObject(BatiUserChatsModal.class);
 
-                    Log.e("CHECK", "documentSnapshot:  "+ documentSnapshot ) ;
-
-                    String id = documentSnapshot.getId() ;
-                    Log.d("TAG", "ID: "+id) ;
-                    userMsgList.add(new BatikromUserMsgModel(
+                    mBatiUserChatsList.add(new BatiUserChatsModal(
                             documentSnapshot.getId(),
                             products.getLastupdatetime(),
                             products.getUnseen_message()
@@ -159,21 +253,22 @@ public class FireStoreInboxActivity extends AppCompatActivity {
 
                 }
 
-                Log.e("response", "list: "+ userMsgList ) ;
+                AppController.getAppController().getInAppNotifier().log("response", "mBatiUserChatsList  1:  "+ mBatiUserChatsList );
 
-                AppController.getAppController().getInAppNotifier().log("listInside", "userMsgList: "+ userMsgList );
-                PostProductListAdapter adapter = new PostProductListAdapter(getApplicationContext(), userMsgList);
-                mUserChatMsgRecyclerview.setAdapter(adapter);
-                GridLayoutManager manager = new GridLayoutManager(getApplicationContext(), 1, GridLayoutManager.VERTICAL, false);
-                mUserChatMsgRecyclerview.setLayoutManager(manager);
+
+
+//                AppController.getAppController().getInAppNotifier().log("listInside", "userMsgList: "+ userMsgList );
+//                PostProductListAdapter adapter = new PostProductListAdapter(getApplicationContext(), userMsgList);
+//                mUserChatMsgRecyclerview.setAdapter(adapter);
+//                GridLayoutManager manager = new GridLayoutManager(getApplicationContext(), 1, GridLayoutManager.VERTICAL, false);
+//                mUserChatMsgRecyclerview.setLayoutManager(manager);
 
             }
         });
 
-        Log.e("response", "list outside: "+ userMsgList ) ;
+        AppController.getAppController().getInAppNotifier().log("response", "mBatiUserChatsList:  "+ mBatiUserChatsList );
+//        Log.e("response", "list outside: "+ userMsgList ) ;
     }
-
-
     private void loadBatikromMsgCollection1() {
         msgUserChatsRef.orderBy("lastupdatetime", Query.Direction.DESCENDING)
 //        userMsgRef.orderBy("timeStamp", Query.Direction.ASCENDING)
@@ -196,8 +291,8 @@ public class FireStoreInboxActivity extends AppCompatActivity {
                                             AppController.getAppController().getInAppNotifier().log("document", document+""   );
                                             if (document.exists()) {
 
-                                                BatikromUserMsgModel userMsgModel = document.toObject(BatikromUserMsgModel.class) ;
-                                                userMsgList.add(new BatikromUserMsgModel(
+                                                BatiUserChatsModal userMsgModel = document.toObject(BatiUserChatsModal.class) ;
+                                                mBatiUserChatsList.add(new BatiUserChatsModal(
                                                         documentID,
                                                         userMsgModel.getLastupdatetime(),
                                                         userMsgModel.getUnseen_message()) ) ;
@@ -207,16 +302,16 @@ public class FireStoreInboxActivity extends AppCompatActivity {
                                                 CharSequence dateFormat2 = DateFormat.format("yyyy-MM-dd hh:mm:ss a", date);
 
 
-                                                mTextView.setText("Time: " +dateFormat2 );
+//                                                mTextView.setText("Time: " +dateFormat2 );
 //                                                mTextView.setText(documentID +"\n"+ document.get("lastupdatetime").toString()+" \n  "+ document.get("unseen_message")+"\n"+ date ) ;
 
 
 
                                             } else {
-                                                AppController.getAppController().getInAppNotifier().log("response", "No such document");
+//                                                AppController.getAppController().getInAppNotifier().log("response", "No such document");
                                             }
                                         } else {
-                                            AppController.getAppController().getInAppNotifier().log("response", "get failed with "+ task.getException());
+//                                            AppController.getAppController().getInAppNotifier().log("response", "get failed with "+ task.getException());
                                         }
 //                                        AppController.getAppController().getInAppNotifier().log("list", "userMsgList: "+ userMsgList );
 //                                        AppController.getAppController().getInAppNotifier().log("listInside", "userMsgList: "+ userMsgList );
@@ -236,33 +331,11 @@ public class FireStoreInboxActivity extends AppCompatActivity {
 
 
                         } else {
-                            AppController.getAppController().getInAppNotifier().log("task", "Error getting documents: "+task.getException());
+//                            AppController.getAppController().getInAppNotifier().log("task", "Error getting documents: "+task.getException());
                         }
                     }
                 });
     }
 
-    private void loadBatikromUsers() {
 
-        userRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.isSuccessful()) {
-                    DocumentSnapshot document = task.getResult();
-                    AppController.getAppController().getInAppNotifier().log("document", document+""   );
-                    if (document.exists()) {
-                        bati_name = document.get("name")+"" ;
-                        bati_email = document.get("email")+"" ;
-                        bati_photo= document.get("photo")+"" ;
-                        AppController.getAppController().getInAppNotifier().log("response", "DocumentSnapshot data: " + document.getData().toString()   );
-                        mTextView.setText(bati_name+" " + bati_email +  "  " + bati_photo  );
-                    } else {
-                        AppController.getAppController().getInAppNotifier().log("response", "No such document");
-                    }
-                } else {
-                    AppController.getAppController().getInAppNotifier().log("response", "get failed with "+ task.getException());
-                }
-            }
-        });
-    }
 }
