@@ -10,6 +10,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.agamilabs.smartshop.controller.AppController;
+import com.agamilabs.smartshop.database.DatabaseHandler;
+import com.agamilabs.smartshop.database.MySharedPreferenceManager;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -30,14 +33,25 @@ public class LoginActivity extends AppCompatActivity implements Response.Listene
     private EditText editText_host_url, editText_domain_name, editText_user_name, editText_password;
     private Button btn_submit;
     private String url = "/connector/index.php";
-    RequestQueue requestQueue;
+
+    private DatabaseHandler mDbHandler;
+    private MySharedPreferenceManager mySharedPreferenceManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        requestQueue = Volley.newRequestQueue(this);
+        mDbHandler = new DatabaseHandler(this);
+        mySharedPreferenceManager = new MySharedPreferenceManager(this);
+
+        if (mySharedPreferenceManager.hasSingleAccount()) {
+            onAccountSelect("");
+        } else if (mySharedPreferenceManager.hasMultipleAccounts()) {
+            onAccountSelect("");
+        } else {
+
+        }
 
         editText_host_url = findViewById(R.id.login_hosturl);
         editText_domain_name = findViewById(R.id.login_domain_name);
@@ -50,35 +64,41 @@ public class LoginActivity extends AppCompatActivity implements Response.Listene
             @Override
             public void onClick(View view) {
 
-                //activity
-                startActivity(new Intent(getApplicationContext(), ShopAdminHome.class ));
-
-
-
                 final HashMap<String, String> params = new HashMap<>();
 
                 String host_url = editText_host_url.getText().toString();
                 String domain_name = editText_domain_name.getText().toString();
+                String user_name = editText_user_name.getText().toString();
                 params.put("domain_name", domain_name);
-                params.put("userid", editText_user_name.getText().toString());
+                params.put("userid", user_name);
                 params.put("password", editText_password.getText().toString());
 
-                Log.e("TAG", "prams map:  "+ params ) ;
+                mySharedPreferenceManager.saveLoginInfo(host_url, domain_name, user_name);
+//                Log.e("TAG", "prams map:  " + params);
 
                 String host = "" + host_url + url;
 
-                StringRequest stringRequest = new StringRequest(Request.Method.POST, host,
-                        LoginActivity.this, LoginActivity.this) {
-                    @Override
-                    protected Map<String, String> getParams() {
-                        return params;
-                    }
-                };
-                requestQueue.add(stringRequest);
+//                StringRequest stringRequest = new StringRequest(Request.Method.POST, host,
+//                        LoginActivity.this, LoginActivity.this) {
+//                    @Override
+//                    protected Map<String, String> getParams() {
+//                        return params;
+//                    }
+//                };
+//                requestQueue.add(stringRequest);
+
+                AppController.getAppController().getAppNetworkController().makeRequest(host, LoginActivity.this, LoginActivity.this, new HashMap<>());
             }
         });
 
 
+    }
+
+    public void onAccountSelect(String authkey) {
+        editText_host_url.setText(mySharedPreferenceManager.getSavedHost(authkey));
+        editText_domain_name.setText(mySharedPreferenceManager.getSavedDomain(authkey));
+        editText_user_name.setText(mySharedPreferenceManager.getSavedUsername(authkey));
+//        editText_password.setText("" + mySharedPreferenceManager.getLoggedInHost());
     }
 
 
@@ -100,9 +120,14 @@ public class LoginActivity extends AppCompatActivity implements Response.Listene
                     FirebaseMessaging.getInstance().subscribeToTopic(topic_name);
 
                     // BEGIN[save topics in database]
+                    mySharedPreferenceManager.saveLoginSuccessInfo(shop_name, topic_name, auth_domain, auth_key);
 
                     // END[save topics in database]
                 }
+
+                mySharedPreferenceManager.saveLoggedIn(true);
+                startActivity(new Intent(getApplicationContext(), ShopAdminHome.class));
+
             } else {
                 Toast.makeText(this, object.getString("message"), Toast.LENGTH_LONG).show();
             }

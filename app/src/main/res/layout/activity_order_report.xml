@@ -7,259 +7,46 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     >
-  <!--  <androidx.cardview.widget.CardView
-        android:id="@+id/cardView_stock_report_list"
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:clickable="true"
-        android:focusable="false"
-        android:foreground="?android:attr/selectableItemBackground"
-        android:foregroundGravity="center"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="match_parent">
 
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
-
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_order_report"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:id="@+id/linear_order"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_weight="5"
-                    android:orientation="vertical">
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/image_logo_order"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:layout_gravity="center"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:scrollbarStyle="outsideInset"
+            android:scrollbars="horizontal"
 
 
-                        android:layout_margin="10dp"
-                        android:src="@drawable/smart_shop_logo"
-                        app:civ_border_width="3dp"
-                        app:civ_border_color="@color/primary_light"
-                        app:civ_border_overlay="true"
-                        />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
 
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_weight="2"
-                    >
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/text_item_name_order"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="20dp"
-                            android:padding="5dp"
-                            android:text="Rice, Sd saruj store"
-                            android:textSize="22dp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/text_agreement_order"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="20dp"
-                            android:padding="5dp"
-                            android:textColor="@color/red"
-                            android:text="Agreement "
-                            android:textSize="18dp" />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <TextView
-                            android:id="@+id/text_id_order"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="5dp"
-                            android:layout_marginLeft="18dp"
-                            android:text="BSO-1X1-INI1K8X3ZN"
-                            android:textSize="20dp"
-                            />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        >
-                        <TextView
-                            android:id="@+id/text_delivery_order"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="5dp"
-                            android:layout_marginLeft="18dp"
-                            android:text="Home Delivery"
-                            android:textColor="@android:color/holo_green_light"
-                            android:textSize="20dp"
-                            />
-                    </LinearLayout>
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/relative_layout_1"
-                android:background="@color/divider"
-                android:orientation="vertical"
-                android:paddingBottom="5dp"
-                android:paddingTop="5dp"
-                >
-
-                <TextView
-                    android:id="@+id/text_user_address_order"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:padding="5dp"
-                    android:text="Cu, Chittagong, 4000 "
-                    android:textSize="18dp" />
-                <TextView
-                    android:id="@+id/text_user_contact_order"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:layout_marginLeft="20dp"
-                    android:text="contact: 01516174937 "
-                    android:textSize="18dp"
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/relative_layout_1"
-                android:background="@color/lightgray"
-                >
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingLeft="2dp"
-                    android:paddingRight="2dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:layout_weight="1">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Cart Time"
-                        android:textSize="16dp"
-                        android:gravity="center"
-
-                        android:layout_marginBottom="5dp"
-                        />
-                    <TextView
-                        android:id="@+id/text_cart_time_order"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Jan 3, 2021 12.37 am"
-                        android:textSize="16dp"
-                        android:textStyle="bold"
-                        android:textColor="@color/colorSecondaryLight"
-                        android:gravity="center"
-
-                        />
-
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="@color/lightgrayDeep"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:paddingLeft="2dp"
-                    android:paddingRight="2dp"
-                    android:layout_weight="1">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Delivery Time"
-                        android:textSize="16dp"
-                        android:gravity="center"
-                        android:layout_marginBottom="5dp"
-                        />
-                    <TextView
-                        android:id="@+id/text_delivery_time_order"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Jan 7, 2021 10.00am"
-                        android:textSize="16dp"
-                        android:textColor="@color/colorSecondaryLight"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        />
-
-
-                </LinearLayout>
-
-
-
-            </LinearLayout>
-        </LinearLayout>
-
-
-    </androidx.cardview.widget.CardView>-->
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_order_report"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:scrollbarStyle="outsideInset"
-        android:scrollbars="horizontal"
-
-
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="MissingConstraints" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="30dp"
+        android:layout_alignParentBottom="true"/>
 
 
 
-
-</androidx.constraintlayout.widget.ConstraintLayout  >
+</androidx.constraintlayout.widget.ConstraintLayout>

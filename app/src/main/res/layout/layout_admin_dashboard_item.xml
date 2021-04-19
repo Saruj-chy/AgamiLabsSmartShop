@@ -1,55 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
     android:gravity="center">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
         android:gravity="center"
-        >
-        <LinearLayout
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
             android:id="@+id/linear_layout"
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_alignParentTop="true"
-            >
+            app:cardCornerRadius="4dp"
+            android:padding="5dp">
+
             <TextView
                 android:id="@+id/text_identifier"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:text="A"
-                android:textSize="50dp"
-                android:layout_margin="10dp"
-
-                android:textColor="@android:color/black"
+                android:layout_width="match_parent"
                 android:background="@drawable/background"
+                android:layout_height="match_parent"
                 android:gravity="center"
-                android:textStyle="bold"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true"
-                />
+                android:text="A"
+                android:textColor="@android:color/black"
+                android:textSize="50sp"
+                android:textStyle="bold" />
 
-        </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/text_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/linear_layout"
-            android:gravity="center"
-            android:text="AGAMiLabs"
-            android:textSize="15dp"
-            android:textStyle="bold"
             android:layout_marginBottom="10dp"
-            />
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
-    </RelativeLayout>
-</RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

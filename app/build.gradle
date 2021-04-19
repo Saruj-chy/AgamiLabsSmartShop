@@ -13,6 +13,7 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -27,27 +28,62 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
 }
 
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation 'com.google.firebase:firebase-messaging:21.0.0'
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.google.firebase:firebase-messaging:21.1.0'
+    implementation 'com.google.firebase:firebase-core:18.0.3'
+    implementation 'com.google.firebase:firebase-analytics:18.0.3'
+    implementation "androidx.recyclerview:recyclerview:1.2.0"
+    implementation 'com.android.volley:volley:1.2.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    testImplementation 'junit:junit:4.13.1'
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.github.markushi:circlebutton:1.1'
+    implementation 'com.google.firebase:firebase-firestore:22.1.2'
+    implementation 'com.google.firebase:firebase-auth:20.0.4'
+    //compile 'com.github.ajithvgiri:SearchDialog:v1.0'
+
+
+    testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     implementation 'me.dm7.barcodescanner:zxing:1.9.13'
-
-    implementation 'com.google.firebase:firebase-core:18.0.0'
-    implementation 'com.google.firebase:firebase-analytics:18.0.0'
-    implementation 'com.android.volley:volley:1.1.1'
-
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    def multidex_version = "2.0.1"
+    implementation "androidx.multidex:multidex:$multidex_version"
+
+    implementation "com.github.ajithvgiri:SearchDialog:v1.0"
+    //rofiqul
+    implementation 'com.github.DantSu:ESCPOS-ThermalPrinter-Android:2.0.8'
+    implementation 'com.github.aakira:expandable-layout:1.4.2@aar'
+
+
+    //shimmer effect
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    implementation 'com.github.astrit-veliu:Smoolider:1.1'
+    implementation 'com.airbnb.android:lottie:3.6.0'
+    implementation "com.github.astrit-veliu:Boom:1.0"
+
+
+    implementation "com.rishabhharit.roundedimageview:RoundedImageView:0.8.4"
+    implementation 'com.github.hackware1993:MagicIndicator:1.7.0'
+
+
+//    implementation group: 'org.apache.httpcomponents' , name: 'httpclient-android' , version: '4.3.5.1'
+    implementation 'com.auth0.android:jwtdecode:2.0.0'
+
+
+
 
 
 }

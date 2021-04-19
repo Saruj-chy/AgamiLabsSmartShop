@@ -1,1 +1,1 @@
-"# AgamiLabsSmartShop" 
+# smart-shop

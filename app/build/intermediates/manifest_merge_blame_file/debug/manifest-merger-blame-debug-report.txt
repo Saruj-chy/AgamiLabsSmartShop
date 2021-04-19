@@ -1,0 +1,466 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.agamilabs.smartshop"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="16"
+8-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
+10    <!-- rofiqul -->
+11    <supports-screens android:anyDensity="true" />
+11-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:5:5-51
+11-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:5:23-48
+12
+13    <uses-feature android:name="android.hardware.usb.accessory" />
+13-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:7:5-67
+13-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:7:19-64
+14    <uses-feature android:name="android.hardware.usb.host" />
+14-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:8:5-62
+14-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:8:19-59
+15
+16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+16-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:10:5-79
+16-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:10:22-76
+17    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+17-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:11:5-76
+17-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:11:22-73
+18    <uses-permission android:name="android.permission.INTERNET" />
+18-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:12:5-67
+18-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:12:22-64
+19    <uses-permission android:name="android.permission.CALL_PHONE" />
+19-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:13:5-69
+19-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:13:22-66
+20    <uses-permission android:name="android.permission.BLUETOOTH" />
+20-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:14:5-68
+20-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:14:22-65
+21    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" /> <!-- rofiqul -->
+21-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:15:5-74
+21-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:15:22-71
+22    <uses-permission android:name="android.permission.INTERNET" />
+22-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:12:5-67
+22-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:12:22-64
+23    <uses-permission android:name="android.permission.CAMERA" />
+23-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:17:5-65
+23-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:17:22-62
+24    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+24-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:18:5-80
+24-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:18:22-77
+25    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+25-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:19:5-81
+25-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:19:22-78
+26    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+26-->[com.google.firebase:firebase-messaging:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\182300206770475f1dc109de00117671\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:23:5-68
+26-->[com.google.firebase:firebase-messaging:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\182300206770475f1dc109de00117671\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:23:22-65
+27    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+27-->[com.google.firebase:firebase-messaging:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\182300206770475f1dc109de00117671\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:25:5-82
+27-->[com.google.firebase:firebase-messaging:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\182300206770475f1dc109de00117671\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:25:22-79
+28    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+28-->[com.google.android.gms:play-services-measurement:18.0.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\e95842a214534440edcef5cce8409b37\jetified-play-services-measurement-18.0.3\AndroidManifest.xml:26:5-110
+28-->[com.google.android.gms:play-services-measurement:18.0.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\e95842a214534440edcef5cce8409b37\jetified-play-services-measurement-18.0.3\AndroidManifest.xml:26:22-107
+29
+30    <application
+30-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:21:5-74:19
+31        android:name="com.agamilabs.smartshop.controller.AppController"
+31-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:22:9-49
+32        android:allowBackup="true"
+32-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:23:9-35
+33        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+33-->[androidx.core:core:1.3.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\67144f8b09a953df3e7278900fce8670\core-1.3.2\AndroidManifest.xml:24:18-86
+34        android:debuggable="true"
+35        android:icon="@mipmap/ic_launcher"
+35-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:24:9-43
+36        android:label="@string/app_name"
+36-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:25:9-41
+37        android:networkSecurityConfig="@xml/network_security_config"
+37-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:26:9-69
+38        android:roundIcon="@mipmap/ic_launcher_round"
+38-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:27:9-54
+39        android:supportsRtl="true"
+39-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:28:9-35
+40        android:testOnly="true"
+41        android:theme="@style/Theme.MyApplication" >
+41-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:29:9-51
+42        <activity android:name="com.agamilabs.smartshop.FireInboxShow.FirestoreUserChatsActivity" />
+42-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:30:9-87
+42-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:30:19-75
+43        <!-- <activity android:name=".FireInboxShow.FireStoreInboxActivity"/> -->
+44        <!-- <activity android:name=".aaaaaaaaaa.NetworkConnectActivity"/> -->
+45        <!-- <activity android:name=".aaaaaaaaaa.AllSiteActivity"/> -->
+46        <!-- <activity android:name=".aaaaaaaaaa.TestingSessionActivity"/> -->
+47        <!-- rofiqul -->
+48        <activity android:name="com.agamilabs.smartshop.activity.DeviceListActivity" />
+48-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:36:9-65
+48-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:36:19-62
+49        <activity android:name="com.agamilabs.smartshop.activity.PrintingActivity" />
+49-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:37:9-63
+49-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:37:19-60
+50        <activity android:name="com.agamilabs.smartshop.activity.NewCampaignActivity" />
+50-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:38:9-66
+50-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:38:19-63
+51        <activity android:name="com.agamilabs.smartshop.activity.CampaignActivity" /> <!-- rofiqul -->
+51-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:39:9-63
+51-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:39:19-60
+52        <activity android:name="com.agamilabs.smartshop.MainActivity" />
+52-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:40:9-50
+52-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:40:19-47
+53        <activity android:name="com.agamilabs.smartshop.activity.RechargeActivity" />
+53-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:41:9-63
+53-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:41:19-60
+54        <activity android:name="com.agamilabs.smartshop.activity.ShopInboxActivity" />
+54-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:42:9-64
+54-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:42:19-61
+55        <activity android:name="com.agamilabs.smartshop.activity.OrderReportActivity" />
+55-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:43:9-66
+55-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:43:19-63
+56        <activity android:name="com.agamilabs.smartshop.activity.StockReportActivity" />
+56-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:44:9-66
+56-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:44:19-63
+57        <activity android:name="com.agamilabs.smartshop.activity.CardShopActivity" />
+57-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:45:9-63
+57-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:45:19-60
+58        <activity android:name="com.agamilabs.smartshop.ShopAdminHome" />
+58-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:46:9-51
+58-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:46:19-48
+59        <activity android:name="com.agamilabs.smartshop.LoginActivity" />
+59-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:47:9-51
+59-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:47:19-48
+60        <activity android:name="com.agamilabs.smartshop.InvoiceActivity" />
+60-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:48:9-53
+60-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:48:19-50
+61        <activity android:name="com.agamilabs.smartshop.InvoiceViewerActivity" />
+61-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:49:9-59
+61-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:49:19-56
+62        <activity android:name="com.agamilabs.smartshop.BaseScannerActivity" />
+62-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:50:9-57
+62-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:50:19-54
+63        <activity android:name="com.agamilabs.smartshop.FullScannerActivity" /> <!-- <activity android:name=".activity.SmothViewPagerActivity"/> -->
+63-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:51:9-57
+63-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:51:19-54
+64        <!-- <activity android:name=".activity.SmothViewPagerActivity"> -->
+65        <activity android:name="com.agamilabs.smartshop.FireInboxShow.FireStoreUserActivity" >
+65-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:53:9-63:20
+65-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:53:19-70
+66            <intent-filter>
+66-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:54:13-62:29
+67                <action android:name="android.intent.action.MAIN" />
+67-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:55:17-69
+67-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:55:25-66
+68
+69                <category android:name="android.intent.category.LAUNCHER" />
+69-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:57:17-77
+69-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:57:27-74
+70                <!-- rofiqul -->
+71                <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />
+71-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:59:17-93
+71-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:59:25-90
+72                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+72-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:60:17-90
+72-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:60:25-87
+73                <!-- rofiqul -->
+74            </intent-filter>
+75        </activity> <!-- <service -->
+76        <!-- android:name=".services.TokenReceiver"> -->
+77        <!-- <intent-filter> -->
+78        <!-- <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/> -->
+79        <!-- </intent-filter> -->
+80        <!-- </service> -->
+81        <service android:name="com.agamilabs.smartshop.services.NotificationReceiver" >
+81-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:69:9-73:19
+81-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:69:18-63
+82            <intent-filter>
+82-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:70:13-72:29
+83                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+83-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:71:17-78
+83-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:71:25-75
+84            </intent-filter>
+85        </service>
+86
+87        <receiver
+87-->[com.google.firebase:firebase-messaging:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\182300206770475f1dc109de00117671\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:28:9-35:20
+88            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+88-->[com.google.firebase:firebase-messaging:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\182300206770475f1dc109de00117671\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:29:13-78
+89            android:exported="true"
+89-->[com.google.firebase:firebase-messaging:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\182300206770475f1dc109de00117671\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:30:13-36
+90            android:permission="com.google.android.c2dm.permission.SEND" >
+90-->[com.google.firebase:firebase-messaging:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\182300206770475f1dc109de00117671\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:31:13-73
+91            <intent-filter>
+91-->[com.google.firebase:firebase-messaging:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\182300206770475f1dc109de00117671\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:32:13-34:29
+92                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+92-->[com.google.firebase:firebase-messaging:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\182300206770475f1dc109de00117671\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:33:17-81
+92-->[com.google.firebase:firebase-messaging:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\182300206770475f1dc109de00117671\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:33:25-78
+93            </intent-filter>
+94        </receiver>
+95        <!--
+96             FirebaseMessagingService performs security checks at runtime,
+97             but set to not exported to explicitly avoid allowing another app to call it.
+98        -->
+99        <service
+99-->[com.google.firebase:firebase-messaging:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\182300206770475f1dc109de00117671\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:41:9-48:19
+100            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+100-->[com.google.firebase:firebase-messaging:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\182300206770475f1dc109de00117671\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:42:13-82
+101            android:directBootAware="true"
+101-->[com.google.firebase:firebase-messaging:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\182300206770475f1dc109de00117671\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:43:13-43
+102            android:exported="false" >
+102-->[com.google.firebase:firebase-messaging:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\182300206770475f1dc109de00117671\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:44:13-37
+103            <intent-filter android:priority="-500" >
+103-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:70:13-72:29
+104                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+104-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:71:17-78
+104-->D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:71:25-75
+105            </intent-filter>
+106        </service>
+107        <service
+107-->[com.google.firebase:firebase-messaging:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\182300206770475f1dc109de00117671\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:49:9-55:19
+108            android:name="com.google.firebase.components.ComponentDiscoveryService"
+108-->[com.google.firebase:firebase-messaging:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\182300206770475f1dc109de00117671\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:50:13-84
+109            android:directBootAware="true"
+109-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\9b2ec3a49389295e09fe37e42c5e30ad\jetified-firebase-common-19.5.0\AndroidManifest.xml:35:13-43
+110            android:exported="false" >
+110-->[com.google.firebase:firebase-messaging:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\182300206770475f1dc109de00117671\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:51:13-37
+111            <meta-data
+111-->[com.google.firebase:firebase-messaging:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\182300206770475f1dc109de00117671\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:52:13-54:85
+112                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+112-->[com.google.firebase:firebase-messaging:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\182300206770475f1dc109de00117671\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:53:17-119
+113                android:value="com.google.firebase.components.ComponentRegistrar" />
+113-->[com.google.firebase:firebase-messaging:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\182300206770475f1dc109de00117671\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:54:17-82
+114            <meta-data
+114-->[com.google.firebase:firebase-firestore:22.1.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\b0cb62c76e324db49ec32f2c8c13ccf4\jetified-firebase-firestore-22.1.2\AndroidManifest.xml:20:13-22:85
+115                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+115-->[com.google.firebase:firebase-firestore:22.1.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\b0cb62c76e324db49ec32f2c8c13ccf4\jetified-firebase-firestore-22.1.2\AndroidManifest.xml:21:17-111
+116                android:value="com.google.firebase.components.ComponentRegistrar" />
+116-->[com.google.firebase:firebase-firestore:22.1.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\b0cb62c76e324db49ec32f2c8c13ccf4\jetified-firebase-firestore-22.1.2\AndroidManifest.xml:22:17-82
+117            <meta-data
+117-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:77:13-79:85
+118                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+118-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:78:17-109
+119                android:value="com.google.firebase.components.ComponentRegistrar" />
+119-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:79:17-82
+120            <meta-data
+120-->[com.google.firebase:firebase-iid:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\dca364ca8652be8b10574e5bb98dfcd5\jetified-firebase-iid-21.1.0\AndroidManifest.xml:32:13-34:85
+121                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+121-->[com.google.firebase:firebase-iid:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\dca364ca8652be8b10574e5bb98dfcd5\jetified-firebase-iid-21.1.0\AndroidManifest.xml:33:17-96
+122                android:value="com.google.firebase.components.ComponentRegistrar" />
+122-->[com.google.firebase:firebase-iid:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\dca364ca8652be8b10574e5bb98dfcd5\jetified-firebase-iid-21.1.0\AndroidManifest.xml:34:17-82
+123            <meta-data
+123-->[com.google.firebase:firebase-datatransport:17.0.10] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\603babbc46d876dc2b2797c077f4c56c\jetified-firebase-datatransport-17.0.10\AndroidManifest.xml:28:13-30:85
+124                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+124-->[com.google.firebase:firebase-datatransport:17.0.10] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\603babbc46d876dc2b2797c077f4c56c\jetified-firebase-datatransport-17.0.10\AndroidManifest.xml:29:17-115
+125                android:value="com.google.firebase.components.ComponentRegistrar" />
+125-->[com.google.firebase:firebase-datatransport:17.0.10] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\603babbc46d876dc2b2797c077f4c56c\jetified-firebase-datatransport-17.0.10\AndroidManifest.xml:30:17-82
+126            <meta-data
+126-->[com.google.android.gms:play-services-measurement-api:18.0.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\64be769a4812fd27bbba533c60fe5b7b\jetified-play-services-measurement-api-18.0.3\AndroidManifest.xml:30:13-32:85
+127                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+127-->[com.google.android.gms:play-services-measurement-api:18.0.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\64be769a4812fd27bbba533c60fe5b7b\jetified-play-services-measurement-api-18.0.3\AndroidManifest.xml:31:17-139
+128                android:value="com.google.firebase.components.ComponentRegistrar" />
+128-->[com.google.android.gms:play-services-measurement-api:18.0.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\64be769a4812fd27bbba533c60fe5b7b\jetified-play-services-measurement-api-18.0.3\AndroidManifest.xml:32:17-82
+129            <meta-data
+129-->[com.google.firebase:firebase-installations:16.3.5] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\1369485c689ceb8322c0628522befd57\jetified-firebase-installations-16.3.5\AndroidManifest.xml:18:13-20:85
+130                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+130-->[com.google.firebase:firebase-installations:16.3.5] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\1369485c689ceb8322c0628522befd57\jetified-firebase-installations-16.3.5\AndroidManifest.xml:19:17-127
+131                android:value="com.google.firebase.components.ComponentRegistrar" />
+131-->[com.google.firebase:firebase-installations:16.3.5] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\1369485c689ceb8322c0628522befd57\jetified-firebase-installations-16.3.5\AndroidManifest.xml:20:17-82
+132            <!--
+133                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
+134                clients to use it as well, by defining this registrar in their own core/common library.
+135            -->
+136            <meta-data
+136-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\9b2ec3a49389295e09fe37e42c5e30ad\jetified-firebase-common-19.5.0\AndroidManifest.xml:43:13-45:85
+137                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
+137-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\9b2ec3a49389295e09fe37e42c5e30ad\jetified-firebase-common-19.5.0\AndroidManifest.xml:44:17-121
+138                android:value="com.google.firebase.components.ComponentRegistrar" />
+138-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\9b2ec3a49389295e09fe37e42c5e30ad\jetified-firebase-common-19.5.0\AndroidManifest.xml:45:17-82
+139        </service>
+140
+141        <provider
+141-->[com.squareup.picasso:picasso:2.71828] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\84b82ac4ad016e96142dcd031063717d\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
+142            android:name="com.squareup.picasso.PicassoProvider"
+142-->[com.squareup.picasso:picasso:2.71828] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\84b82ac4ad016e96142dcd031063717d\jetified-picasso-2.71828\AndroidManifest.xml:9:13-64
+143            android:authorities="com.agamilabs.smartshop.com.squareup.picasso"
+143-->[com.squareup.picasso:picasso:2.71828] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\84b82ac4ad016e96142dcd031063717d\jetified-picasso-2.71828\AndroidManifest.xml:10:13-72
+144            android:exported="false" />
+144-->[com.squareup.picasso:picasso:2.71828] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\84b82ac4ad016e96142dcd031063717d\jetified-picasso-2.71828\AndroidManifest.xml:11:13-37
+145
+146        <activity
+146-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:27:9-44:20
+147            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+147-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:28:13-80
+148            android:excludeFromRecents="true"
+148-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:29:13-46
+149            android:exported="true"
+149-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:30:13-36
+150            android:launchMode="singleTask"
+150-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:31:13-44
+151            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+151-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:32:13-72
+152            <intent-filter>
+152-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:33:13-43:29
+153                <action android:name="android.intent.action.VIEW" />
+153-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:34:17-69
+153-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:34:25-66
+154
+155                <category android:name="android.intent.category.DEFAULT" />
+155-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:36:17-76
+155-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:36:27-73
+156                <category android:name="android.intent.category.BROWSABLE" />
+156-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:37:17-78
+156-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:37:27-75
+157
+158                <data
+158-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:39:17-42:51
+159                    android:host="firebase.auth"
+159-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:40:21-49
+160                    android:path="/"
+160-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:41:21-37
+161                    android:scheme="genericidp" />
+161-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:42:21-48
+162            </intent-filter>
+163        </activity>
+164        <activity
+164-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:45:9-62:20
+165            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+165-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:46:13-79
+166            android:excludeFromRecents="true"
+166-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:47:13-46
+167            android:exported="true"
+167-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:48:13-36
+168            android:launchMode="singleTask"
+168-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:49:13-44
+169            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+169-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:50:13-72
+170            <intent-filter>
+170-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:51:13-61:29
+171                <action android:name="android.intent.action.VIEW" />
+171-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:34:17-69
+171-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:34:25-66
+172
+173                <category android:name="android.intent.category.DEFAULT" />
+173-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:36:17-76
+173-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:36:27-73
+174                <category android:name="android.intent.category.BROWSABLE" />
+174-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:37:17-78
+174-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:37:27-75
+175
+176                <data
+176-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:39:17-42:51
+177                    android:host="firebase.auth"
+177-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:40:21-49
+178                    android:path="/"
+178-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:41:21-37
+179                    android:scheme="recaptcha" />
+179-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:42:21-48
+180            </intent-filter>
+181        </activity>
+182
+183        <service
+183-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:64:9-73:19
+184            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
+184-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:65:13-101
+185            android:enabled="true"
+185-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:66:13-35
+186            android:exported="false" >
+186-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:67:13-37
+187            <intent-filter>
+187-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:68:13-72:29
+188                <action android:name="com.google.firebase.auth.api.gms.service.START" />
+188-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:69:17-89
+188-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:69:25-86
+189
+190                <category android:name="android.intent.category.DEFAULT" />
+190-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:36:17-76
+190-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:36:27-73
+191            </intent-filter>
+192        </service>
+193
+194        <activity
+194-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\a63935de15513710d98bf227aa324a8b\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+195            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+195-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\a63935de15513710d98bf227aa324a8b\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+196            android:exported="false"
+196-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\a63935de15513710d98bf227aa324a8b\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+197            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+197-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\a63935de15513710d98bf227aa324a8b\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+198
+199        <receiver
+199-->[com.google.android.gms:play-services-measurement:18.0.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\e95842a214534440edcef5cce8409b37\jetified-play-services-measurement-18.0.3\AndroidManifest.xml:29:9-33:20
+200            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+200-->[com.google.android.gms:play-services-measurement:18.0.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\e95842a214534440edcef5cce8409b37\jetified-play-services-measurement-18.0.3\AndroidManifest.xml:30:13-85
+201            android:enabled="true"
+201-->[com.google.android.gms:play-services-measurement:18.0.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\e95842a214534440edcef5cce8409b37\jetified-play-services-measurement-18.0.3\AndroidManifest.xml:31:13-35
+202            android:exported="false" >
+202-->[com.google.android.gms:play-services-measurement:18.0.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\e95842a214534440edcef5cce8409b37\jetified-play-services-measurement-18.0.3\AndroidManifest.xml:32:13-37
+203        </receiver>
+204
+205        <service
+205-->[com.google.android.gms:play-services-measurement:18.0.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\e95842a214534440edcef5cce8409b37\jetified-play-services-measurement-18.0.3\AndroidManifest.xml:35:9-38:40
+206            android:name="com.google.android.gms.measurement.AppMeasurementService"
+206-->[com.google.android.gms:play-services-measurement:18.0.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\e95842a214534440edcef5cce8409b37\jetified-play-services-measurement-18.0.3\AndroidManifest.xml:36:13-84
+207            android:enabled="true"
+207-->[com.google.android.gms:play-services-measurement:18.0.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\e95842a214534440edcef5cce8409b37\jetified-play-services-measurement-18.0.3\AndroidManifest.xml:37:13-35
+208            android:exported="false" />
+208-->[com.google.android.gms:play-services-measurement:18.0.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\e95842a214534440edcef5cce8409b37\jetified-play-services-measurement-18.0.3\AndroidManifest.xml:38:13-37
+209        <service
+209-->[com.google.android.gms:play-services-measurement:18.0.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\e95842a214534440edcef5cce8409b37\jetified-play-services-measurement-18.0.3\AndroidManifest.xml:39:9-43:72
+210            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+210-->[com.google.android.gms:play-services-measurement:18.0.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\e95842a214534440edcef5cce8409b37\jetified-play-services-measurement-18.0.3\AndroidManifest.xml:40:13-87
+211            android:enabled="true"
+211-->[com.google.android.gms:play-services-measurement:18.0.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\e95842a214534440edcef5cce8409b37\jetified-play-services-measurement-18.0.3\AndroidManifest.xml:41:13-35
+212            android:exported="false"
+212-->[com.google.android.gms:play-services-measurement:18.0.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\e95842a214534440edcef5cce8409b37\jetified-play-services-measurement-18.0.3\AndroidManifest.xml:42:13-37
+213            android:permission="android.permission.BIND_JOB_SERVICE" />
+213-->[com.google.android.gms:play-services-measurement:18.0.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\e95842a214534440edcef5cce8409b37\jetified-play-services-measurement-18.0.3\AndroidManifest.xml:43:13-69
+214
+215        <provider
+215-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\9b2ec3a49389295e09fe37e42c5e30ad\jetified-firebase-common-19.5.0\AndroidManifest.xml:26:9-31:39
+216            android:name="com.google.firebase.provider.FirebaseInitProvider"
+216-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\9b2ec3a49389295e09fe37e42c5e30ad\jetified-firebase-common-19.5.0\AndroidManifest.xml:27:13-77
+217            android:authorities="com.agamilabs.smartshop.firebaseinitprovider"
+217-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\9b2ec3a49389295e09fe37e42c5e30ad\jetified-firebase-common-19.5.0\AndroidManifest.xml:28:13-72
+218            android:directBootAware="true"
+218-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\9b2ec3a49389295e09fe37e42c5e30ad\jetified-firebase-common-19.5.0\AndroidManifest.xml:29:13-43
+219            android:exported="false"
+219-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\9b2ec3a49389295e09fe37e42c5e30ad\jetified-firebase-common-19.5.0\AndroidManifest.xml:30:13-37
+220            android:initOrder="100" />
+220-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\9b2ec3a49389295e09fe37e42c5e30ad\jetified-firebase-common-19.5.0\AndroidManifest.xml:31:13-36
+221
+222        <meta-data
+222-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\74483de84094d0d661b0d354666c2c5a\jetified-play-services-basement-17.1.0\AndroidManifest.xml:23:9-25:69
+223            android:name="com.google.android.gms.version"
+223-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\74483de84094d0d661b0d354666c2c5a\jetified-play-services-basement-17.1.0\AndroidManifest.xml:24:13-58
+224            android:value="@integer/google_play_services_version" />
+224-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\74483de84094d0d661b0d354666c2c5a\jetified-play-services-basement-17.1.0\AndroidManifest.xml:25:13-66
+225
+226        <service
+226-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\05fc7cd6728c298b7927d252382ef60b\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:29:9-35:19
+227            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+227-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\05fc7cd6728c298b7927d252382ef60b\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:30:13-103
+228            android:exported="false" >
+228-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\05fc7cd6728c298b7927d252382ef60b\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:31:13-37
+229            <meta-data
+229-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\05fc7cd6728c298b7927d252382ef60b\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:32:13-34:39
+230                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+230-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\05fc7cd6728c298b7927d252382ef60b\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:33:17-94
+231                android:value="cct" />
+231-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\05fc7cd6728c298b7927d252382ef60b\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:34:17-36
+232        </service>
+233        <service
+233-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\cf56bdcfab0c33e1d23156916458c093\jetified-transport-runtime-2.2.5\AndroidManifest.xml:26:9-30:19
+234            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+234-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\cf56bdcfab0c33e1d23156916458c093\jetified-transport-runtime-2.2.5\AndroidManifest.xml:27:13-117
+235            android:exported="false"
+235-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\cf56bdcfab0c33e1d23156916458c093\jetified-transport-runtime-2.2.5\AndroidManifest.xml:28:13-37
+236            android:permission="android.permission.BIND_JOB_SERVICE" >
+236-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\cf56bdcfab0c33e1d23156916458c093\jetified-transport-runtime-2.2.5\AndroidManifest.xml:29:13-69
+237        </service>
+238
+239        <receiver
+239-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\cf56bdcfab0c33e1d23156916458c093\jetified-transport-runtime-2.2.5\AndroidManifest.xml:32:9-34:40
+240            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+240-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\cf56bdcfab0c33e1d23156916458c093\jetified-transport-runtime-2.2.5\AndroidManifest.xml:33:13-132
+241            android:exported="false" />
+241-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\cf56bdcfab0c33e1d23156916458c093\jetified-transport-runtime-2.2.5\AndroidManifest.xml:34:13-37
+242    </application>
+243
+244</manifest>

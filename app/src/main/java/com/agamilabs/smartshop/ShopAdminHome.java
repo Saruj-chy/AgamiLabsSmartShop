@@ -7,7 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 
+import com.agamilabs.smartshop.Class.PageSlideTransformer;
 import com.agamilabs.smartshop.adapter.ShopAdminHomeViewPagerAdapter;
+import com.agamilabs.smartshop.database.DatabaseHandler;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 
 public class ShopAdminHome extends AppCompatActivity {
@@ -16,13 +19,23 @@ public class ShopAdminHome extends AppCompatActivity {
     private TabLayout mTabLayout;
     private ShopAdminHomeViewPagerAdapter mAdapter;
 
+    private FloatingActionButton options_fab;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE) ;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop_admin_home);
-
         mTabLayout = (TabLayout) findViewById(R.id.tab_layout);
+
+        options_fab = findViewById(R.id.options_fab);
+        options_fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                options_fab.hide();
+
+                
+            }
+        });
 
         mTabLayout.addTab(mTabLayout.newTab().setText("Dashboard Fragment"));
         mTabLayout.addTab(mTabLayout.newTab().setText("Home Fragment"));
@@ -34,30 +47,32 @@ public class ShopAdminHome extends AppCompatActivity {
         mAdapter = new ShopAdminHomeViewPagerAdapter(getSupportFragmentManager(), mTabLayout.getTabCount() );
         mViewPager.setAdapter(mAdapter);
 
+        mViewPager.setPageTransformer(false, new PageSlideTransformer());
+
         mViewPager.setCurrentItem(1);
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
 
-        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                if(position==0){
-                    mViewPager.setPadding(0, 0, 100, 0) ;
-                    mViewPager.setClipToPadding(false) ;
-                }
-                else if(position==1){
-                    mViewPager.setPadding(0, 0, 0, 0) ;
-                    mViewPager.setClipToPadding(false) ;
-                }
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-            }
-        });
+//        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+//            @Override
+//            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+//                if(position==0){
+//                    mViewPager.setPadding(0, 0, 100, 0) ;
+//                    mViewPager.setClipToPadding(false) ;
+//                }
+//                else if(position==1){
+//                    mViewPager.setPadding(0, 0, 0, 0) ;
+//                    mViewPager.setClipToPadding(false) ;
+//                }
+//            }
+//
+//            @Override
+//            public void onPageSelected(int position) {
+//            }
+//
+//            @Override
+//            public void onPageScrollStateChanged(int state) {
+//            }
+//        });
 
 
         mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -77,8 +92,8 @@ public class ShopAdminHome extends AppCompatActivity {
     }
     public void setSelect(int position){
         mViewPager.setCurrentItem(position);
-        mViewPager.setPadding(0, 0, 0, 0);
-        mViewPager.setClipToPadding(false);
+        //mViewPager.setPadding(0, 0, 0, 0);
+        //mViewPager.setClipToPadding(false);
 
     }
 }

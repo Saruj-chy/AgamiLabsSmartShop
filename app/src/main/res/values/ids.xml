@@ -4,4 +4,6 @@
     <item type="id" name="menu_auto_focus" />
     <item type="id" name="menu_formats" />
     <item type="id" name="menu_camera_selector" />
+    <item name="menu_invoiceView" type="id"/>
+    <item name="menu_cancel" type="id"/>
 </resources>

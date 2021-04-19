@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.agamilabs.smartshop.R;
@@ -25,8 +26,9 @@ public class AllNotificationViewAdapter extends RecyclerView.Adapter<AllNotifica
         this.itemList = itemList;
     }
 
+    @NonNull
     @Override
-    public NotificationViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public NotificationViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mCtx);
         View view = inflater.inflate(R.layout.item_list, null);
         return new NotificationViewHolder(view);

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.agamilabs.smartshop.Fragments.AdminDashboardFragment;
@@ -62,7 +63,7 @@ public class AdminDashboardAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     class PostViewHolder extends RecyclerView.ViewHolder {
 
         private TextView mTextViewLogoName, mTextViewLogoText;
-        private LinearLayout mLinearLayout;
+        private CardView mLinearLayout;
 
 
         public PostViewHolder(View itemView) {
@@ -94,13 +95,12 @@ public class AdminDashboardAdapter extends RecyclerView.Adapter<RecyclerView.Vie
             mTextViewLogoName.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(final View view) {
-                    mLogName = settings.getSection_title();
-//                    logDomain = settings.getSection_identifier() ;
-                    mLogDomain = "agamilabs.slack.com" ;
+                    //mLogName = settings.getSection_title();
+                    //mLogDomain = "agamilabs.slack.com" ;
 
-                    mDashboardFragment.sharedSaved(PREF_POSITION,"positionId", String.valueOf(position));
+                    //mDashboardFragment.sharedSaved(PREF_POSITION,"positionId", String.valueOf(position));
                     mDashboardFragment.Finish();
-                    mDashboardFragment.onLogoName(mLogName, mLogDomain);
+                    //mDashboardFragment.onLogoName(mLogName, mLogDomain);
                 }
             });
 
