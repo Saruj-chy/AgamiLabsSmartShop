@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class BatiChatsModal {
-    String userChatId, userChats1, userChats2 ;
+    String userChatId ;
     List<String> usersList  ;
 
     public BatiChatsModal(String id, String s) {
@@ -17,11 +17,7 @@ public class BatiChatsModal {
         this.usersList = usersList;
     }
 
-    public BatiChatsModal(String userChatId, String userChats1, String userChats2) {
-        this.userChatId = userChatId;
-        this.userChats1 = userChats1;
-        this.userChats2 = userChats2;
-    }
+
 
     public String getUserChatId() {
         return userChatId;
@@ -39,19 +35,13 @@ public class BatiChatsModal {
         this.usersList = usersList;
     }
 
-    public String getUserChats1() {
-        return userChats1;
-    }
 
-    public void setUserChats1(String userChats1) {
-        this.userChats1 = userChats1;
-    }
 
-    public String getUserChats2() {
-        return userChats2;
-    }
-
-    public void setUserChats2(String userChats2) {
-        this.userChats2 = userChats2;
+    @Override
+    public String toString() {
+        return "BatiChatsModal{" +
+                "userChatId='" + userChatId + '\'' +
+                ", usersList=" + usersList +
+                '}';
     }
 }

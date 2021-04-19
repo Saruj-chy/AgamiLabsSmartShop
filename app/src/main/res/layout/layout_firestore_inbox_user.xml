@@ -24,7 +24,6 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/black"
             >
 
             <RelativeLayout
@@ -61,6 +60,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:gravity="center"
+                    android:layout_centerVertical="true"
 
                     android:layout_toEndOf="@+id/relative_image"
                     android:layout_toRightOf="@+id/relative_image">
@@ -68,13 +68,13 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
                         >
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             android:layout_marginTop="5dp"
+
                             >
                             <TextView
                                 android:id="@+id/text_user_name"
@@ -98,6 +98,7 @@
                                 android:text="Hey, bro. I am available "
                                 android:textColor="@android:color/holo_green_light"
                                 android:textSize="14dp"
+                                android:visibility="gone"
                                 android:layout_marginBottom="10dp"
                                 />
                         </LinearLayout>

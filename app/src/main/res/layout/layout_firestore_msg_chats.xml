@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/relative_receive"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginLeft="5dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <TextView
+            android:id="@+id/text_receive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Receive msg"
+            android:background="@drawable/chats_receive_style"
+            android:textSize="18dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textColor="@color/white"
+            />
+        <TextView
+            android:id="@+id/text_receive_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5:56 pm"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:textSize="14dp"
+            android:layout_below="@+id/text_receive"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relative_sent"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:gravity="end"
+        android:layout_marginRight="5dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        >
+
+        <TextView
+            android:id="@+id/text_sent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+
+            android:background="@drawable/chats_sent_style"
+            android:gravity="end"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Receive msg"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+        <TextView
+            android:id="@+id/text_sent_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="4:42 am"
+            android:gravity="end"
+            android:layout_marginTop="2dp"
+            android:textSize="14dp"
+            android:layout_below="@+id/text_sent"
+            />
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

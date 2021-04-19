@@ -1766,6 +1766,8 @@ drawable btn_radio_on_to_off_mtrl_animation
 drawable button_tk
 drawable buttons
 drawable cardview_shop
+drawable chats_receive_style
+drawable chats_sent_style
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -2344,6 +2346,7 @@ id mtrl_view_tag_bottom_padding
 id multiply
 id navigation_header_container
 id nestedScrollView
+id nested_scroll_chatmsg
 id nested_scroll_stock
 id never
 id noScroll
@@ -2385,6 +2388,7 @@ id ratio
 id rectangles
 id recycler_admin_home
 id recycler_card_shop
+id recycler_chatmsg
 id recycler_ecommerce
 id recycler_notification
 id recycler_order_report
@@ -2403,6 +2407,8 @@ id relative_image1
 id relative_image_part
 id relative_layout_1
 id relative_layout_2
+id relative_receive
+id relative_sent
 id relative_smoth
 id relative_stock_report
 id relative_user_name_order
@@ -2566,11 +2572,15 @@ id text_post_status_order
 id text_progress
 id text_promotion_title
 id text_purchase_rate
+id text_receive
+id text_receive_time
 id text_remaining_qty
 id text_reorder
 id text_reorder1
 id text_reorder_point
 id text_sale_rate
+id text_sent
+id text_sent_time
 id text_session
 id text_shop_name
 id text_shop_quantity
@@ -2745,7 +2755,8 @@ layout activity_all_site
 layout activity_campaign
 layout activity_card_shop
 layout activity_device_list
-layout activity_fire_store_inbox
+layout activity_fire_store_user
+layout activity_firestore_user_chats
 layout activity_invoice
 layout activity_invoice_viewer
 layout activity_login
@@ -2802,6 +2813,7 @@ layout layout_campaign_statistics
 layout layout_category_list
 layout layout_firestore_inbox
 layout layout_firestore_inbox_user
+layout layout_firestore_msg_chats
 layout layout_popup
 layout layout_printers
 layout layout_shimmer_effect

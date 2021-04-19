@@ -39,7 +39,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.MyApplication" >
-
+        <activity android:name="com.agamilabs.smartshop.FireInboxShow.FirestoreUserChatsActivity" />
         <!-- <activity android:name=".FireInboxShow.FireStoreInboxActivity"/> -->
         <!-- <activity android:name=".aaaaaaaaaa.NetworkConnectActivity"/> -->
         <!-- <activity android:name=".aaaaaaaaaa.AllSiteActivity"/> -->
@@ -62,7 +62,7 @@
         <activity android:name="com.agamilabs.smartshop.BaseScannerActivity" />
         <activity android:name="com.agamilabs.smartshop.FullScannerActivity" /> <!-- <activity android:name=".activity.SmothViewPagerActivity"/> -->
         <!-- <activity android:name=".activity.SmothViewPagerActivity"> -->
-        <activity android:name="com.agamilabs.smartshop.FireInboxShow.FireStoreInboxActivity" >
+        <activity android:name="com.agamilabs.smartshop.FireInboxShow.FireStoreUserActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

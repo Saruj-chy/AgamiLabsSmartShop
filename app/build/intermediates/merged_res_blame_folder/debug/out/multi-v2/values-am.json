@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-am\\values-am.xml",
+            "outputFile": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-am\\values-am.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Saruj\\.gradle\\caches\\transforms-2\\files-2.1\\a63935de15513710d98bf227aa324a8b\\jetified-play-services-base-17.1.0\\res\\values-am\\values.xml",
