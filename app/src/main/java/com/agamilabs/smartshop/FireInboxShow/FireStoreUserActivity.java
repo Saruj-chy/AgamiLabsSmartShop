@@ -34,20 +34,18 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class FireStoreUserActivity extends AppCompatActivity {
 
-
     private RecyclerView mUserChatMsgRecyclerview;
     private CircleImageView mClientImage;
 
     private FireStoreUserAdapter mBatiUserAdapter;
-
-
 //    private DocumentReference userRef ;
     private CollectionReference userRef, userMsgRef, msgUserChatsRef, msgChatsRef ;
+
 //.collection("asabbir47@gmail.com"),        kobir_store_maafe419rw@batikrom.shop,   .collection("+8801722373161")
-// .collection("alif-shop")  rashed_shop_7q6c630wrq@batikrom.shop   116056194772555530699
+// .collection("alif-shop")  rashed_shop_7q6c630wrq@batikrom.shop   116056194772555530699    rashed_shop_7q6c630wrq@batikrom.shop
 //    private String USER_ID = "kobir_store_maafe419rw@batikrom.shop";
-    public static final String USER_ID = "116056194772555530699" ;
-//    private String DOCUMENT_ID = "7hUH4zrS9GzKnBgQTSqj" ;
+    public static final String USER_ID = "rashed_shop_7q6c630wrq@batikrom.shop" ;
+
     private String bati_name, bati_email, bati_photo ;
     private List<BatiUsersDetailsModal> mBatiUsersDetailsList;
     private List<BatiUserChatsModal> mBatiUserChatsList;
@@ -94,7 +92,7 @@ public class FireStoreUserActivity extends AppCompatActivity {
 
     private void initializeAdapter() {
 //        AppController.getAppController().getInAppNotifier().log("adapter", "mBatiChatsList: "+ mBatiChatsList+"   mBatiUserChatsList:  "+mBatiUserChatsList );
-        mBatiUserAdapter = new FireStoreUserAdapter(getApplicationContext(), mBatiUserChatsList, mBatiUsersDetailsList);
+        mBatiUserAdapter = new FireStoreUserAdapter(getApplicationContext(), mBatiUsersDetailsList);
         mUserChatMsgRecyclerview.setAdapter(mBatiUserAdapter);
         GridLayoutManager manager = new GridLayoutManager(getApplicationContext(), 1, GridLayoutManager.VERTICAL, false);
         mUserChatMsgRecyclerview.setLayoutManager(manager);
@@ -169,6 +167,7 @@ public class FireStoreUserActivity extends AppCompatActivity {
                         DocumentSnapshot document = task.getResult();
                         if (document.exists()) {
                             mBatiUsersDetailsList.add(new BatiUsersDetailsModal(
+                                    document.getId(),
                                     document.get("name").toString(),
                                     document.get("email").toString(),
                                     document.get("photo").toString()
@@ -197,6 +196,17 @@ public class FireStoreUserActivity extends AppCompatActivity {
         }
 
     }
+
+
+
+
+
+
+
+
+
+
+
 
     private void loadBatiChatsCollection(List<BatiUserChatsModal> mBatiUserChatsList) {
 //        AppController.getAppController().getInAppNotifier().log("batiUserChats", "loadBatiChatsCollection: "+ mBatiUserChatsList );
@@ -236,13 +246,6 @@ public class FireStoreUserActivity extends AppCompatActivity {
                 });
 
     }
-
-
-
-
-
-
-
 
 
     //now not countable, but nessary

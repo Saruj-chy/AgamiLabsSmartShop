@@ -32,15 +32,32 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
         >
+
         <EditText
+            android:id="@+id/edit_msgtext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Your Msg here"
-            android:textSize="18dp"
-            android:textColor="@color/black"
             android:layout_alignParentBottom="true"
-            />
+            android:layout_marginLeft="5dp"
+
+            android:layout_toStartOf="@+id/img_btn_sent"
+            android:layout_toLeftOf="@+id/img_btn_sent"
+            android:background="@drawable/border_input"
+            android:hint="Enter Your Msg here"
+            android:padding="4dp"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+        <ImageButton
+            android:id="@+id/img_btn_sent"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_baseline_send_24"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true" />
 
     </RelativeLayout>
 

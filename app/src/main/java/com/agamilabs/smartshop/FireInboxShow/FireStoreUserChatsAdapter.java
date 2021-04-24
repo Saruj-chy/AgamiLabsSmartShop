@@ -5,6 +5,7 @@ import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -25,7 +26,6 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUserChatsAdapter.PostViewHolder> {
-
 
     private Context mCtx;
     private List<BatiChatMsgModel> mChatsMsgModalList;
@@ -68,7 +68,8 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
     class PostViewHolder extends RecyclerView.ViewHolder {
 
       RelativeLayout mSentRelative, mReceiveRelative ;
-      TextView mSentMsgTV, mSentTimeTV, mReceiveMsgTV, mReceiveTimeTV ;
+      TextView mSentMsgTV, mSentTimeTV, mReceiveMsgTV, mReceiveTimeTV, mDateShowTV ;
+      LinearLayout mDateLinear;
 
 
 
@@ -81,6 +82,8 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
             mSentTimeTV = itemView.findViewById(R.id.text_sent_time);
             mReceiveMsgTV = itemView.findViewById(R.id.text_receive);
             mReceiveTimeTV = itemView.findViewById(R.id.text_receive_time);
+            mDateShowTV = itemView.findViewById(R.id.text_date_layout);
+            mDateLinear = itemView.findViewById(R.id.linear_layout);
 
         }
 
@@ -116,32 +119,62 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
         }
 
         public void bind1(List<BatiChatMsgModel> mChatsMsgModalList, int position) {
-//            AppController.getAppController().getInAppNotifier().log("position", "mChatsMsgModalList: "+mChatsMsgModalList.size() );
-
-            Timestamp timestamp, timestamp2 ;
-            Date date, date2 ;
-            CharSequence timeFormat, dateTimeFormat1, dateTimeFormat2 = null;
+            Timestamp timestamp, timestampNext, timestampPrev ;
+            Date date, dateNext = null, datePrev ;
+            CharSequence timeFormat, dateTimeFormat1, dateTimeFormat2 = null, dateFormat1, dateFormatNext = null, dateFormatPrev = null;
             timestamp =  (Timestamp) mChatsMsgModalList.get(position).getSentTime();
             date = timestamp.toDate() ;
 
             timeFormat = DateFormat.format("hh:mm a", date);
 //            CharSequence dateFormat = DateFormat.format("yyyy-MM-dd", date);
             dateTimeFormat1 = DateFormat.format("yyyy-MM-dd hh:mm a", date);
+            dateFormat1 = DateFormat.format("yyyy-MM-dd", date);
+
+            if(mChatsMsgModalList.size()>=(position+1)){
+                if(position!=0){
+                    timestampPrev =  (Timestamp) mChatsMsgModalList.get(position-1).getSentTime();
+                    datePrev = timestampPrev.toDate() ;
+                    dateFormatPrev = DateFormat.format("yyyy-MM-dd", datePrev);
+                }
+                if(mChatsMsgModalList.size()>(position+1)){
+
+                    timestampNext =  (Timestamp) mChatsMsgModalList.get(position+1).getSentTime();
+                    dateNext = timestampNext.toDate() ;
+                    dateFormatNext = DateFormat.format("yyyy-MM-dd", dateNext);
+                    if( mChatsMsgModalList.get(position).getSentBy().equalsIgnoreCase( mChatsMsgModalList.get(position+1).getSentBy())){
+                        dateTimeFormat2 = DateFormat.format("yyyy-MM-dd hh:mm a", dateNext);
+                    }
+                }
 
 
+            }
 
 
+            boolean b = dateTimeFormat2 != null && dateTimeFormat2.toString().equalsIgnoreCase(dateTimeFormat1.toString());
+
+            AppController.getAppController().getInAppNotifier().log("date", dateFormat1+" \n dateFormatNext: "+dateFormatNext
+                    +" \ndateFormatPrev: "+dateFormatPrev+" \n position: "+position );
+            if((dateFormat1.equals(dateFormatNext) && !dateFormat1.equals(dateFormatPrev)) || dateFormatPrev==null){
+                mDateShowTV.setText(dateFormat1);
+                mDateLinear.setVisibility(View.VISIBLE);
+            }
 
             if(FireStoreUserActivity.USER_ID.equalsIgnoreCase( mChatsMsgModalList.get(position).getSentBy())){
                 mSentRelative.setVisibility(View.VISIBLE);
                 mSentMsgTV.setText( mChatsMsgModalList.get(position).getMessage());
-                mSentTimeTV.setText(timeFormat );
+                mSentTimeTV.setText(timeFormat);
 
+                if(b){
+                    mSentTimeTV.setVisibility(View.GONE);
+                }
 
             }else{
                 mReceiveRelative.setVisibility(View.VISIBLE);
                 mReceiveMsgTV.setText( mChatsMsgModalList.get(position).getMessage());
                 mReceiveTimeTV.setText(timeFormat);
+                if(b){
+                    mReceiveTimeTV.setVisibility(View.GONE);
+                }
             }
         }
     }

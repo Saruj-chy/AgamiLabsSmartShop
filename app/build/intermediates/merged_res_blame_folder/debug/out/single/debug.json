@@ -28,6 +28,10 @@
         "source": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_radio_button.xml"
     },
     {
+        "merged": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_baseline_send_24.png.flat",
+        "source": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_baseline_send_24.png"
+    },
+    {
         "merged": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_btn_add.png.flat",
         "source": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_btn_add.png"
     },
@@ -86,6 +90,10 @@
     {
         "merged": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable_buttons.xml.flat",
         "source": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\drawable\\buttons.xml"
+    },
+    {
+        "merged": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_baseline_send_24.png.flat",
+        "source": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_baseline_send_24.png"
     },
     {
         "merged": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable_btn_grad.xml.flat",
@@ -212,6 +220,10 @@
         "source": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_action_shop.xml"
     },
     {
+        "merged": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_baseline_send_24.png.flat",
+        "source": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_baseline_send_24.png"
+    },
+    {
         "merged": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_flash.png.flat",
         "source": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\drawable-hdpi\\ic_flash.png"
     },
@@ -230,6 +242,10 @@
     {
         "merged": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_minus.xml.flat",
         "source": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_minus.xml"
+    },
+    {
+        "merged": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_baseline_send_24.xml.flat",
+        "source": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_baseline_send_24.xml"
     },
     {
         "merged": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_action_preference.xml.flat",
@@ -636,8 +652,16 @@
         "source": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\drawable-xhdpi\\ic_focus_off.png"
     },
     {
+        "merged": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_baseline_send_24.png.flat",
+        "source": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_baseline_send_24.png"
+    },
+    {
         "merged": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\layout_order_summary_list.xml.flat",
         "source": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\layout\\order_summary_list.xml"
+    },
+    {
+        "merged": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_baseline_send_24.png.flat",
+        "source": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_baseline_send_24.png"
     },
     {
         "merged": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_baseline_sms_24.png.flat",
@@ -1030,6 +1054,10 @@
     {
         "merged": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable_save_bk.xml.flat",
         "source": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\drawable\\save_bk.xml"
+    },
+    {
+        "merged": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_baseline_send_24.png.flat",
+        "source": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_baseline_send_24.png"
     },
     {
         "merged": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_delete.png.flat",

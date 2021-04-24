@@ -5,12 +5,15 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.agamilabs.smartshop.R;
 import com.agamilabs.smartshop.activity.StockReportActivity;
+import com.agamilabs.smartshop.controller.AppController;
+import com.agamilabs.smartshop.controller.AppImageLoader;
 import com.google.type.Date;
 
 import java.util.List;
@@ -21,15 +24,11 @@ public class FireStoreUserAdapter extends RecyclerView.Adapter<FireStoreUserAdap
 
 
     private Context mCtx;
-    private List<BatiUserChatsModal> mUserChatsModalList;
-//    private List<BatiChatsModal> mChatsModalList;
     private List<BatiUsersDetailsModal> mUserDetailsModalList;
 
-    public FireStoreUserAdapter(Context mCtx, List<BatiUserChatsModal> mUserChatsModalList, List<BatiUsersDetailsModal> mUserDetailsModalList) {
+    public FireStoreUserAdapter(Context mCtx,  List<BatiUsersDetailsModal> mUserDetailsModalList) {
         this.mCtx = mCtx;
         this.mUserDetailsModalList = mUserDetailsModalList;
-        this.mUserChatsModalList = mUserChatsModalList;
-//        AppController.getAppController().getInAppNotifier().log("BatikromUserAdapter", "BatikromUserAdapter: " + mUserChatsModalList);
     }
 
     @Override
@@ -42,10 +41,9 @@ public class FireStoreUserAdapter extends RecyclerView.Adapter<FireStoreUserAdap
 
     @Override
     public void onBindViewHolder(final FireStoreUserAdapter.PostViewHolder holder, final int position) {
-        final BatiUserChatsModal userChatsModal = mUserChatsModalList.get(position);
         final BatiUsersDetailsModal chatsModal = mUserDetailsModalList.get(position);
 
-        ((PostViewHolder) holder).bind(userChatsModal, chatsModal) ;
+        ((PostViewHolder) holder).bind(chatsModal) ;
 
 
 
@@ -54,7 +52,7 @@ public class FireStoreUserAdapter extends RecyclerView.Adapter<FireStoreUserAdap
 
     @Override
     public int getItemCount() {
-        return mUserChatsModalList.size();
+        return mUserDetailsModalList.size();
     }
 
     class PostViewHolder extends RecyclerView.ViewHolder {
@@ -67,23 +65,26 @@ public class FireStoreUserAdapter extends RecyclerView.Adapter<FireStoreUserAdap
         public PostViewHolder(View itemView) {
             super(itemView);
 
+            mUserImageLogo = itemView.findViewById(R.id.image_user);
             textViewUserName = itemView.findViewById(R.id.text_user_name);
             textViewUserStatus = itemView.findViewById(R.id.text_user_status);
 
         }
 
-        public void bind(final BatiUserChatsModal userChats , final BatiUsersDetailsModal chats){
+        public void bind( final BatiUsersDetailsModal userDetails){
 //            Timestamp timestamp = (Timestamp) products.getLastupdatetime();
 //            Date date = timestamp.toDate();
 //            CharSequence dateFormat = DateFormat.format("yyyy-MM-dd hh:mm:ss a", date);
 
-            textViewUserName.setText(chats.getName());
+            AppImageLoader.loadImageInView(userDetails.getPhoto(), R.drawable.profile_image, (ImageView)mUserImageLogo);
+
+            textViewUserName.setText(userDetails.getName());
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(mCtx, FirestoreUserChatsActivity.class) ;
-                    intent.putExtra("chatID", userChats.getDocumentId()) ;
+                    intent.putExtra("chatID", userDetails.getDocumentId()) ;
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     mCtx.startActivity(intent);
                 }
