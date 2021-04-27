@@ -116,9 +116,6 @@ public class FireStoreUserActivity extends AppCompatActivity {
 //                        loadBatiMsgChatsCollection() ;
 
                         loadBatiUserChatsCollection();
-
-                        AppController.getAppController().getInAppNotifier().log("batiUsers", "  bati_name: "+bati_name+" bati_email: "+bati_email+" bati_photo: "+bati_photo    );
-//                        mTextView.setText(bati_name+" " + bati_email +  "  " + bati_photo  );
                     } else {
 //                        AppController.getAppController().getInAppNotifier().log("response", "No such document");
                     }
@@ -150,24 +147,61 @@ public class FireStoreUserActivity extends AppCompatActivity {
                         }
                         AppController.getAppController().getInAppNotifier().log("userChats", mBatiUserChatsList.toString()    );
 
-                        loadUserNamesCollection(mBatiUserChatsList);
-//                        loadBatiChatsCollection(mBatiUserChatsList) ;
+//                        loadUserNamesCollection(mBatiUserChatsList);
+                        loadBatiChatsCollection(mBatiUserChatsList) ;
                     }
                 });
     }
 
-    private void loadUserNamesCollection(List<BatiUserChatsModal> mBatiUserChatsList) {
+    private void loadBatiChatsCollection(List<BatiUserChatsModal> mBatiUserChatsList) {
+        msgChatsRef
+//                .limit(1)
+                .addSnapshotListener(this, new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(QuerySnapshot queryDocumentSnapshots, FirebaseFirestoreException e) {
+                        if (e != null) {
+                            return;
+                        }
+                        for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+                            List<String> usersList = (List<String>) documentSnapshot.get("users");
 
-        for(int i=0; i<mBatiUserChatsList.size(); i++){
-            int finalI = i;
-            userRef.document(mBatiUserChatsList.get(i).getDocumentId()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                           for (int i=0; i<mBatiUserChatsList.size(); i++){
+                               if(mBatiUserChatsList.get(i).getDocumentId().equals(documentSnapshot.getId()) ){
+                                   AppController.getAppController().getInAppNotifier().log("docID", "documentID: "+ documentSnapshot.getId() );
+                                   mBatiChatsList.add(new BatiChatsModal(
+                                           documentSnapshot.getId(),
+                                           usersList
+                                   )) ;
+                               }
+                           }
+                        }
+                        AppController.getAppController().getInAppNotifier().log("chats", mBatiChatsList.toString()    );
+                        loadUserNamesCollection(mBatiChatsList);
+                    }
+                });
+
+    }
+    private void loadUserNamesCollection(List<BatiChatsModal> mBatiChatsList) {
+        mBatiUsersDetailsList.clear();
+        for(int i=0; i<mBatiChatsList.size(); i++){
+            String userChatName = null;
+            String userChatId = mBatiChatsList.get(i).getUserChatId() ;
+            for(int j=0; j<mBatiChatsList.get(i).getUsersList().size(); j++){
+
+                if(!mBatiChatsList.get(i).getUsersList().get(j).equalsIgnoreCase(USER_ID)){
+                    userChatName = mBatiChatsList.get(i).getUsersList().get(j);
+                }
+            }
+
+            userRef.document(userChatName).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+
                     if (task.isSuccessful()) {
                         DocumentSnapshot document = task.getResult();
                         if (document.exists()) {
                             mBatiUsersDetailsList.add(new BatiUsersDetailsModal(
-                                    document.getId(),
+                                    userChatId,
                                     document.get("name").toString(),
                                     document.get("email").toString(),
                                     document.get("photo").toString()
@@ -187,12 +221,6 @@ public class FireStoreUserActivity extends AppCompatActivity {
                 }
             });
             AppController.getAppController().getInAppNotifier().log("userList", "mBatiUsersDetailsList2: "+ mBatiUsersDetailsList);
-
-//            if(i==(mBatiUserChatsList.size()-1)){
-//                AppController.getAppController().getInAppNotifier().log("userList", "size: "+ mBatiUserChatsList.size()+"  "+i);
-//                AppController.getAppController().getInAppNotifier().log("userList", "mBatiUsersDetailsList2: "+ mBatiUsersDetailsList);
-//
-//            }
         }
 
     }
@@ -208,44 +236,18 @@ public class FireStoreUserActivity extends AppCompatActivity {
 
 
 
-    private void loadBatiChatsCollection(List<BatiUserChatsModal> mBatiUserChatsList) {
-//        AppController.getAppController().getInAppNotifier().log("batiUserChats", "loadBatiChatsCollection: "+ mBatiUserChatsList );
-        msgChatsRef
-//                .limit(1)
-                .addSnapshotListener(this, new EventListener<QuerySnapshot>() {
-                    @Override
-                    public void onEvent(QuerySnapshot queryDocumentSnapshots, FirebaseFirestoreException e) {
-                        if (e != null) {
-                            return;
-                        }
-                        Log.e("CHECK", "queryDocumentSnapshots:  "+ queryDocumentSnapshots+ " e: "+e  ) ;
-                        for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
-
-                            List<String> usersList = (List<String>) documentSnapshot.get("users");
-
-                           for (int i=0; i<mBatiUserChatsList.size(); i++){
-                               if(mBatiUserChatsList.get(i).getDocumentId().equals(documentSnapshot.getId()) ){
-                                   AppController.getAppController().getInAppNotifier().log("docID", "documentID: "+ documentSnapshot.getId() );
-                                   mBatiChatsList.add(new BatiChatsModal(
-                                           documentSnapshot.getId(),
-                                           usersList
-                                   )) ;
-                               }
-                           }
-                        }
-                        AppController.getAppController().getInAppNotifier().log("chats", mBatiChatsList.toString()    );
 
 
 
-//                        AppController.getAppController().getInAppNotifier().log("docSnap", "mBatiChatsList: "+ mBatiChatsList+"   mBatiUserChatsList:  "+mBatiUserChatsList );
-//                        initializeAdapter();
-                        mBatiUserAdapter.notifyDataSetChanged();
 
 
-                    }
-                });
 
-    }
+
+
+
+
+
+
 
 
     //now not countable, but nessary

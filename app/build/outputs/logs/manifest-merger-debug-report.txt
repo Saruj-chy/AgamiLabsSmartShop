@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-76:12
-INJECTED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-76:12
-INJECTED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-76:12
-INJECTED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-76:12
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-76:12
+INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-76:12
+INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-76:12
+INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-76:12
 MERGED from [androidx.multidex:multidex:2.0.1] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\d537e181754c9d8f2c0b89905231951b\multidex-2.0.1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\cd6f2caba378d66250797e09d6bb24e0\material-1.3.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\1b47bb01ecc6aa52d262badcce0bb4ed\constraintlayout-2.0.4\AndroidManifest.xml:2:1-11:12
@@ -18,16 +18,16 @@ MERGED from [com.google.firebase:firebase-analytics:18.0.3] C:\Users\Saruj\.grad
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\fcf5af611bc33846b591cd77e4d0a38c\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.recyclerview:recyclerview:1.2.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\89b9897d6911d52f3e8a678c45bde2e8\recyclerview-1.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.volley:volley:1.2.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\79bbbde5c555640d929a37e27f6c1763\jetified-volley-1.2.0\AndroidManifest.xml:2:1-7:12
-MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\84b82ac4ad016e96142dcd031063717d\jetified-picasso-2.71828\AndroidManifest.xml:2:1-14:12
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\11e41590f0d5ccc698b4bd466d6e8632\jetified-picasso-2.71828\AndroidManifest.xml:2:1-14:12
 MERGED from [me.dm7.barcodescanner:zxing:1.9.13] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\32fec3a7cc722685d5eca4a7707d6db0\jetified-zxing-1.9.13\AndroidManifest.xml:2:1-13:12
-MERGED from [me.dm7.barcodescanner:core:1.9.13] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\c7c30b616b39ba6f8d1b925e7bfd1755\jetified-core-1.9.13\AndroidManifest.xml:2:1-13:12
+MERGED from [me.dm7.barcodescanner:core:1.9.13] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\151cbde9880766093c98aa35ec4406a8\jetified-core-1.9.13\AndroidManifest.xml:2:1-13:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\9467dea77a5cea6c22f80debdbcfbe43\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.markushi:circlebutton:1.1] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\c05e84e651bfeb7effd44c202918db84\jetified-circlebutton-1.1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.firebase:firebase-firestore:22.1.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\b0cb62c76e324db49ec32f2c8c13ccf4\jetified-firebase-firestore-22.1.2\AndroidManifest.xml:2:1-26:12
 MERGED from [com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:17:1-83:12
 MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\54fb852e5096b279f5f014a17dcea39d\jetified-circleimageview-3.1.0\AndroidManifest.xml:2:1-11:12
 MERGED from [com.github.ajithvgiri:SearchDialog:v1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\1140327d15c8debcc728654d3e8c2d76\jetified-SearchDialog-v1.0\AndroidManifest.xml:2:1-11:12
-MERGED from [com.github.aakira:expandable-layout:1.4.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\2eec67ba9863cb25050feafdbda47fb7\jetified-expandable-layout-1.4.2\AndroidManifest.xml:2:1-14:12
+MERGED from [com.github.aakira:expandable-layout:1.4.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\98de5d0b5764ffa868513758713f3706\jetified-expandable-layout-1.4.2\AndroidManifest.xml:2:1-14:12
 MERGED from [com.facebook.shimmer:shimmer:0.5.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\3aae86dd204a67609e2d73a3742961b5\jetified-shimmer-0.5.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.rishabhharit.roundedimageview:RoundedImageView:0.8.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\abb21b94f14b09cd05bb1699b3d25f34\jetified-RoundedImageView-0.8.4\AndroidManifest.xml:2:1-11:12
 MERGED from [com.github.hackware1993:MagicIndicator:1.7.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\3dfb84a7062e7ab95dff6fee26e56523\jetified-MagicIndicator-1.7.0\AndroidManifest.xml:2:1-9:12
@@ -97,37 +97,37 @@ MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Saruj\.gradle\cache
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\1f6b045666a31134b82a56c243bf4255\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:protolite-well-known-types:17.1.1] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\e53fbbcf78ffb18c7cd795b35d4efb56\jetified-protolite-well-known-types-17.1.1\AndroidManifest.xml:2:1-11:12
 MERGED from [io.grpc:grpc-android:1.28.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\10a3513949333938587db48c8411373d\jetified-grpc-android-1.28.0\AndroidManifest.xml:2:1-13:12
-INJECTED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-76:12
-INJECTED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-76:12
-INJECTED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-76:12
+INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-76:12
+INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-76:12
+INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-76:12
 	package
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:3:5-38
-		INJECTED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
-		INJECTED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:3:5-38
+		INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-76:12
-		INJECTED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-76:12
+		INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-76:12
-		INJECTED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-76:12
+		INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:11-69
 supports-screens
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:5:5-51
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:5:5-51
 	android:anyDensity
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:5:23-48
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:5:23-48
 uses-feature#android.hardware.usb.accessory
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:7:5-67
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:7:5-67
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:7:19-64
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:7:19-64
 uses-feature#android.hardware.usb.host
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:8:5-62
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:8:5-62
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:8:19-59
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:8:19-59
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:10:5-79
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:10:5-79
 MERGED from [com.google.firebase:firebase-messaging:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\182300206770475f1dc109de00117671\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:22:5-79
 MERGED from [com.google.firebase:firebase-messaging:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\182300206770475f1dc109de00117671\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:22:5-79
 MERGED from [com.google.firebase:firebase-firestore:22.1.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\b0cb62c76e324db49ec32f2c8c13ccf4\jetified-firebase-firestore-22.1.2\AndroidManifest.xml:13:5-79
@@ -155,13 +155,13 @@ MERGED from [com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\
 MERGED from [io.grpc:grpc-android:1.28.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\10a3513949333938587db48c8411373d\jetified-grpc-android-1.28.0\AndroidManifest.xml:11:5-79
 MERGED from [io.grpc:grpc-android:1.28.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\10a3513949333938587db48c8411373d\jetified-grpc-android-1.28.0\AndroidManifest.xml:11:5-79
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:10:22-76
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:10:22-76
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:11:5-76
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:11:5-76
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:11:22-73
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:11:22-73
 uses-permission#android.permission.INTERNET
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:12:5-67
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:12:5-67
 MERGED from [com.google.firebase:firebase-firestore:22.1.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\b0cb62c76e324db49ec32f2c8c13ccf4\jetified-firebase-firestore-22.1.2\AndroidManifest.xml:14:5-67
 MERGED from [com.google.firebase:firebase-firestore:22.1.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\b0cb62c76e324db49ec32f2c8c13ccf4\jetified-firebase-firestore-22.1.2\AndroidManifest.xml:14:5-67
 MERGED from [com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:23:5-67
@@ -183,33 +183,33 @@ MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.3] C:
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\05fc7cd6728c298b7927d252382ef60b\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:26:5-67
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\05fc7cd6728c298b7927d252382ef60b\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:26:5-67
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:12:22-64
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:12:22-64
 uses-permission#android.permission.CALL_PHONE
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:13:5-69
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:13:5-69
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:13:22-66
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:13:22-66
 uses-permission#android.permission.BLUETOOTH
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:14:5-68
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:14:5-68
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:14:22-65
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:14:22-65
 uses-permission#android.permission.BLUETOOTH_ADMIN
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:15:5-74
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:15:5-74
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:15:22-71
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:15:22-71
 uses-permission#android.permission.CAMERA
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:17:5-65
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:17:5-65
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:17:22-62
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:17:22-62
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:18:5-80
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:18:5-80
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:18:22-77
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:18:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:19:5-81
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:19:5-81
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:19:22-78
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:19:22-78
 application
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:21:5-74:19
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:21:5-74:19
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\cd6f2caba378d66250797e09d6bb24e0\material-1.3.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\cd6f2caba378d66250797e09d6bb24e0\material-1.3.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\1b47bb01ecc6aa52d262badcce0bb4ed\constraintlayout-2.0.4\AndroidManifest.xml:9:5-20
@@ -222,12 +222,12 @@ MERGED from [com.google.firebase:firebase-core:18.0.3] C:\Users\Saruj\.gradle\ca
 MERGED from [com.google.firebase:firebase-core:18.0.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\3c7314e25d85d96fe6a6a2b3d540bc19\jetified-firebase-core-18.0.3\AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-analytics:18.0.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\7b9ba1454cb5ac3e64733e9e2c3a90eb\jetified-firebase-analytics-18.0.3\AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-analytics:18.0.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\7b9ba1454cb5ac3e64733e9e2c3a90eb\jetified-firebase-analytics-18.0.3\AndroidManifest.xml:7:5-20
-MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\84b82ac4ad016e96142dcd031063717d\jetified-picasso-2.71828\AndroidManifest.xml:7:5-12:19
-MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\84b82ac4ad016e96142dcd031063717d\jetified-picasso-2.71828\AndroidManifest.xml:7:5-12:19
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\11e41590f0d5ccc698b4bd466d6e8632\jetified-picasso-2.71828\AndroidManifest.xml:7:5-12:19
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\11e41590f0d5ccc698b4bd466d6e8632\jetified-picasso-2.71828\AndroidManifest.xml:7:5-12:19
 MERGED from [me.dm7.barcodescanner:zxing:1.9.13] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\32fec3a7cc722685d5eca4a7707d6db0\jetified-zxing-1.9.13\AndroidManifest.xml:11:5-20
 MERGED from [me.dm7.barcodescanner:zxing:1.9.13] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\32fec3a7cc722685d5eca4a7707d6db0\jetified-zxing-1.9.13\AndroidManifest.xml:11:5-20
-MERGED from [me.dm7.barcodescanner:core:1.9.13] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\c7c30b616b39ba6f8d1b925e7bfd1755\jetified-core-1.9.13\AndroidManifest.xml:11:5-20
-MERGED from [me.dm7.barcodescanner:core:1.9.13] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\c7c30b616b39ba6f8d1b925e7bfd1755\jetified-core-1.9.13\AndroidManifest.xml:11:5-20
+MERGED from [me.dm7.barcodescanner:core:1.9.13] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\151cbde9880766093c98aa35ec4406a8\jetified-core-1.9.13\AndroidManifest.xml:11:5-20
+MERGED from [me.dm7.barcodescanner:core:1.9.13] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\151cbde9880766093c98aa35ec4406a8\jetified-core-1.9.13\AndroidManifest.xml:11:5-20
 MERGED from [com.github.markushi:circlebutton:1.1] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\c05e84e651bfeb7effd44c202918db84\jetified-circlebutton-1.1\AndroidManifest.xml:9:5-20
 MERGED from [com.github.markushi:circlebutton:1.1] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\c05e84e651bfeb7effd44c202918db84\jetified-circlebutton-1.1\AndroidManifest.xml:9:5-20
 MERGED from [com.google.firebase:firebase-firestore:22.1.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\b0cb62c76e324db49ec32f2c8c13ccf4\jetified-firebase-firestore-22.1.2\AndroidManifest.xml:16:5-24:19
@@ -236,8 +236,8 @@ MERGED from [com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\ca
 MERGED from [com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:26:5-81:19
 MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\54fb852e5096b279f5f014a17dcea39d\jetified-circleimageview-3.1.0\AndroidManifest.xml:9:5-20
 MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\54fb852e5096b279f5f014a17dcea39d\jetified-circleimageview-3.1.0\AndroidManifest.xml:9:5-20
-MERGED from [com.github.aakira:expandable-layout:1.4.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\2eec67ba9863cb25050feafdbda47fb7\jetified-expandable-layout-1.4.2\AndroidManifest.xml:12:5-20
-MERGED from [com.github.aakira:expandable-layout:1.4.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\2eec67ba9863cb25050feafdbda47fb7\jetified-expandable-layout-1.4.2\AndroidManifest.xml:12:5-20
+MERGED from [com.github.aakira:expandable-layout:1.4.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\98de5d0b5764ffa868513758713f3706\jetified-expandable-layout-1.4.2\AndroidManifest.xml:12:5-20
+MERGED from [com.github.aakira:expandable-layout:1.4.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\98de5d0b5764ffa868513758713f3706\jetified-expandable-layout-1.4.2\AndroidManifest.xml:12:5-20
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\6754113431c8f40305fea67c580b0d20\jetified-play-services-safetynet-17.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\6754113431c8f40305fea67c580b0d20\jetified-play-services-safetynet-17.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\a63935de15513710d98bf227aa324a8b\jetified-play-services-base-17.1.0\AndroidManifest.xml:22:5-27:19
@@ -285,125 +285,125 @@ MERGED from [com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.3.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\67144f8b09a953df3e7278900fce8670\core-1.3.2\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:28:9-35
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:28:9-35
 	android:label
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:25:9-41
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:25:9-41
 	android:roundIcon
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:27:9-54
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:27:9-54
 	android:icon
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:24:9-43
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:24:9-43
 	android:allowBackup
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:23:9-35
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:23:9-35
 	android:theme
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:29:9-51
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:29:9-51
 	android:networkSecurityConfig
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:26:9-69
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:26:9-69
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:22:9-49
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:22:9-49
 activity#com.agamilabs.smartshop.FireInboxShow.FirestoreUserChatsActivity
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:30:9-87
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:30:9-87
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:30:19-75
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:30:19-75
 activity#com.agamilabs.smartshop.activity.DeviceListActivity
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:36:9-65
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:36:9-65
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:36:19-62
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:36:19-62
 activity#com.agamilabs.smartshop.activity.PrintingActivity
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:37:9-63
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:37:9-63
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:37:19-60
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:37:19-60
 activity#com.agamilabs.smartshop.activity.NewCampaignActivity
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:38:9-66
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:38:9-66
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:38:19-63
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:38:19-63
 activity#com.agamilabs.smartshop.activity.CampaignActivity
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:39:9-63
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:39:9-63
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:39:19-60
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:39:19-60
 activity#com.agamilabs.smartshop.MainActivity
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:40:9-50
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:40:9-50
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:40:19-47
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:40:19-47
 activity#com.agamilabs.smartshop.activity.RechargeActivity
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:41:9-63
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:41:9-63
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:41:19-60
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:41:19-60
 activity#com.agamilabs.smartshop.activity.ShopInboxActivity
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:42:9-64
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:42:9-64
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:42:19-61
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:42:19-61
 activity#com.agamilabs.smartshop.activity.OrderReportActivity
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:43:9-66
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:43:9-66
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:43:19-63
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:43:19-63
 activity#com.agamilabs.smartshop.activity.StockReportActivity
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:44:9-66
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:44:9-66
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:44:19-63
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:44:19-63
 activity#com.agamilabs.smartshop.activity.CardShopActivity
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:45:9-63
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:45:9-63
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:45:19-60
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:45:19-60
 activity#com.agamilabs.smartshop.ShopAdminHome
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:46:9-51
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:46:9-51
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:46:19-48
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:46:19-48
 activity#com.agamilabs.smartshop.LoginActivity
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:47:9-51
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:47:9-51
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:47:19-48
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:47:19-48
 activity#com.agamilabs.smartshop.InvoiceActivity
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:48:9-53
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:48:9-53
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:48:19-50
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:48:19-50
 activity#com.agamilabs.smartshop.InvoiceViewerActivity
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:49:9-59
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:49:9-59
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:49:19-56
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:49:19-56
 activity#com.agamilabs.smartshop.BaseScannerActivity
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:50:9-57
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:50:9-57
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:50:19-54
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:50:19-54
 activity#com.agamilabs.smartshop.FullScannerActivity
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:51:9-57
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:51:9-57
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:51:19-54
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:51:19-54
 activity#com.agamilabs.smartshop.FireInboxShow.FireStoreUserActivity
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:53:9-63:20
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:53:9-63:20
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:53:19-70
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:53:19-70
 intent-filter#action:name:android.hardware.usb.action.USB_ACCESSORY_ATTACHED+action:name:android.hardware.usb.action.USB_DEVICE_ATTACHED+action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:54:13-62:29
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:54:13-62:29
 action#android.intent.action.MAIN
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:55:17-69
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:55:17-69
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:55:25-66
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:55:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:57:17-77
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:57:17-77
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:57:27-74
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:57:27-74
 action#android.hardware.usb.action.USB_ACCESSORY_ATTACHED
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:59:17-93
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:59:17-93
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:59:25-90
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:59:25-90
 action#android.hardware.usb.action.USB_DEVICE_ATTACHED
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:60:17-90
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:60:17-90
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:60:25-87
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:60:25-87
 service#com.agamilabs.smartshop.services.NotificationReceiver
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:69:9-73:19
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:69:9-73:19
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:69:18-63
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:69:18-63
 intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:70:13-72:29
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:70:13-72:29
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:71:17-78
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:71:17-78
 	android:name
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:71:25-75
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:71:25-75
 uses-sdk
-INJECTED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
-INJECTED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
+INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
+INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
 MERGED from [androidx.multidex:multidex:2.0.1] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\d537e181754c9d8f2c0b89905231951b\multidex-2.0.1\AndroidManifest.xml:20:5-43
 MERGED from [androidx.multidex:multidex:2.0.1] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\d537e181754c9d8f2c0b89905231951b\multidex-2.0.1\AndroidManifest.xml:20:5-43
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\cd6f2caba378d66250797e09d6bb24e0\material-1.3.0\AndroidManifest.xml:20:5-44
@@ -432,12 +432,12 @@ MERGED from [androidx.recyclerview:recyclerview:1.2.0] C:\Users\Saruj\.gradle\ca
 MERGED from [androidx.recyclerview:recyclerview:1.2.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\89b9897d6911d52f3e8a678c45bde2e8\recyclerview-1.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.android.volley:volley:1.2.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\79bbbde5c555640d929a37e27f6c1763\jetified-volley-1.2.0\AndroidManifest.xml:5:5-43
 MERGED from [com.android.volley:volley:1.2.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\79bbbde5c555640d929a37e27f6c1763\jetified-volley-1.2.0\AndroidManifest.xml:5:5-43
-MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\84b82ac4ad016e96142dcd031063717d\jetified-picasso-2.71828\AndroidManifest.xml:5:5-44
-MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\84b82ac4ad016e96142dcd031063717d\jetified-picasso-2.71828\AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\11e41590f0d5ccc698b4bd466d6e8632\jetified-picasso-2.71828\AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\11e41590f0d5ccc698b4bd466d6e8632\jetified-picasso-2.71828\AndroidManifest.xml:5:5-44
 MERGED from [me.dm7.barcodescanner:zxing:1.9.13] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\32fec3a7cc722685d5eca4a7707d6db0\jetified-zxing-1.9.13\AndroidManifest.xml:7:5-9:41
 MERGED from [me.dm7.barcodescanner:zxing:1.9.13] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\32fec3a7cc722685d5eca4a7707d6db0\jetified-zxing-1.9.13\AndroidManifest.xml:7:5-9:41
-MERGED from [me.dm7.barcodescanner:core:1.9.13] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\c7c30b616b39ba6f8d1b925e7bfd1755\jetified-core-1.9.13\AndroidManifest.xml:7:5-9:41
-MERGED from [me.dm7.barcodescanner:core:1.9.13] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\c7c30b616b39ba6f8d1b925e7bfd1755\jetified-core-1.9.13\AndroidManifest.xml:7:5-9:41
+MERGED from [me.dm7.barcodescanner:core:1.9.13] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\151cbde9880766093c98aa35ec4406a8\jetified-core-1.9.13\AndroidManifest.xml:7:5-9:41
+MERGED from [me.dm7.barcodescanner:core:1.9.13] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\151cbde9880766093c98aa35ec4406a8\jetified-core-1.9.13\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\9467dea77a5cea6c22f80debdbcfbe43\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\9467dea77a5cea6c22f80debdbcfbe43\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.github.markushi:circlebutton:1.1] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\c05e84e651bfeb7effd44c202918db84\jetified-circlebutton-1.1\AndroidManifest.xml:7:5-44
@@ -450,8 +450,8 @@ MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\Saruj\.gradle\caches\t
 MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\54fb852e5096b279f5f014a17dcea39d\jetified-circleimageview-3.1.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.ajithvgiri:SearchDialog:v1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\1140327d15c8debcc728654d3e8c2d76\jetified-SearchDialog-v1.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.ajithvgiri:SearchDialog:v1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\1140327d15c8debcc728654d3e8c2d76\jetified-SearchDialog-v1.0\AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.aakira:expandable-layout:1.4.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\2eec67ba9863cb25050feafdbda47fb7\jetified-expandable-layout-1.4.2\AndroidManifest.xml:8:5-10:41
-MERGED from [com.github.aakira:expandable-layout:1.4.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\2eec67ba9863cb25050feafdbda47fb7\jetified-expandable-layout-1.4.2\AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.aakira:expandable-layout:1.4.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\98de5d0b5764ffa868513758713f3706\jetified-expandable-layout-1.4.2\AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.aakira:expandable-layout:1.4.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\98de5d0b5764ffa868513758713f3706\jetified-expandable-layout-1.4.2\AndroidManifest.xml:8:5-10:41
 MERGED from [com.facebook.shimmer:shimmer:0.5.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\3aae86dd204a67609e2d73a3742961b5\jetified-shimmer-0.5.0\AndroidManifest.xml:5:5-44
 MERGED from [com.facebook.shimmer:shimmer:0.5.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\3aae86dd204a67609e2d73a3742961b5\jetified-shimmer-0.5.0\AndroidManifest.xml:5:5-44
 MERGED from [com.rishabhharit.roundedimageview:RoundedImageView:0.8.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\abb21b94f14b09cd05bb1699b3d25f34\jetified-RoundedImageView-0.8.4\AndroidManifest.xml:7:5-9:41
@@ -590,16 +590,16 @@ MERGED from [com.google.firebase:protolite-well-known-types:17.1.1] C:\Users\Sar
 MERGED from [com.google.firebase:protolite-well-known-types:17.1.1] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\e53fbbcf78ffb18c7cd795b35d4efb56\jetified-protolite-well-known-types-17.1.1\AndroidManifest.xml:7:5-9:41
 MERGED from [io.grpc:grpc-android:1.28.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\10a3513949333938587db48c8411373d\jetified-grpc-android-1.28.0\AndroidManifest.xml:7:5-9:41
 MERGED from [io.grpc:grpc-android:1.28.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\10a3513949333938587db48c8411373d\jetified-grpc-android-1.28.0\AndroidManifest.xml:7:5-9:41
-INJECTED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
-INJECTED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
+INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
+INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
-		INJECTED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
-		ADDED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
-		INJECTED from D:\Android studio All Folder\AgamiLabs-Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.WAKE_LOCK
 ADDED from [com.google.firebase:firebase-messaging:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\182300206770475f1dc109de00117671\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:23:5-68
 MERGED from [com.google.firebase:firebase-iid:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\dca364ca8652be8b10574e5bb98dfcd5\jetified-firebase-iid-21.1.0\AndroidManifest.xml:24:5-68
@@ -677,13 +677,13 @@ ADDED from [com.google.firebase:firebase-messaging:21.1.0] C:\Users\Saruj\.gradl
 	android:name
 		ADDED from [com.google.firebase:firebase-messaging:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\182300206770475f1dc109de00117671\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:53:17-119
 provider#com.squareup.picasso.PicassoProvider
-ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\84b82ac4ad016e96142dcd031063717d\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
+ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\11e41590f0d5ccc698b4bd466d6e8632\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
 	android:authorities
-		ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\84b82ac4ad016e96142dcd031063717d\jetified-picasso-2.71828\AndroidManifest.xml:10:13-72
+		ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\11e41590f0d5ccc698b4bd466d6e8632\jetified-picasso-2.71828\AndroidManifest.xml:10:13-72
 	android:exported
-		ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\84b82ac4ad016e96142dcd031063717d\jetified-picasso-2.71828\AndroidManifest.xml:11:13-37
+		ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\11e41590f0d5ccc698b4bd466d6e8632\jetified-picasso-2.71828\AndroidManifest.xml:11:13-37
 	android:name
-		ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\84b82ac4ad016e96142dcd031063717d\jetified-picasso-2.71828\AndroidManifest.xml:9:13-64
+		ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\11e41590f0d5ccc698b4bd466d6e8632\jetified-picasso-2.71828\AndroidManifest.xml:9:13-64
 meta-data#com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar
 ADDED from [com.google.firebase:firebase-firestore:22.1.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\b0cb62c76e324db49ec32f2c8c13ccf4\jetified-firebase-firestore-22.1.2\AndroidManifest.xml:20:13-22:85
 	android:value

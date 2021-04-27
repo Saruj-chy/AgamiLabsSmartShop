@@ -1,7 +1,9 @@
 package com.agamilabs.smartshop.FireInboxShow;
 
 import android.content.Context;
+import android.os.Build;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,22 +15,28 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.agamilabs.smartshop.R;
 import com.agamilabs.smartshop.controller.AppController;
-import com.google.firebase.firestore.FieldValue;
 
 import com.google.firebase.Timestamp;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
-import de.hdodenhof.circleimageview.CircleImageView;
-
-public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUserChatsAdapter.PostViewHolder> {
+public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUserChatsAdapter.FirestoreUserChatsViewHolder> {
 
     private Context mCtx;
     private List<BatiChatMsgModel> mChatsMsgModalList;
+    int mPageNumber = 1 ;
+    CharSequence tempSentDate =null, tempReceiveDate=null ;
+    CharSequence tempSentTime =null, tempReceiveTime=null ;
+
+    HashMap<String, String> myList = new HashMap<>() ;
+
+    int dataSize=0, tempDataSize=0 ;
+
 
     public FireStoreUserChatsAdapter(Context mCtx, List<BatiChatMsgModel> mChatsMsgModal) {
         this.mCtx = mCtx;
@@ -36,25 +44,76 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
     }
 
     @Override
-    public FireStoreUserChatsAdapter.PostViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(mCtx);
-        View view = inflater.inflate(R.layout.layout_firestore_msg_chats, null);
-        return new FireStoreUserChatsAdapter.PostViewHolder(view);
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
     }
 
 
+
     @Override
-    public void onBindViewHolder(final FireStoreUserChatsAdapter.PostViewHolder holder, final int position) {
+    public FirestoreUserChatsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(mCtx);
+        View view = inflater.inflate(R.layout.layout_firestore_msg_chats, null);
+        FirestoreUserChatsViewHolder holder = new FirestoreUserChatsViewHolder(view);
+
+        holder.setIsRecyclable(false);
+        return new FirestoreUserChatsViewHolder(view);
+    }
+
+
+
+    @Override
+    public void onBindViewHolder(final FirestoreUserChatsViewHolder holder, final int position) {
+
         Collections.sort(mChatsMsgModalList, new Comparator<BatiChatMsgModel>() {
             @Override
             public int compare(BatiChatMsgModel lhs, BatiChatMsgModel rhs) {
                 return lhs.getSentTime().toString().compareTo(rhs.getSentTime().toString());
             }
         });
-        final BatiChatMsgModel chatMsgModel = mChatsMsgModalList.get(position);
 
-//        ((PostViewHolder) holder).bind(chatMsgModel) ;
-        ((PostViewHolder) holder).bind1(mChatsMsgModalList, position) ;
+        final BatiChatMsgModel chatMsgModel = mChatsMsgModalList.get(position);
+        Timestamp timestamp =  (Timestamp) chatMsgModel.getSentTime();
+        Date date = timestamp.toDate() ;
+        CharSequence dateFormat = DateFormat.format("yyyy-MM-dd", date);
+
+        dataSize = mChatsMsgModalList.size() ;
+            if(dataSize>tempDataSize){
+                tempDataSize = dataSize ;
+                myList.clear();
+                for(int i=0; i<mChatsMsgModalList.size();i++){
+                    Timestamp timestamp1 =  (Timestamp) mChatsMsgModalList.get(i).getSentTime();
+                    Date date1 = timestamp1.toDate() ;
+                    CharSequence dateFormat1 = DateFormat.format("yyyy-MM-dd", date1);
+                    if(myList.containsKey(dateFormat1) && myList.get(dateFormat1) != null  ){
+                        myList.get(dateFormat1).concat( mChatsMsgModalList.get(i).getChatId());
+
+                    }else{
+                        myList.put(dateFormat1+"", mChatsMsgModalList.get(i).getChatId());
+
+                    }
+                }
+            }
+
+//        Log.e("map_list_for1", " myList : "+ myList.get(dateFormat)+"  dataSize:  "+ dataSize +"  tempDataSize:  "+tempDataSize ) ;
+
+
+
+
+
+
+
+
+//        ((FirestoreUserChatsViewHolder) holder).bind(chatMsgModel) ;
+
+        ((FirestoreUserChatsViewHolder) holder).bind2(chatMsgModel, myList) ;
+
+//        ((FirestoreUserChatsViewHolder) holder).bind1(mChatsMsgModalList, position) ;
 
 
 
@@ -65,7 +124,7 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
         return mChatsMsgModalList.size();
     }
 
-    class PostViewHolder extends RecyclerView.ViewHolder {
+    class FirestoreUserChatsViewHolder extends RecyclerView.ViewHolder {
 
       RelativeLayout mSentRelative, mReceiveRelative ;
       TextView mSentMsgTV, mSentTimeTV, mReceiveMsgTV, mReceiveTimeTV, mDateShowTV ;
@@ -73,7 +132,7 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
 
 
 
-        public PostViewHolder(View itemView) {
+        public FirestoreUserChatsViewHolder(View itemView) {
             super(itemView);
 
             mSentRelative = itemView.findViewById(R.id.relative_sent);
@@ -87,38 +146,142 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
 
         }
 
-        public void bind(final BatiChatMsgModel chatMsgModel){
-//            Timestamp timestamp
+        public void bind2(final BatiChatMsgModel chatMsgModel, HashMap<String, String> myList){
+
+
             Timestamp timestamp =  (Timestamp) chatMsgModel.getSentTime();
             Date date = timestamp.toDate() ;
             CharSequence dateFormat = DateFormat.format("yyyy-MM-dd", date);
             CharSequence timeFormat = DateFormat.format("hh:mm a", date);
 
 
+
+
+
+            if(FireStoreUserActivity.USER_ID.equalsIgnoreCase(chatMsgModel.getSentBy())){
+
+                mSentRelative.setVisibility(View.VISIBLE);
+                mReceiveRelative.setVisibility(View.GONE);
+                mSentMsgTV.setText(chatMsgModel.getMessage());
+                mSentTimeTV.setText( timeFormat+"\n"+dateFormat );
+
+//                mDateLinear.setVisibility(View.VISIBLE);
+//                mDateShowTV.setText(dateFormat);
+//                if(tempSentDate!=null && tempSentDate.equals(dateFormat) ){
+//                    mDateLinear.setVisibility(View.GONE);
+////                    Log.e("dateFormat", tempReceiveDate+"  dateformat 2: "+ dateFormat);
+//
+//                }
+//                if(tempSentDate==null || !tempSentDate.equals(dateFormat)){
+//
+//                    tempSentDate = dateFormat;
+////                    Log.e("dateFormat", tempReceiveDate+"  dateformat 1: "+ dateFormat);
+//                }
+
+                if(myList.get(dateFormat)!=null && myList.get(dateFormat).equalsIgnoreCase(chatMsgModel.getChatId())){
+                    mDateLinear.setVisibility(View.VISIBLE);
+                    mDateShowTV.setText(dateFormat);
+                    Log.e("map", " myList cKey: "+ myList.get(dateFormat) +  " ID:   "+ chatMsgModel.getChatId()) ;
+                }else{
+                    mDateLinear.setVisibility(View.GONE);
+                }
+
+
+
+
+            }else{
+                mSentRelative.setVisibility(View.GONE);
+                mReceiveRelative.setVisibility(View.VISIBLE);
+                mReceiveMsgTV.setText(chatMsgModel.getMessage());
+                mReceiveTimeTV.setText(timeFormat+"\n"+dateFormat);
+
+//                mDateLinear.setVisibility(View.VISIBLE);
+//                mDateShowTV.setText(dateFormat);
+
+//                Log.e("dateFormat", tempReceiveDate+"  dateformat: "+ dateFormat);
+
+                Log.e("dateFormat", tempReceiveDate+"  dateformat 0: "+ dateFormat);
+
+                if(myList.get(dateFormat)!=null && myList.get(dateFormat).equalsIgnoreCase(chatMsgModel.getChatId())){
+                    mDateLinear.setVisibility(View.VISIBLE);
+                    mDateShowTV.setText(dateFormat);
+                    Log.e("map", " myList cKey: "+ myList.get(dateFormat) +  " ID:   "+ chatMsgModel.getChatId()) ;
+                }else{
+                    mDateLinear.setVisibility(View.GONE);
+                }
+
+//                if(tempReceiveDate!=null && tempReceiveDate.equals(dateFormat) ){
+//                    mDateLinear.setVisibility(View.GONE);
+//                    Log.e("dateFormat", tempReceiveDate+"  dateformat 2: "+ dateFormat);
+//
+//                }
+//                if(tempReceiveDate==null || !tempReceiveDate.equals(dateFormat)){
+//
+//                    tempReceiveDate = dateFormat;
+//                    Log.e("dateFormat", tempReceiveDate+"  dateformat 1: "+ dateFormat);
+//                }
+
+
+
+//                if(tempReceiveTime != null && tempReceiveTime.equals(timeFormat)){
+//
+//                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public void bind(final BatiChatMsgModel chatMsgModel){
+//            Timestamp timestamp
+            Timestamp timestamp_1 =  (Timestamp) chatMsgModel.getSentTime();
+            Date date_1 = timestamp_1.toDate() ;
+            CharSequence dateFormat_1 = DateFormat.format("yyyy-MM-dd", date_1);
+            CharSequence timeFormat_1 = DateFormat.format("hh:mm a", date_1);
+
+
             if(FireStoreUserActivity.USER_ID.equalsIgnoreCase(chatMsgModel.getSentBy())){
                 mSentRelative.setVisibility(View.VISIBLE);
+                mReceiveRelative.setVisibility(View.GONE);
                 mSentMsgTV.setText(chatMsgModel.getMessage());
-                mSentTimeTV.setText(dateFormat+"\n"+timeFormat );
+                mSentTimeTV.setText(dateFormat_1+"\n"+timeFormat_1 );
 
             }else{
                 mReceiveRelative.setVisibility(View.VISIBLE);
+                mSentRelative.setVisibility(View.GONE);
                 mReceiveMsgTV.setText(chatMsgModel.getMessage());
-                mReceiveTimeTV.setText(dateFormat+"\n"+timeFormat);
+                mReceiveTimeTV.setText(dateFormat_1+"\n"+timeFormat_1);
             }
-
-//            itemView.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Intent intent = new Intent(mCtx, FirestoreUserChatsActivity.class) ;
-//                    intent.putExtra("chatID", userChats.getDocumentId()) ;
-//                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//                    mCtx.startActivity(intent);
-//                }
-//            });
-
         }
 
         public void bind1(List<BatiChatMsgModel> mChatsMsgModalList, int position) {
+
+            Log.e("posi_bind1", "position: "+ position );
             Timestamp timestamp, timestampNext, timestampPrev ;
             Date date, dateNext = null, datePrev ;
             CharSequence timeFormat, dateTimeFormat1, dateTimeFormat2 = null, dateFormat1, dateFormatNext = null, dateFormatPrev = null;

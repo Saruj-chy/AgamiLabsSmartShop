@@ -1,27 +1,8 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "outputFile": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
-                {
-                    "source": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\values-night\\themes.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "102",
-                        "endLines": "17",
-                        "endColumns": "12",
-                        "endOffsets": "937"
-                    },
-                    "to": {
-                        "startLines": "25",
-                        "startColumns": "4",
-                        "startOffsets": "2594",
-                        "endLines": "40",
-                        "endColumns": "12",
-                        "endOffsets": "3412"
-                    }
-                },
                 {
                     "source": "C:\\Users\\Saruj\\.gradle\\caches\\transforms-2\\files-2.1\\994d5787a0c5e3a9050593b6e3088631\\appcompat-1.2.0\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
@@ -37,6 +18,25 @@
                         "startOffsets": "100,170,254,338,434,536,638,3417",
                         "endColumns": "69,83,83,95,101,101,93,88",
                         "endOffsets": "165,249,333,429,531,633,727,3501"
+                    }
+                },
+                {
+                    "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "102",
+                        "endLines": "17",
+                        "endColumns": "12",
+                        "endOffsets": "937"
+                    },
+                    "to": {
+                        "startLines": "25",
+                        "startColumns": "4",
+                        "startOffsets": "2594",
+                        "endLines": "40",
+                        "endColumns": "12",
+                        "endOffsets": "3412"
                     }
                 },
                 {

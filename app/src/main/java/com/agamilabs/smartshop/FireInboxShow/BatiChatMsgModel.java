@@ -49,10 +49,10 @@ public class BatiChatMsgModel {
     @Override
     public String toString() {
         return "BatiChatMsgModel{" +
-                "chatId='" + chatId + '\'' +
-                ", message='" + message + '\'' +
-                ", sentBy='" + sentBy + '\'' +
+                "chatId='" + chatId + '\'' + "\n"+
+                ", message='" + message + '\'' +"\n"+
+                ", sentBy='" + sentBy + '\'' +"\n"+
                 ", sentTime=" + sentTime +
-                '}';
+                '}'+"\n\n";
     }
 }

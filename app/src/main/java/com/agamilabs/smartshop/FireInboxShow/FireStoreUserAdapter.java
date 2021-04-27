@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -87,6 +88,7 @@ public class FireStoreUserAdapter extends RecyclerView.Adapter<FireStoreUserAdap
                     intent.putExtra("chatID", userDetails.getDocumentId()) ;
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     mCtx.startActivity(intent);
+//                    Toast.makeText(mCtx, "chatID: "+ userDetails.getDocumentId(), Toast.LENGTH_SHORT).show();
                 }
             });
 
