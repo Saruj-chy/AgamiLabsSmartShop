@@ -1812,6 +1812,7 @@ drawable ic_add_customer
 drawable ic_arrow_down
 drawable ic_arrow_forward
 drawable ic_baseline_access_time_24
+drawable ic_baseline_cancel_24
 drawable ic_baseline_check_circle
 drawable ic_baseline_credit_card_24
 drawable ic_baseline_date_range_24
@@ -1983,6 +1984,13 @@ id animateToEnd
 id animateToStart
 id anticipate
 id anticipateOvershoot
+id app_bar_layout_firestore
+id appbar_cancelbtn
+id appbar_circle_image
+id appbar_linear_search
+id appbar_search_edit
+id appbar_searchbtn
+id appbar_text
 id asConfigured
 id async
 id auto
@@ -2066,6 +2074,7 @@ id chip_group
 id chronometer
 id circle_center
 id circle_image_client
+id circle_image_client1
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -2155,6 +2164,7 @@ id fill_horizontal
 id fill_vertical
 id filled
 id firestore_toolbar
+id firestore_user_chats_appbar
 id fitToContents
 id fixed
 id flip
@@ -2349,7 +2359,6 @@ id mtrl_view_tag_bottom_padding
 id multiply
 id navigation_header_container
 id nestedScrollView
-id nested_scroll_chatmsg
 id nested_scroll_stock
 id never
 id noScroll
@@ -2379,6 +2388,7 @@ id percent
 id pin
 id position
 id postLayout
+id progress_chat_firestore
 id progress_circular
 id progress_horizontal
 id progressbar
@@ -2779,6 +2789,7 @@ layout activity_stock_report
 layout activity_store_dashboard
 layout activity_testing_session
 layout app_bar_layout
+layout app_bar_layout_firestore
 layout bottom_sheet_layout
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row

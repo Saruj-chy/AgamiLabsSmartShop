@@ -1,7 +1,6 @@
 package com.agamilabs.smartshop.FireInboxShow;
 
 import android.content.Context;
-import android.os.Build;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,7 +17,6 @@ import com.agamilabs.smartshop.controller.AppController;
 
 import com.google.firebase.Timestamp;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
@@ -33,7 +31,9 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
     CharSequence tempSentDate =null, tempReceiveDate=null ;
     CharSequence tempSentTime =null, tempReceiveTime=null ;
 
-    HashMap<String, String> myList = new HashMap<>() ;
+    HashMap<String, String> mapDateList = new HashMap<>() ;
+    HashMap<String, String> mapSentList = new HashMap<>() ;
+    HashMap<String, String> mapReceiveList = new HashMap<>() ;
 
     int dataSize=0, tempDataSize=0 ;
 
@@ -41,19 +41,8 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
     public FireStoreUserChatsAdapter(Context mCtx, List<BatiChatMsgModel> mChatsMsgModal) {
         this.mCtx = mCtx;
         this.mChatsMsgModalList = mChatsMsgModal;
+
     }
-
-    @Override
-    public long getItemId(int position) {
-        return position;
-    }
-
-    @Override
-    public int getItemViewType(int position) {
-        return position;
-    }
-
-
 
     @Override
     public FirestoreUserChatsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -70,6 +59,7 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
     @Override
     public void onBindViewHolder(final FirestoreUserChatsViewHolder holder, final int position) {
 
+//        holder.setIsRecyclable(false);
         Collections.sort(mChatsMsgModalList, new Comparator<BatiChatMsgModel>() {
             @Override
             public int compare(BatiChatMsgModel lhs, BatiChatMsgModel rhs) {
@@ -78,40 +68,62 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
         });
 
         final BatiChatMsgModel chatMsgModel = mChatsMsgModalList.get(position);
-        Timestamp timestamp =  (Timestamp) chatMsgModel.getSentTime();
-        Date date = timestamp.toDate() ;
-        CharSequence dateFormat = DateFormat.format("yyyy-MM-dd", date);
+//        Timestamp timestamp =  (Timestamp) chatMsgModel.getSentTime();
+//        Date date = timestamp.toDate() ;
+//        CharSequence dateFormat = DateFormat.format("yyyy-MM-dd", date);
+//        CharSequence timeFormat = DateFormat.format("hh:mm a", date);
 
         dataSize = mChatsMsgModalList.size() ;
             if(dataSize>tempDataSize){
                 tempDataSize = dataSize ;
-                myList.clear();
+                mapDateList.clear();
+                mapSentList.clear();
+                mapReceiveList.clear();
                 for(int i=0; i<mChatsMsgModalList.size();i++){
                     Timestamp timestamp1 =  (Timestamp) mChatsMsgModalList.get(i).getSentTime();
                     Date date1 = timestamp1.toDate() ;
                     CharSequence dateFormat1 = DateFormat.format("yyyy-MM-dd", date1);
-                    if(myList.containsKey(dateFormat1) && myList.get(dateFormat1) != null  ){
-                        myList.get(dateFormat1).concat( mChatsMsgModalList.get(i).getChatId());
+                    if(mapDateList.containsKey(dateFormat1) && mapDateList.get(dateFormat1) != null  ){
+                        mapDateList.get(dateFormat1).concat( mChatsMsgModalList.get(i).getChatId());
 
                     }else{
-                        myList.put(dateFormat1+"", mChatsMsgModalList.get(i).getChatId());
+                        mapDateList.put(dateFormat1+"", mChatsMsgModalList.get(i).getChatId());
 
                     }
                 }
+                for(int j=mChatsMsgModalList.size()-1; j>=0;j--){
+                    Timestamp timestamp1 =  (Timestamp) mChatsMsgModalList.get(j).getSentTime();
+                    Date date1 = timestamp1.toDate() ;
+                    CharSequence timeFormat1 = DateFormat.format("hh:mm a", date1);
+
+                    if(mChatsMsgModalList.get(j).getSentBy().equalsIgnoreCase(FireStoreUserActivity.USER_ID)){
+                        if(mapSentList.containsKey(timeFormat1) && mapSentList.get(timeFormat1) != null  ){
+                            mapSentList.get(timeFormat1).concat( mChatsMsgModalList.get(j).getChatId());
+
+                        }else{
+                            mapSentList.put(timeFormat1+"", mChatsMsgModalList.get(j).getChatId());
+
+                        }
+                    }else{
+                        if(mapReceiveList.containsKey(timeFormat1) && mapReceiveList.get(timeFormat1) != null  ){
+                            mapReceiveList.get(timeFormat1).concat( mChatsMsgModalList.get(j).getChatId());
+
+                        }else{
+                            mapReceiveList.put(timeFormat1+"", mChatsMsgModalList.get(j).getChatId());
+
+                        }
+                    }
+
+
+                }
             }
-
-//        Log.e("map_list_for1", " myList : "+ myList.get(dateFormat)+"  dataSize:  "+ dataSize +"  tempDataSize:  "+tempDataSize ) ;
-
-
-
-
 
 
 
 
 //        ((FirestoreUserChatsViewHolder) holder).bind(chatMsgModel) ;
 
-        ((FirestoreUserChatsViewHolder) holder).bind2(chatMsgModel, myList) ;
+        ((FirestoreUserChatsViewHolder) holder).bind2(chatMsgModel) ;
 
 //        ((FirestoreUserChatsViewHolder) holder).bind1(mChatsMsgModalList, position) ;
 
@@ -146,15 +158,24 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
 
         }
 
-        public void bind2(final BatiChatMsgModel chatMsgModel, HashMap<String, String> myList){
+        public void bind2(final BatiChatMsgModel chatMsgModel){
 
 
             Timestamp timestamp =  (Timestamp) chatMsgModel.getSentTime();
             Date date = timestamp.toDate() ;
+//            Log.e("map_date",  " date: "+ DateFormat.format("d MMM, yyyy", date)  ) ;
+            CharSequence dateFormatText = DateFormat.format("d MMM, yyyy", date);
             CharSequence dateFormat = DateFormat.format("yyyy-MM-dd", date);
             CharSequence timeFormat = DateFormat.format("hh:mm a", date);
 
 
+            if(mapDateList.get(dateFormat)!=null && mapDateList.get(dateFormat).equalsIgnoreCase(chatMsgModel.getChatId())){
+                mDateLinear.setVisibility(View.VISIBLE);
+                mDateShowTV.setText(dateFormatText);
+                Log.e("map", " myList cKey: "+ mapDateList.get(dateFormat) +  " ID:   "+ chatMsgModel.getChatId()) ;
+            }else{
+                mDateLinear.setVisibility(View.GONE);
+            }
 
 
 
@@ -163,7 +184,7 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
                 mSentRelative.setVisibility(View.VISIBLE);
                 mReceiveRelative.setVisibility(View.GONE);
                 mSentMsgTV.setText(chatMsgModel.getMessage());
-                mSentTimeTV.setText( timeFormat+"\n"+dateFormat );
+//                mSentTimeTV.setText( timeFormat+"\n"+dateFormat );
 
 //                mDateLinear.setVisibility(View.VISIBLE);
 //                mDateShowTV.setText(dateFormat);
@@ -178,13 +199,22 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
 ////                    Log.e("dateFormat", tempReceiveDate+"  dateformat 1: "+ dateFormat);
 //                }
 
-                if(myList.get(dateFormat)!=null && myList.get(dateFormat).equalsIgnoreCase(chatMsgModel.getChatId())){
-                    mDateLinear.setVisibility(View.VISIBLE);
-                    mDateShowTV.setText(dateFormat);
-                    Log.e("map", " myList cKey: "+ myList.get(dateFormat) +  " ID:   "+ chatMsgModel.getChatId()) ;
+//                if(mapDateList.get(dateFormat)!=null && mapDateList.get(dateFormat).equalsIgnoreCase(chatMsgModel.getChatId())){
+//                    mDateLinear.setVisibility(View.VISIBLE);
+//                    mDateShowTV.setText(dateFormat);
+//                    Log.e("map", " myList cKey: "+ mapDateList.get(dateFormat) +  " ID:   "+ chatMsgModel.getChatId()) ;
+//                }else{
+//                    mDateLinear.setVisibility(View.GONE);
+//                }
+
+                if(mapSentList.get(timeFormat)!=null && mapSentList.get(timeFormat).equalsIgnoreCase(chatMsgModel.getChatId())){
+                    mSentTimeTV.setVisibility(View.VISIBLE);
+                    mSentTimeTV.setText(timeFormat);
+                    Log.e("map", " myList cKey: "+ mapSentList.get(timeFormat) +  " ID:   "+ chatMsgModel.getChatId()) ;
                 }else{
-                    mDateLinear.setVisibility(View.GONE);
+                    mSentTimeTV.setVisibility(View.GONE);
                 }
+
 
 
 
@@ -193,7 +223,7 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
                 mSentRelative.setVisibility(View.GONE);
                 mReceiveRelative.setVisibility(View.VISIBLE);
                 mReceiveMsgTV.setText(chatMsgModel.getMessage());
-                mReceiveTimeTV.setText(timeFormat+"\n"+dateFormat);
+//                mReceiveTimeTV.setText(timeFormat+"\n"+dateFormat);
 
 //                mDateLinear.setVisibility(View.VISIBLE);
 //                mDateShowTV.setText(dateFormat);
@@ -202,13 +232,26 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
 
                 Log.e("dateFormat", tempReceiveDate+"  dateformat 0: "+ dateFormat);
 
-                if(myList.get(dateFormat)!=null && myList.get(dateFormat).equalsIgnoreCase(chatMsgModel.getChatId())){
-                    mDateLinear.setVisibility(View.VISIBLE);
-                    mDateShowTV.setText(dateFormat);
-                    Log.e("map", " myList cKey: "+ myList.get(dateFormat) +  " ID:   "+ chatMsgModel.getChatId()) ;
+//                if(mapDateList.get(dateFormat)!=null && mapDateList.get(dateFormat).equalsIgnoreCase(chatMsgModel.getChatId())){
+//                    mDateLinear.setVisibility(View.VISIBLE);
+//                    mDateShowTV.setText(dateFormat);
+//                }else{
+//                    mDateLinear.setVisibility(View.GONE);
+//                }
+
+                Log.e("map_key", " myList cKey: "+ mapDateList.get(timeFormat) +  " ID:   "+ chatMsgModel.getChatId()) ;
+                Log.e("map_key", " myList cKey: "+ mapReceiveList.keySet() ) ;
+                if(mapReceiveList.get(timeFormat)!=null && mapReceiveList.get(timeFormat).equalsIgnoreCase(chatMsgModel.getChatId())){
+                    mReceiveTimeTV.setVisibility(View.VISIBLE);
+                    mReceiveTimeTV.setText(timeFormat);
+
                 }else{
-                    mDateLinear.setVisibility(View.GONE);
+                    mReceiveTimeTV.setVisibility(View.GONE);
                 }
+
+
+
+
 
 //                if(tempReceiveDate!=null && tempReceiveDate.equals(dateFormat) ){
 //                    mDateLinear.setVisibility(View.GONE);
@@ -227,6 +270,11 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
 //
 //                }
             }
+
+
+
+
+
         }
 
 

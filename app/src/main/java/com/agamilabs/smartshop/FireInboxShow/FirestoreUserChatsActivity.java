@@ -1,27 +1,23 @@
 package com.agamilabs.smartshop.FireInboxShow;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.widget.NestedScrollView;
-import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.format.DateFormat;
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
-import android.widget.AbsListView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.agamilabs.smartshop.R;
-import com.agamilabs.smartshop.controller.AppController;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -30,27 +26,25 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
 public class FirestoreUserChatsActivity extends AppCompatActivity {
 
-    String chatId;
+    String chatId, chatName;
     private CollectionReference userChatMsgRef ;
 
-    private NestedScrollView mNestedScroll ;
+    private ProgressBar mChatProgressbar ;
     private RecyclerView mChatMsgRV ;
     private LinearLayoutManager linearLayoutManager;
     protected FireStoreUserChatsAdapter mUserChatsAdapter ;
     private List<BatiChatMsgModel> mChatsMsgList = new ArrayList<>();
-    private int totalItemCount, pastVisiblesItems,  visibleItemCount, page =1, previousTotal ;
+    private int firstVisiblesItems, dataExistNum=0;
     private boolean loading = true ;
 
 
-    private DocumentSnapshot lastVisible;
-    private boolean isScrolling = false;
-    private boolean isLastItemReached = false;
+    private CountDownTimer countDownTimer;
+    long remainingRefreshTime = 2000 ;
 
 
     @Override
@@ -59,12 +53,23 @@ public class FirestoreUserChatsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_firestore_user_chats);
 
         chatId =  getIntent().getStringExtra("chatID");
+        chatName =  getIntent().getStringExtra("chat_name");
+
+        Toolbar toolbar = findViewById(R.id.firestore_user_chats_appbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowCustomEnabled(true);
+        actionBar.setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setTitle(chatName);
+
+
         userChatMsgRef = FirebaseFirestore.getInstance().collection("batikrom-message-collection").document("chatMessages").collection(chatId);
 
         mChatMsgRV = findViewById(R.id.recycler_chatmsg) ;
+        mChatProgressbar = findViewById(R.id.progress_chat_firestore) ;
 
 
-        mNestedScroll = findViewById(R.id.nested_scroll_chatmsg) ;
 
         initializeAdapter();
         loadChatMsgArrayCollection() ;
@@ -85,21 +90,55 @@ public class FirestoreUserChatsActivity extends AppCompatActivity {
                 super.onScrolled(recyclerView, dx, dy);
                 Log.e("RV", "dx: "+dx+"  dy:  "+dy ) ;
                 if(dy<0){
-                    visibleItemCount = linearLayoutManager.getChildCount();
-                    totalItemCount = linearLayoutManager.getItemCount();
-                    pastVisiblesItems = linearLayoutManager.findFirstVisibleItemPosition();
-                    previousTotal = linearLayoutManager.findLastCompletelyVisibleItemPosition();
+                    firstVisiblesItems = linearLayoutManager.findFirstVisibleItemPosition();
 
+                   if(firstVisiblesItems == 0 && loading){
+                       loading=false;
+                       mChatProgressbar.setVisibility(View.VISIBLE);
 
-                   if(pastVisiblesItems == 0 && loading){
-                           loading=false;
-                           loadNextFirestoreData(first);
+                       setAutoRefresh(first);
 //                           Toast.makeText(FirestoreUserChatsActivity.this, "length: "+ mChatsMsgList.size(), Toast.LENGTH_SHORT).show();
                    }
                 }
 
             }
         });
+    }
+    private void setAutoRefresh(Query first){
+        //if already countdowntime nul na hole, countdowntimer k stop korbe.
+        //max refresh time 0 or 0 theke chotu hoi, uporer kaj ta korbe..
+        if(remainingRefreshTime<=0){
+            if(countDownTimer!= null){
+                countDownTimer.cancel();
+            }
+            return;
+
+        }
+        if(countDownTimer == null){
+            countDownTimer = new CountDownTimer(remainingRefreshTime, 500) {
+                @Override
+                public void onTick(long millisUntilFinished) {
+                   Log.e("trick", "trick: "+ remainingRefreshTime) ;
+                }
+
+                @Override
+                public void onFinish() {
+                    Log.e("trick", "finish: "+ remainingRefreshTime) ;
+                    mChatProgressbar.setVisibility(View.GONE);
+                    loadNextFirestoreData(first);
+                    cancelAutoRefresh() ;
+
+                }
+            };
+
+            countDownTimer.start() ;
+        }
+    }
+    private void cancelAutoRefresh(){
+        if(countDownTimer!= null){
+            countDownTimer.cancel();
+            countDownTimer=null;
+        }
     }
 
 
@@ -114,6 +153,7 @@ public class FirestoreUserChatsActivity extends AppCompatActivity {
                         }
                         DocumentSnapshot lastVisible = documentSnapshots.getDocuments()
                                 .get(documentSnapshots.size() -1);
+
                         Query next =  userChatMsgRef.orderBy("sentTime", Query.Direction.DESCENDING)
                                 .startAfter(lastVisible)
                                 .limit(5);
@@ -124,6 +164,7 @@ public class FirestoreUserChatsActivity extends AppCompatActivity {
                                         for (QueryDocumentSnapshot documentSnapshot : documentSnapshots) {
                                             BatiChatMsgModel chatMsgModel = documentSnapshot.toObject(BatiChatMsgModel.class);
 
+                                            dataExistNum = documentSnapshots.size() ;
                                             mChatsMsgList.add(new BatiChatMsgModel(
                                                     documentSnapshot.getId(),
                                                     chatMsgModel.getMessage(),
@@ -132,6 +173,10 @@ public class FirestoreUserChatsActivity extends AppCompatActivity {
                                             ));
                                         }
                                         mUserChatsAdapter.notifyDataSetChanged();
+                                        Log.e("trick_num", "dataExistNum: "+ dataExistNum) ;
+                                        linearLayoutManager.scrollToPositionWithOffset(dataExistNum-1,  0);
+//                                        mUserChatsAdapter.notifyItemChanged(previousTotal+5);
+//                                        Log.e("previous","previousTotal :  "+ previousTotal  ) ;
                                     }
                                 });
 
@@ -181,11 +226,11 @@ public class FirestoreUserChatsActivity extends AppCompatActivity {
                 });
     }
 
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        startActivity(new Intent(getApplicationContext(), FireStoreUserActivity.class));
-
-    }
+//
+//    @Override
+//    public void onBackPressed() {
+//        super.onBackPressed();
+//        startActivity(new Intent(getApplicationContext(), FireStoreUserActivity.class));
+//
+//    }
 }

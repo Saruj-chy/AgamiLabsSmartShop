@@ -31,6 +31,11 @@ public class FireStoreUserAdapter extends RecyclerView.Adapter<FireStoreUserAdap
         this.mCtx = mCtx;
         this.mUserDetailsModalList = mUserDetailsModalList;
     }
+    //  subject search option
+    public void filterList(List<BatiUsersDetailsModal> filteredList) {
+        mUserDetailsModalList = filteredList;
+        notifyDataSetChanged();
+    }
 
     @Override
     public FireStoreUserAdapter.PostViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -85,7 +90,8 @@ public class FireStoreUserAdapter extends RecyclerView.Adapter<FireStoreUserAdap
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(mCtx, FirestoreUserChatsActivity.class) ;
-                    intent.putExtra("chatID", userDetails.getDocumentId()) ;
+                    intent.putExtra("chatID", userDetails.getDocumentId() ) ;
+                    intent.putExtra("chat_name", userDetails.getName() ) ;
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     mCtx.startActivity(intent);
 //                    Toast.makeText(mCtx, "chatID: "+ userDetails.getDocumentId(), Toast.LENGTH_SHORT).show();

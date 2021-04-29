@@ -7,9 +7,17 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.text.format.DateFormat;
 import android.util.Log;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.agamilabs.smartshop.R;
 import com.agamilabs.smartshop.controller.AppController;
@@ -34,6 +42,13 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class FireStoreUserActivity extends AppCompatActivity {
 
+    private TextView mAppbarTV ;
+    private CircleImageView mAppbarImage ;
+    private ImageButton mSearchImgBtn, mCancelImgBtn ;
+    private EditText mSearchET ;
+    private LinearLayout mSearchEditLinear ;
+    private Toolbar toolbar ;
+
     private RecyclerView mUserChatMsgRecyclerview;
     private CircleImageView mClientImage;
 
@@ -42,7 +57,7 @@ public class FireStoreUserActivity extends AppCompatActivity {
     private CollectionReference userRef, userMsgRef, msgUserChatsRef, msgChatsRef ;
 
 //.collection("asabbir47@gmail.com"),        kobir_store_maafe419rw@batikrom.shop,   .collection("+8801722373161")
-// .collection("alif-shop")  rashed_shop_7q6c630wrq@batikrom.shop   116056194772555530699    rashed_shop_7q6c630wrq@batikrom.shop
+// .collection("alif-shop")  rashed_shop_7q6c630wrq@batikrom.shop   116056194772555530699
 //    private String USER_ID = "kobir_store_maafe419rw@batikrom.shop";
     public static final String USER_ID = "rashed_shop_7q6c630wrq@batikrom.shop" ;
 
@@ -57,12 +72,14 @@ public class FireStoreUserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fire_store_user);
 
-        Toolbar toolbar = findViewById(R.id.firestore_toolbar);
+        Initialize() ;
+
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Smart Shop Firestore");
 
-        mUserChatMsgRecyclerview = findViewById(R.id.user_chat_recyclerview) ;
-        mClientImage = findViewById(R.id.circle_image_client) ;
+
+
         userRef = FirebaseFirestore.getInstance().collection("batikrom-users");
         userMsgRef = FirebaseFirestore.getInstance().collection("batikrom-message-collection");
         msgUserChatsRef = userMsgRef.document("userChats").collection(USER_ID);
@@ -77,6 +94,28 @@ public class FireStoreUserActivity extends AppCompatActivity {
         loadBatikromUsers();
         initializeAdapter() ;
 
+        mSearchImgBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mSearchEditLinear.setVisibility(View.VISIBLE);
+                mSearchImgBtn.setVisibility(View.GONE);
+
+                mSearchET.requestFocus() ;
+            }
+        });
+        mCancelImgBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mSearchET.setText("") ;
+                mSearchEditLinear.setVisibility(View.GONE) ;
+                mSearchImgBtn.setVisibility(View.VISIBLE) ;
+
+
+            }
+        });
+
+
+        AddTextChange();
 
 
 
@@ -90,8 +129,19 @@ public class FireStoreUserActivity extends AppCompatActivity {
 
     }
 
+    private void Initialize() {
+        mAppbarTV = findViewById(R.id.appbar_text) ;
+        mAppbarImage = findViewById(R.id.appbar_circle_image) ;
+        mSearchImgBtn = findViewById(R.id.appbar_searchbtn) ;
+        mSearchET = findViewById(R.id.appbar_search_edit) ;
+        mCancelImgBtn = findViewById(R.id.appbar_cancelbtn) ;
+        mSearchEditLinear = findViewById(R.id.appbar_linear_search) ;
+        toolbar = findViewById(R.id.firestore_toolbar);
+        mUserChatMsgRecyclerview = findViewById(R.id.user_chat_recyclerview) ;
+        mClientImage = findViewById(R.id.circle_image_client) ;
+    }
+
     private void initializeAdapter() {
-//        AppController.getAppController().getInAppNotifier().log("adapter", "mBatiChatsList: "+ mBatiChatsList+"   mBatiUserChatsList:  "+mBatiUserChatsList );
         mBatiUserAdapter = new FireStoreUserAdapter(getApplicationContext(), mBatiUsersDetailsList);
         mUserChatMsgRecyclerview.setAdapter(mBatiUserAdapter);
         GridLayoutManager manager = new GridLayoutManager(getApplicationContext(), 1, GridLayoutManager.VERTICAL, false);
@@ -99,6 +149,7 @@ public class FireStoreUserActivity extends AppCompatActivity {
     }
 
     private void loadBatikromUsers() {
+        Log.e("load", "loadBatikromUsers") ;
 
         userRef.document(USER_ID).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -111,7 +162,9 @@ public class FireStoreUserActivity extends AppCompatActivity {
                         bati_email = document.get("email")+"" ;
                         bati_photo= document.get("photo")+"" ;
 
-                        AppImageLoader.loadImageInView(bati_photo, R.drawable.profile_image, (ImageView)mClientImage);
+                        mAppbarTV.setText(bati_name);
+//                        AppImageLoader.loadImageInView(bati_photo, R.drawable.profile_image, (ImageView)mClientImage);
+                        AppImageLoader.loadImageInView(bati_photo, R.drawable.profile_image, (ImageView)mAppbarImage);
 //                        loadBatiMsgUserChatsCollection() ;
 //                        loadBatiMsgChatsCollection() ;
 
@@ -127,6 +180,8 @@ public class FireStoreUserActivity extends AppCompatActivity {
     }
 
     private void loadBatiUserChatsCollection() {
+        Log.e("load", "loadBatiUserChatsCollection") ;
+
         msgUserChatsRef.orderBy("lastupdatetime", Query.Direction.DESCENDING)
 //                .limit(1)
                 .addSnapshotListener(this, new EventListener<QuerySnapshot>() {
@@ -154,6 +209,8 @@ public class FireStoreUserActivity extends AppCompatActivity {
     }
 
     private void loadBatiChatsCollection(List<BatiUserChatsModal> mBatiUserChatsList) {
+        Log.e("load", "loadBatiChatsCollection") ;
+
         msgChatsRef
 //                .limit(1)
                 .addSnapshotListener(this, new EventListener<QuerySnapshot>() {
@@ -181,8 +238,10 @@ public class FireStoreUserActivity extends AppCompatActivity {
                 });
 
     }
+
     private void loadUserNamesCollection(List<BatiChatsModal> mBatiChatsList) {
-        mBatiUsersDetailsList.clear();
+        Log.e("load", "loadUserNamesCollection") ;
+
         for(int i=0; i<mBatiChatsList.size(); i++){
             String userChatName = null;
             String userChatId = mBatiChatsList.get(i).getUserChatId() ;
@@ -192,10 +251,15 @@ public class FireStoreUserActivity extends AppCompatActivity {
                     userChatName = mBatiChatsList.get(i).getUsersList().get(j);
                 }
             }
+            Log.e("userChatName", "userChatName: "+ userChatName+" userChatId: "+userChatId );
+            AppController.getAppController().getInAppNotifier().log("details_list", "mBatiUsersDetailsList out: "+ mBatiUsersDetailsList.size());
 
+//            mBatiUsersDetailsList.clear();
+            String finalUserChatName = userChatName;
             userRef.document(userChatName).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+
 
                     if (task.isSuccessful()) {
                         DocumentSnapshot document = task.getResult();
@@ -206,23 +270,67 @@ public class FireStoreUserActivity extends AppCompatActivity {
                                     document.get("email").toString(),
                                     document.get("photo").toString()
                             ));
-                            mBatiUserAdapter.notifyDataSetChanged();
+
+                            AppController.getAppController().getInAppNotifier().log("userChatName", "name: "+ document.get("name").toString());
                         } else {
-//                        AppController.getAppController().getInAppNotifier().log("response", "No such document");
+                            mBatiUsersDetailsList.add(new BatiUsersDetailsModal(
+                                    userChatId,
+                                    finalUserChatName,
+                                    "",
+                                    ""
+                            ));
+                        AppController.getAppController().getInAppNotifier().log("userChatName", "userChatId: "+ userChatId);
                         }
+
+                        mBatiUserAdapter.notifyDataSetChanged();
                     } else {
 //                    AppController.getAppController().getInAppNotifier().log("response", "get failed with "+ task.getException());
                     }
 
-                    AppController.getAppController().getInAppNotifier().log("userList", "mBatiUsersDetailsList1: "+ mBatiUsersDetailsList);
-
-
 
                 }
             });
-            AppController.getAppController().getInAppNotifier().log("userList", "mBatiUsersDetailsList2: "+ mBatiUsersDetailsList);
-        }
+            AppController.getAppController().getInAppNotifier().log("details_list", "mBatiUsersDetailsList in: "+ mBatiUsersDetailsList.size());
 
+
+        }
+        AppController.getAppController().getInAppNotifier().log("details_list", "mBatiUsersDetailsList: "+ mBatiUsersDetailsList.size());
+
+
+    }
+
+    public void AddTextChange(){
+        mSearchET.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                filter(s.toString());
+
+            }
+        });
+    }
+    private void filter(String text) {
+        List<BatiUsersDetailsModal> filteredList = new ArrayList<>();
+
+        for (BatiUsersDetailsModal item : mBatiUsersDetailsList) {
+
+            if (item.getName().toLowerCase().contains(text.toLowerCase())){
+                filteredList.add(item);
+            }
+//            if(String.valueOf(item.getPhone()).toLowerCase().contains(text.toLowerCase())){
+//                filteredList.add(item);
+//            }
+        }
+        mBatiUserAdapter.filterList(filteredList);
     }
 
 

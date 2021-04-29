@@ -82,8 +82,8 @@
                                 android:layout_height="wrap_content"
                                 android:text="Sarose Datta"
                                 android:textColor="@color/green"
-                                android:textSize="18dp"
-                                android:paddingBottom="10dp"
+                                android:textSize="16dp"
+                                android:gravity="center|start"
                                 android:textStyle="bold"
                                 android:justificationMode="inter_word"
 
@@ -112,9 +112,10 @@
                 android:id="@+id/view_stock"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@android:color/darker_gray"
+                android:background="@color/lightgray"
                 android:layout_below="@+id/relative_image_part"
                 android:layout_marginTop="5dp"
+                android:layout_marginBottom="2dp"
                 />
 
         </RelativeLayout>

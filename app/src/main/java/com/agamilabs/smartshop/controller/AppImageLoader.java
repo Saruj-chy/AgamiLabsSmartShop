@@ -151,9 +151,8 @@ public class AppImageLoader {
 
     // Load an image from url and in case of failure, load a resource(default) into an imageView
     public static void loadImageInView(String url, int defaultResourceId, ImageView imageView) {
-
         if (url.trim().length() == 0) {
-            Picasso.get().load(R.drawable.no_image).into(imageView);
+            Picasso.get().load(R.drawable.profile_image).into(imageView);
             return;
         }
 

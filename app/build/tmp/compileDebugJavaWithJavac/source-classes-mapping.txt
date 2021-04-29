@@ -1,7 +1,9 @@
 com/agamilabs/smartshop/model/CampaignStatItem.java
  com.agamilabs.smartshop.model.CampaignStatItem
-com/agamilabs/smartshop/model/CartStatusModel.java
- com.agamilabs.smartshop.model.CartStatusModel
+com/agamilabs/smartshop/FireInboxShow/FireStoreUserChatsAdapter.java
+ com.agamilabs.smartshop.FireInboxShow.FireStoreUserChatsAdapter
+ com.agamilabs.smartshop.FireInboxShow.FireStoreUserChatsAdapter$1
+ com.agamilabs.smartshop.FireInboxShow.FireStoreUserChatsAdapter$FirestoreUserChatsViewHolder
 com/agamilabs/smartshop/ScanerDilogFragmentActivity.java
  com.agamilabs.smartshop.ScanerDilogFragmentActivity
  com.agamilabs.smartshop.ScanerDilogFragmentActivity$1
@@ -57,9 +59,13 @@ com/agamilabs/smartshop/controller/AppNetworkController.java
  com.agamilabs.smartshop.controller.AppNetworkController$1
  com.agamilabs.smartshop.controller.AppNetworkController$2
  com.agamilabs.smartshop.controller.AppNetworkController$3
-com/agamilabs/smartshop/adapter/RvAdapter_invoiceItemList.java
- com.agamilabs.smartshop.adapter.RvAdapter_invoiceItemList
- com.agamilabs.smartshop.adapter.RvAdapter_invoiceItemList$MyViewHolder
+com/agamilabs/smartshop/FireInboxShow/FirestoreUserChatsActivity.java
+ com.agamilabs.smartshop.FireInboxShow.FirestoreUserChatsActivity
+ com.agamilabs.smartshop.FireInboxShow.FirestoreUserChatsActivity$1
+ com.agamilabs.smartshop.FireInboxShow.FirestoreUserChatsActivity$2
+ com.agamilabs.smartshop.FireInboxShow.FirestoreUserChatsActivity$3
+ com.agamilabs.smartshop.FireInboxShow.FirestoreUserChatsActivity$3$1
+ com.agamilabs.smartshop.FireInboxShow.FirestoreUserChatsActivity$4
 com/agamilabs/smartshop/model/AdminDashboardModel.java
  com.agamilabs.smartshop.model.AdminDashboardModel
 com/agamilabs/smartshop/constants/AppServerURL.java
@@ -350,8 +356,10 @@ com/agamilabs/smartshop/Interfaces/IImageLoadedCallback.java
  com.agamilabs.smartshop.Interfaces.IImageLoadedCallback
 com/agamilabs/smartshop/BuildConfig.java
  com.agamilabs.smartshop.BuildConfig
-com/agamilabs/smartshop/database/DatabaseHandler.java
- com.agamilabs.smartshop.database.DatabaseHandler
+com/agamilabs/smartshop/FireInboxShow/FireStoreUserAdapter.java
+ com.agamilabs.smartshop.FireInboxShow.FireStoreUserAdapter
+ com.agamilabs.smartshop.FireInboxShow.FireStoreUserAdapter$PostViewHolder
+ com.agamilabs.smartshop.FireInboxShow.FireStoreUserAdapter$PostViewHolder$1
 com/agamilabs/smartshop/custom/AppJSONObject.java
  com.agamilabs.smartshop.custom.AppJSONObject
 com/agamilabs/smartshop/constants/Array_JSON.java
@@ -377,13 +385,16 @@ com/agamilabs/smartshop/ui/storeadmin/models/StoreProductModel.java
 com/agamilabs/smartshop/FireInboxShow/FireStoreUserActivity.java
  com.agamilabs.smartshop.FireInboxShow.FireStoreUserActivity
  com.agamilabs.smartshop.FireInboxShow.FireStoreUserActivity$1
+ com.agamilabs.smartshop.FireInboxShow.FireStoreUserActivity$10
+ com.agamilabs.smartshop.FireInboxShow.FireStoreUserActivity$10$1
  com.agamilabs.smartshop.FireInboxShow.FireStoreUserActivity$2
  com.agamilabs.smartshop.FireInboxShow.FireStoreUserActivity$3
  com.agamilabs.smartshop.FireInboxShow.FireStoreUserActivity$4
  com.agamilabs.smartshop.FireInboxShow.FireStoreUserActivity$5
  com.agamilabs.smartshop.FireInboxShow.FireStoreUserActivity$6
  com.agamilabs.smartshop.FireInboxShow.FireStoreUserActivity$7
- com.agamilabs.smartshop.FireInboxShow.FireStoreUserActivity$7$1
+ com.agamilabs.smartshop.FireInboxShow.FireStoreUserActivity$8
+ com.agamilabs.smartshop.FireInboxShow.FireStoreUserActivity$9
 com/agamilabs/smartshop/ui/storeadmin/interfaces/IConfirmationCallback.java
  com.agamilabs.smartshop.ui.storeadmin.interfaces.IConfirmationCallback
 com/agamilabs/smartshop/adapter/StockReportAdapter.java
@@ -396,17 +407,10 @@ com/agamilabs/smartshop/ui/storeadmin/StoreDashboardActivity.java
  com.agamilabs.smartshop.ui.storeadmin.StoreDashboardActivity$1
  com.agamilabs.smartshop.ui.storeadmin.StoreDashboardActivity$2
  com.agamilabs.smartshop.ui.storeadmin.StoreDashboardActivity$3
-com/agamilabs/smartshop/FireInboxShow/FireStoreUserChatsAdapter.java
- com.agamilabs.smartshop.FireInboxShow.FireStoreUserChatsAdapter
- com.agamilabs.smartshop.FireInboxShow.FireStoreUserChatsAdapter$1
- com.agamilabs.smartshop.FireInboxShow.FireStoreUserChatsAdapter$FirestoreUserChatsViewHolder
-com/agamilabs/smartshop/FireInboxShow/FirestoreUserChatsActivity.java
- com.agamilabs.smartshop.FireInboxShow.FirestoreUserChatsActivity
- com.agamilabs.smartshop.FireInboxShow.FirestoreUserChatsActivity$1
- com.agamilabs.smartshop.FireInboxShow.FirestoreUserChatsActivity$2
- com.agamilabs.smartshop.FireInboxShow.FirestoreUserChatsActivity$2$1
- com.agamilabs.smartshop.FireInboxShow.FirestoreUserChatsActivity$3
-com/agamilabs/smartshop/FireInboxShow/FireStoreUserAdapter.java
- com.agamilabs.smartshop.FireInboxShow.FireStoreUserAdapter
- com.agamilabs.smartshop.FireInboxShow.FireStoreUserAdapter$PostViewHolder
- com.agamilabs.smartshop.FireInboxShow.FireStoreUserAdapter$PostViewHolder$1
+com/agamilabs/smartshop/database/DatabaseHandler.java
+ com.agamilabs.smartshop.database.DatabaseHandler
+com/agamilabs/smartshop/adapter/RvAdapter_invoiceItemList.java
+ com.agamilabs.smartshop.adapter.RvAdapter_invoiceItemList
+ com.agamilabs.smartshop.adapter.RvAdapter_invoiceItemList$MyViewHolder
+com/agamilabs/smartshop/model/CartStatusModel.java
+ com.agamilabs.smartshop.model.CartStatusModel

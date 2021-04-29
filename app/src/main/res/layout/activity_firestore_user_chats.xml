@@ -7,29 +7,34 @@
     android:layout_height="match_parent"
     tools:context=".FireInboxShow.FirestoreUserChatsActivity">
 
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/nested_scroll_chatmsg"
+    <include
+        layout="@layout/app_bar_layout"
+        android:id="@+id/firestore_user_chats_appbar"
+        />
+
+    <ProgressBar
+        android:id="@+id/progress_chat_firestore"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        android:layout_below="@+id/firestore_user_chats_appbar"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_chatmsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="120dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:visibility="gone"
-        >
-    </androidx.core.widget.NestedScrollView>
+        android:layout_marginTop="60dp"
+
+        />
 
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_chatmsg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="100dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
 
-            />
 
     <RelativeLayout
         android:layout_width="match_parent"

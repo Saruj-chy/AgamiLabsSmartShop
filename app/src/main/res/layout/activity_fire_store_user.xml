@@ -7,11 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".FireInboxShow.FireStoreUserActivity">
 
+
+    <include
+        layout="@layout/app_bar_layout_firestore"
+        android:id="@+id/app_bar_layout_firestore"/>
+
+
+
     <include
         layout="@layout/app_bar_layout"
         android:id="@+id/firestore_toolbar"
+        android:visibility="gone"
         />
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,6 +26,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="10dp"
+        android:visibility="gone"
         android:translationZ="90dp"
         android:gravity="center">
 
@@ -38,8 +46,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/firestore_toolbar"
-        android:layout_marginTop="50dp"
+        android:layout_below="@+id/app_bar_layout_firestore"
         >
 
         <androidx.recyclerview.widget.RecyclerView
