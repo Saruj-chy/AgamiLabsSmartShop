@@ -43,8 +43,7 @@ public class BatiUserChatsModal {
     public String toString() {
         return "BatikromUserMsgModel{" +
                 "documentId='" + documentId + '\'' +
-                ", lastupdatetime='" + lastupdatetime + '\'' +
-                ", unseen_message='" + unseen_message + '\'' +
+
                 '}';
     }
 }

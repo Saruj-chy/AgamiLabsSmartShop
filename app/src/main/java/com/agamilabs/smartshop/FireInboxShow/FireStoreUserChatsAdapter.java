@@ -1,6 +1,7 @@
 package com.agamilabs.smartshop.FireInboxShow;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,6 +24,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUserChatsAdapter.FirestoreUserChatsViewHolder> {
 
     private Context mCtx;
@@ -36,6 +39,9 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
     HashMap<String, String> mapReceiveList = new HashMap<>() ;
 
     int dataSize=0, tempDataSize=0 ;
+    SharedPreferences sharedPreferences ;
+    static String SHARED_PREFS = "admin_store";
+    String USER_ID ;
 
 
     public FireStoreUserChatsAdapter(Context mCtx, List<BatiChatMsgModel> mChatsMsgModal) {
@@ -49,6 +55,9 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
         LayoutInflater inflater = LayoutInflater.from(mCtx);
         View view = inflater.inflate(R.layout.layout_firestore_msg_chats, null);
         FirestoreUserChatsViewHolder holder = new FirestoreUserChatsViewHolder(view);
+
+        sharedPreferences = mCtx.getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        USER_ID = sharedPreferences.getString("admin_user_id", "");
 
         holder.setIsRecyclable(false);
         return new FirestoreUserChatsViewHolder(view);
@@ -96,7 +105,7 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
                     Date date1 = timestamp1.toDate() ;
                     CharSequence timeFormat1 = DateFormat.format("hh:mm a", date1);
 
-                    if(mChatsMsgModalList.get(j).getSentBy().equalsIgnoreCase(FireStoreUserActivity.USER_ID)){
+                    if(mChatsMsgModalList.get(j).getSentBy().equalsIgnoreCase(USER_ID)){
                         if(mapSentList.containsKey(timeFormat1) && mapSentList.get(timeFormat1) != null  ){
                             mapSentList.get(timeFormat1).concat( mChatsMsgModalList.get(j).getChatId());
 
@@ -179,7 +188,7 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
 
 
 
-            if(FireStoreUserActivity.USER_ID.equalsIgnoreCase(chatMsgModel.getSentBy())){
+            if(USER_ID.equalsIgnoreCase(chatMsgModel.getSentBy())){
 
                 mSentRelative.setVisibility(View.VISIBLE);
                 mReceiveRelative.setVisibility(View.GONE);
@@ -313,7 +322,7 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
             CharSequence timeFormat_1 = DateFormat.format("hh:mm a", date_1);
 
 
-            if(FireStoreUserActivity.USER_ID.equalsIgnoreCase(chatMsgModel.getSentBy())){
+            if(USER_ID.equalsIgnoreCase(chatMsgModel.getSentBy())){
                 mSentRelative.setVisibility(View.VISIBLE);
                 mReceiveRelative.setVisibility(View.GONE);
                 mSentMsgTV.setText(chatMsgModel.getMessage());
@@ -370,7 +379,7 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
                 mDateLinear.setVisibility(View.VISIBLE);
             }
 
-            if(FireStoreUserActivity.USER_ID.equalsIgnoreCase( mChatsMsgModalList.get(position).getSentBy())){
+            if(USER_ID.equalsIgnoreCase( mChatsMsgModalList.get(position).getSentBy())){
                 mSentRelative.setVisibility(View.VISIBLE);
                 mSentMsgTV.setText( mChatsMsgModalList.get(position).getMessage());
                 mSentTimeTV.setText(timeFormat);

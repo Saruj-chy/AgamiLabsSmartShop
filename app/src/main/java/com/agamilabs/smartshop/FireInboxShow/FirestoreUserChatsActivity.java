@@ -81,7 +81,7 @@ public class FirestoreUserChatsActivity extends AppCompatActivity {
 
     }
 
-    private void loadScrollViewRV(Query first) {
+    private void loadScrollViewRV(Query next) {
         Log.e("notify", "notify: " ) ;
 
         mChatMsgRV.addOnScrollListener(new RecyclerView.OnScrollListener() {
@@ -96,7 +96,7 @@ public class FirestoreUserChatsActivity extends AppCompatActivity {
                        loading=false;
                        mChatProgressbar.setVisibility(View.VISIBLE);
 
-                       setAutoRefresh(first);
+                       setAutoRefresh(next);
 //                           Toast.makeText(FirestoreUserChatsActivity.this, "length: "+ mChatsMsgList.size(), Toast.LENGTH_SHORT).show();
                    }
                 }
@@ -104,7 +104,7 @@ public class FirestoreUserChatsActivity extends AppCompatActivity {
             }
         });
     }
-    private void setAutoRefresh(Query first){
+    private void setAutoRefresh(Query next){
         //if already countdowntime nul na hole, countdowntimer k stop korbe.
         //max refresh time 0 or 0 theke chotu hoi, uporer kaj ta korbe..
         if(remainingRefreshTime<=0){
@@ -125,7 +125,7 @@ public class FirestoreUserChatsActivity extends AppCompatActivity {
                 public void onFinish() {
                     Log.e("trick", "finish: "+ remainingRefreshTime) ;
                     mChatProgressbar.setVisibility(View.GONE);
-                    loadNextFirestoreData(first);
+                    loadNextFirestoreData(next);
                     cancelAutoRefresh() ;
 
                 }
@@ -143,8 +143,8 @@ public class FirestoreUserChatsActivity extends AppCompatActivity {
 
 
 
-    private void loadNextFirestoreData(Query first){
-        first.get()
+    private void loadNextFirestoreData(Query next){
+        next.get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot documentSnapshots) {

@@ -2391,6 +2391,7 @@ id postLayout
 id progress_chat_firestore
 id progress_circular
 id progress_horizontal
+id progress_user_firestore
 id progressbar
 id radial
 id radio

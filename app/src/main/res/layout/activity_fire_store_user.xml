@@ -14,6 +14,7 @@
 
 
 
+
     <include
         layout="@layout/app_bar_layout"
         android:id="@+id/firestore_toolbar"
@@ -58,7 +59,14 @@
 
 
     </RelativeLayout>
-
+    <ProgressBar
+        android:id="@+id/progress_user_firestore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        />
 
 
 </RelativeLayout>
