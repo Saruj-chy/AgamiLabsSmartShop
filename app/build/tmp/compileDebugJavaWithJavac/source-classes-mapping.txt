@@ -401,7 +401,6 @@ com/agamilabs/smartshop/FireInboxShow/FireStoreUserAdapter.java
  com.agamilabs.smartshop.FireInboxShow.FireStoreUserAdapter
  com.agamilabs.smartshop.FireInboxShow.FireStoreUserAdapter$PostViewHolder
  com.agamilabs.smartshop.FireInboxShow.FireStoreUserAdapter$PostViewHolder$1
- com.agamilabs.smartshop.FireInboxShow.FireStoreUserAdapter$PostViewHolder$2
 com/agamilabs/smartshop/FireInboxShow/FireStoreUserActivity.java
  com.agamilabs.smartshop.FireInboxShow.FireStoreUserActivity
  com.agamilabs.smartshop.FireInboxShow.FireStoreUserActivity$1
