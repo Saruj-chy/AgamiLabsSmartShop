@@ -25,11 +25,11 @@
         android:id="@+id/recycler_chatmsg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="120dp"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginTop="60dp"
+        android:layout_marginBottom="100dp"
 
         />
 
@@ -37,6 +37,7 @@
 
 
     <RelativeLayout
+        android:id="@+id/relative_chat_msg"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_alignParentBottom="true"
@@ -63,6 +64,7 @@
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_baseline_send_24"
+            android:onClick="onSentMsgClick"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true" />

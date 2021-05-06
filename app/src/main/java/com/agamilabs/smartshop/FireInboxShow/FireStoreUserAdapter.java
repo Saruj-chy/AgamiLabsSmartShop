@@ -3,30 +3,35 @@ package com.agamilabs.smartshop.FireInboxShow;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.agamilabs.smartshop.R;
 import com.agamilabs.smartshop.controller.AppImageLoader;
+import com.google.firebase.Timestamp;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class FireStoreUserAdapter extends RecyclerView.Adapter<FireStoreUserAdapter.PostViewHolder> {
-
-
     private Context mCtx;
     private List<BatiUsersDetailsModal> mUserDetailsModalList;
     private List<BatiChatMsgModel> mChatsMsgList;
     private List<BatiUserChatsModal> mBatiUserChatsList;
 
+    private boolean filterCheck = false ;
 
     public FireStoreUserAdapter(Context mCtx,  List<BatiUsersDetailsModal> mUserDetailsModalList, List<BatiChatMsgModel> mChatsMsgList, List<BatiUserChatsModal> mBatiUserChatsList ) {
         this.mCtx = mCtx;
@@ -36,7 +41,8 @@ public class FireStoreUserAdapter extends RecyclerView.Adapter<FireStoreUserAdap
 
     }
     //  subject search option
-    public void filterList(List<BatiUsersDetailsModal> filteredList) {
+    public void filterList(List<BatiUsersDetailsModal> filteredList, boolean textExist) {
+        filterCheck = textExist ;
         mUserDetailsModalList = filteredList;
         notifyDataSetChanged();
     }
@@ -57,7 +63,7 @@ public class FireStoreUserAdapter extends RecyclerView.Adapter<FireStoreUserAdap
 
 
 
-        ((PostViewHolder) holder).bind(batiUserChatsModal) ;
+        ((PostViewHolder) holder).bind(batiUserChatsModal, batiUsersDetailsModal, batiChatMsgModel) ;
 
 
 
@@ -70,8 +76,9 @@ public class FireStoreUserAdapter extends RecyclerView.Adapter<FireStoreUserAdap
 
     class PostViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textViewUserName, textViewUserStatus ;
+        TextView textViewUserName, textViewUserStatus, textViewUserLastTime ;
         CircleImageView mUserImageLogo ;
+        ImageButton mActiveImgbtn;
 
 
 
@@ -81,70 +88,105 @@ public class FireStoreUserAdapter extends RecyclerView.Adapter<FireStoreUserAdap
             mUserImageLogo = itemView.findViewById(R.id.image_user);
             textViewUserName = itemView.findViewById(R.id.text_user_name);
             textViewUserStatus = itemView.findViewById(R.id.text_user_status);
+            textViewUserLastTime = itemView.findViewById(R.id.text_user_last_time);
+            mActiveImgbtn = itemView.findViewById(R.id.imgbtn_active);
 
         }
 
 
 
-        public void bind(BatiUserChatsModal batiUserChatsModal ) {
+        public void bind(BatiUserChatsModal batiUserChatsModal, BatiUsersDetailsModal batiUsersDetailsModal, BatiChatMsgModel batiChatMsgModel ) {
+
+
 
            for(int i=0; i<mBatiUserChatsList.size(); i++){
-               if(batiUserChatsModal.getDocumentId().equalsIgnoreCase(mUserDetailsModalList.get(i).getDocumentId())){
-                   AppImageLoader.loadImageInView(mUserDetailsModalList.get(i).getPhoto(), R.drawable.profile_image, (ImageView)mUserImageLogo);
 
-                   textViewUserName.setText(mUserDetailsModalList.get(i).getName());
-                   textViewUserStatus.setText(mChatsMsgList.get(i).getMessage());
-                   if(batiUserChatsModal.getUnseen_message()==0){
-                       textViewUserStatus.setTypeface(null, Typeface.NORMAL);
-                   }
+               if(!filterCheck){
+                   if(batiUserChatsModal.getDocumentId().equalsIgnoreCase(mUserDetailsModalList.get(i).getDocumentId())  ){
+                       AppImageLoader.loadImageInView(mUserDetailsModalList.get(i).getPhoto(), R.drawable.profile_image, (ImageView)mUserImageLogo);
 
-                   int tempI = i;
-                   itemView.setOnClickListener(new View.OnClickListener() {
-                       @Override
-                       public void onClick(View v) {
-                           Intent intent = new Intent(mCtx, FirestoreUserChatsActivity.class) ;
-                           intent.putExtra("chatID", mUserDetailsModalList.get(tempI).getDocumentId() ) ;
-                           intent.putExtra("chat_name", mUserDetailsModalList.get(tempI).getName() ) ;
-                           intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                           mCtx.startActivity(intent);
-//                    Toast.makeText(mCtx, "chatID: "+ userDetails.getDocumentId(), Toast.LENGTH_SHORT).show();
+                       textViewUserName.setText(mUserDetailsModalList.get(i).getName());
+
+                       if(!batiUserChatsModal.getDocumentId().equalsIgnoreCase(mChatsMsgList.get(i).getDocumentId())){
+                           for(int j=0; j<mChatsMsgList.size(); j++){
+                               if(batiUserChatsModal.getDocumentId().equalsIgnoreCase(mChatsMsgList.get(j).getDocumentId())){
+                                   textViewUserStatus.setText(mChatsMsgList.get(j).getMessage());
+
+                                   Timestamp timestamp =  (Timestamp) mChatsMsgList.get(j).getSentTime();
+                                   Date date = timestamp.toDate() ;
+                                   CharSequence timeFormat = DateFormat.format("hh:mm a", date);
+                                   textViewUserLastTime.setText(timeFormat);
+                               }
+                           }
+                       }else{
+                           textViewUserStatus.setText(mChatsMsgList.get(i).getMessage());
+
+                           Timestamp timestamp =  (Timestamp) mChatsMsgList.get(i).getSentTime();
+                           Date date = timestamp.toDate() ;
+                           CharSequence timeFormat = DateFormat.format("hh:mm a", date);
+                           textViewUserLastTime.setText(timeFormat);
                        }
-                   });
+
+                       if(batiUserChatsModal.getUnseen_message()==0){
+                           textViewUserStatus.setTypeface(null, Typeface.NORMAL);
+                           mActiveImgbtn.setVisibility(View.GONE);
+                       }else{
+                           textViewUserStatus.setTypeface(null, Typeface.BOLD);
+                           textViewUserStatus.setTypeface(null, Typeface.BOLD_ITALIC);
+                           mActiveImgbtn.setVisibility(View.VISIBLE);
+                       }
+
+
+                       int tempI = i;
+                       itemView.setOnClickListener(new View.OnClickListener() {
+                           @Override
+                           public void onClick(View v) {
+                               Intent intent = new Intent(mCtx, FirestoreUserChatsActivity.class) ;
+                               intent.putExtra("chatID", mUserDetailsModalList.get(tempI).getDocumentId() ) ;
+                               intent.putExtra("chat_name", mUserDetailsModalList.get(tempI).getName() ) ;
+                               intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                               mCtx.startActivity(intent);
+                           }
+                       });
+                   }
+               }else{
+                   if(batiUsersDetailsModal.getDocumentId().equalsIgnoreCase(mBatiUserChatsList.get(i).getDocumentId())  ){
+                       AppImageLoader.loadImageInView(batiUsersDetailsModal.getPhoto(), R.drawable.profile_image, (ImageView)mUserImageLogo);
+
+                       textViewUserName.setText(batiUsersDetailsModal.getName());
+
+                       for (int j=0; j<mChatsMsgList.size(); j++ ){
+                           if (batiUsersDetailsModal.getDocumentId().equalsIgnoreCase(mChatsMsgList.get(j).getDocumentId())){
+                               textViewUserStatus.setText( mChatsMsgList.get(j).getMessage() );
+
+                               Timestamp timestamp =  (Timestamp) mChatsMsgList.get(j).getSentTime();
+                               Date date = timestamp.toDate() ;
+                               CharSequence timeFormat = DateFormat.format("hh:mm a", date);
+                               textViewUserLastTime.setText(timeFormat);
+                           }
+                       }
+
+                       if(mBatiUserChatsList.get(i).getUnseen_message()==0){
+                           textViewUserStatus.setTypeface(null, Typeface.NORMAL);
+                       }
+
+
+//                       int tempI = i;
+                       itemView.setOnClickListener(new View.OnClickListener() {
+                           @Override
+                           public void onClick(View v) {
+                               Intent intent = new Intent(mCtx, FirestoreUserChatsActivity.class) ;
+                               intent.putExtra("chatID", batiUsersDetailsModal.getDocumentId() ) ;
+                               intent.putExtra("chat_name", batiUsersDetailsModal.getName() ) ;
+                               intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                               mCtx.startActivity(intent);
+                           }
+                       });
+
+                   }
                }
            }
 
-
-
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

@@ -1132,6 +1132,7 @@ color foreground_material_light
 color green
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color holo_green
 color holoblue
 color icons
 color lightgray
@@ -1818,6 +1819,7 @@ drawable ic_baseline_credit_card_24
 drawable ic_baseline_date_range_24
 drawable ic_baseline_send_24
 drawable ic_baseline_sms_24
+drawable ic_brightnes_24
 drawable ic_btn_add
 drawable ic_calender
 drawable ic_call
@@ -2227,6 +2229,7 @@ id img_active_green
 id img_active_red
 id img_btn_sent
 id img_slider
+id imgbtn_active
 id indicator_container
 id info
 id inputedit_popup_category
@@ -2416,6 +2419,7 @@ id recycler_view_nagation
 id recyclerview_popup
 id rel_content
 id relative_appbar
+id relative_chat_msg
 id relative_image
 id relative_image1
 id relative_image_part
@@ -2610,6 +2614,7 @@ id text_title
 id text_token_name
 id text_topic
 id text_total_subscribers
+id text_user_last_time
 id text_user_name
 id text_user_name_order
 id text_user_status
