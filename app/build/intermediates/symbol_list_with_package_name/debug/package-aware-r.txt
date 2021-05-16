@@ -1813,8 +1813,10 @@ drawable ic_add_customer
 drawable ic_arrow_down
 drawable ic_arrow_forward
 drawable ic_baseline_access_time_24
+drawable ic_baseline_attach_file_24
 drawable ic_baseline_cancel_24
 drawable ic_baseline_check_circle
+drawable ic_baseline_clear
 drawable ic_baseline_credit_card_24
 drawable ic_baseline_date_range_24
 drawable ic_baseline_send_24
@@ -2172,6 +2174,9 @@ id fixed
 id flip
 id floating
 id forever
+id frame_img_btn
+id frame_img_view
+id frame_layout
 id ghost_view
 id ghost_view_holder
 id gone
@@ -2227,6 +2232,7 @@ id img_active_blue
 id img_active_gray
 id img_active_green
 id img_active_red
+id img_btn_select
 id img_btn_sent
 id img_slider
 id imgbtn_active
@@ -2362,6 +2368,7 @@ id mtrl_view_tag_bottom_padding
 id multiply
 id navigation_header_container
 id nestedScrollView
+id nested_imageView
 id nested_scroll_stock
 id never
 id noScroll
@@ -2402,6 +2409,7 @@ id radioGroup
 id radio_regular_api
 id radio_turtle_api
 id ratio
+id receive_rv
 id rectangles
 id recycler_admin_home
 id recycler_card_shop
@@ -2411,6 +2419,7 @@ id recycler_notification
 id recycler_order_report
 id recycler_pos
 id recycler_promotion
+id recycler_select_image
 id recycler_stock_report
 id recycler_timeline_order
 id recycler_view
@@ -2419,6 +2428,7 @@ id recycler_view_nagation
 id recyclerview_popup
 id rel_content
 id relative_appbar
+id relative_chat_item
 id relative_chat_msg
 id relative_image
 id relative_image1
@@ -2426,6 +2436,7 @@ id relative_image_part
 id relative_layout_1
 id relative_layout_2
 id relative_receive
+id relative_recycler
 id relative_sent
 id relative_smoth
 id relative_stock_report
@@ -2469,6 +2480,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id sent_rv
 id shimmerFrameLayout
 id shortcut
 id showCustom
@@ -2793,6 +2805,7 @@ layout activity_smoth_view_pager
 layout activity_splash_screen
 layout activity_stock_report
 layout activity_store_dashboard
+layout activity_testing
 layout activity_testing_session
 layout app_bar_layout
 layout app_bar_layout_firestore
@@ -2886,6 +2899,7 @@ layout mtrl_picker_header_title_text
 layout mtrl_picker_header_toggle
 layout mtrl_picker_text_input_date
 layout mtrl_picker_text_input_date_range
+layout nested_post_image
 layout no_result_found_scaner_dialog_fragment
 layout notification_action
 layout notification_action_tombstone

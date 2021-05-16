@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-79:12
-INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-79:12
-INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-79:12
-INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-79:12
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-80:12
+INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-80:12
+INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-80:12
+INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-80:12
 MERGED from [androidx.multidex:multidex:2.0.1] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\d537e181754c9d8f2c0b89905231951b\multidex-2.0.1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\cd6f2caba378d66250797e09d6bb24e0\material-1.3.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\1b47bb01ecc6aa52d262badcce0bb4ed\constraintlayout-2.0.4\AndroidManifest.xml:2:1-11:12
@@ -25,6 +25,7 @@ MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Saruj\.gradle\cac
 MERGED from [com.github.markushi:circlebutton:1.1] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\c05e84e651bfeb7effd44c202918db84\jetified-circlebutton-1.1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.firebase:firebase-firestore:22.1.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\b0cb62c76e324db49ec32f2c8c13ccf4\jetified-firebase-firestore-22.1.2\AndroidManifest.xml:2:1-26:12
 MERGED from [com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:17:1-83:12
+MERGED from [com.google.firebase:firebase-storage:19.2.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\a907c0b5248f633011250abda8f0e1d9\jetified-firebase-storage-19.2.2\AndroidManifest.xml:15:1-39:12
 MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\54fb852e5096b279f5f014a17dcea39d\jetified-circleimageview-3.1.0\AndroidManifest.xml:2:1-11:12
 MERGED from [com.github.ajithvgiri:SearchDialog:v1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\1140327d15c8debcc728654d3e8c2d76\jetified-SearchDialog-v1.0\AndroidManifest.xml:2:1-11:12
 MERGED from [com.github.aakira:expandable-layout:1.4.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\98de5d0b5764ffa868513758713f3706\jetified-expandable-layout-1.4.2\AndroidManifest.xml:2:1-14:12
@@ -97,20 +98,20 @@ MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Saruj\.gradle\cache
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\1f6b045666a31134b82a56c243bf4255\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:protolite-well-known-types:17.1.1] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\e53fbbcf78ffb18c7cd795b35d4efb56\jetified-protolite-well-known-types-17.1.1\AndroidManifest.xml:2:1-11:12
 MERGED from [io.grpc:grpc-android:1.28.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\10a3513949333938587db48c8411373d\jetified-grpc-android-1.28.0\AndroidManifest.xml:2:1-13:12
-INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-79:12
-INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-79:12
-INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-79:12
+INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-80:12
+INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-80:12
+INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-80:12
 	package
 		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:3:5-38
 		INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
 		INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
-		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-79:12
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-80:12
 		INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
-		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-79:12
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:1-80:12
 		INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:2:11-69
@@ -134,6 +135,8 @@ MERGED from [com.google.firebase:firebase-firestore:22.1.2] C:\Users\Saruj\.grad
 MERGED from [com.google.firebase:firebase-firestore:22.1.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\b0cb62c76e324db49ec32f2c8c13ccf4\jetified-firebase-firestore-22.1.2\AndroidManifest.xml:13:5-79
 MERGED from [com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:24:5-79
 MERGED from [com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-storage:19.2.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\a907c0b5248f633011250abda8f0e1d9\jetified-firebase-storage-19.2.2\AndroidManifest.xml:26:5-79
+MERGED from [com.google.firebase:firebase-storage:19.2.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\a907c0b5248f633011250abda8f0e1d9\jetified-firebase-storage-19.2.2\AndroidManifest.xml:26:5-79
 MERGED from [com.google.firebase:firebase-iid:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\dca364ca8652be8b10574e5bb98dfcd5\jetified-firebase-iid-21.1.0\AndroidManifest.xml:22:5-79
 MERGED from [com.google.firebase:firebase-iid:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\dca364ca8652be8b10574e5bb98dfcd5\jetified-firebase-iid-21.1.0\AndroidManifest.xml:22:5-79
 MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\4ac2cccf7c0d7418cae3857e803d7555\jetified-play-services-cloud-messaging-16.0.0\AndroidManifest.xml:7:5-79
@@ -166,6 +169,8 @@ MERGED from [com.google.firebase:firebase-firestore:22.1.2] C:\Users\Saruj\.grad
 MERGED from [com.google.firebase:firebase-firestore:22.1.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\b0cb62c76e324db49ec32f2c8c13ccf4\jetified-firebase-firestore-22.1.2\AndroidManifest.xml:14:5-67
 MERGED from [com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-storage:19.2.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\a907c0b5248f633011250abda8f0e1d9\jetified-firebase-storage-19.2.2\AndroidManifest.xml:27:5-67
+MERGED from [com.google.firebase:firebase-storage:19.2.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\a907c0b5248f633011250abda8f0e1d9\jetified-firebase-storage-19.2.2\AndroidManifest.xml:27:5-67
 MERGED from [com.google.firebase:firebase-iid:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\dca364ca8652be8b10574e5bb98dfcd5\jetified-firebase-iid-21.1.0\AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-iid:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\dca364ca8652be8b10574e5bb98dfcd5\jetified-firebase-iid-21.1.0\AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\4ac2cccf7c0d7418cae3857e803d7555\jetified-play-services-cloud-messaging-16.0.0\AndroidManifest.xml:8:5-67
@@ -209,7 +214,7 @@ ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\sma
 	android:name
 		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:19:22-78
 application
-ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:21:5-77:19
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:21:5-78:19
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\cd6f2caba378d66250797e09d6bb24e0\material-1.3.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\cd6f2caba378d66250797e09d6bb24e0\material-1.3.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\1b47bb01ecc6aa52d262badcce0bb4ed\constraintlayout-2.0.4\AndroidManifest.xml:9:5-20
@@ -234,6 +239,8 @@ MERGED from [com.google.firebase:firebase-firestore:22.1.2] C:\Users\Saruj\.grad
 MERGED from [com.google.firebase:firebase-firestore:22.1.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\b0cb62c76e324db49ec32f2c8c13ccf4\jetified-firebase-firestore-22.1.2\AndroidManifest.xml:16:5-24:19
 MERGED from [com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:26:5-81:19
 MERGED from [com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:26:5-81:19
+MERGED from [com.google.firebase:firebase-storage:19.2.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\a907c0b5248f633011250abda8f0e1d9\jetified-firebase-storage-19.2.2\AndroidManifest.xml:29:5-37:19
+MERGED from [com.google.firebase:firebase-storage:19.2.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\a907c0b5248f633011250abda8f0e1d9\jetified-firebase-storage-19.2.2\AndroidManifest.xml:29:5-37:19
 MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\54fb852e5096b279f5f014a17dcea39d\jetified-circleimageview-3.1.0\AndroidManifest.xml:9:5-20
 MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\54fb852e5096b279f5f014a17dcea39d\jetified-circleimageview-3.1.0\AndroidManifest.xml:9:5-20
 MERGED from [com.github.aakira:expandable-layout:1.4.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\98de5d0b5764ffa868513758713f3706\jetified-expandable-layout-1.4.2\AndroidManifest.xml:12:5-20
@@ -301,13 +308,13 @@ MERGED from [com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\
 	android:name
 		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:22:9-49
 activity#com.agamilabs.smartshop.FireInboxShow.FirestoreUserChatsActivity
-ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:30:9-33:15
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:31:9-34:81
 	android:parentActivityName
-		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:31:13-78
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:34:13-78
 	android:launchMode
-		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:32:13-48
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:33:13-48
 	android:name
-		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:30:19-75
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:32:13-69
 activity#com.agamilabs.smartshop.activity.DeviceListActivity
 ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:39:9-65
 	android:name
@@ -373,37 +380,37 @@ ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\sma
 	android:name
 		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:54:19-54
 activity#com.agamilabs.smartshop.FireInboxShow.FireStoreUserActivity
-ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:56:9-66:20
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:56:9-67:20
 	android:name
 		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:56:19-70
 intent-filter#action:name:android.hardware.usb.action.USB_ACCESSORY_ATTACHED+action:name:android.hardware.usb.action.USB_DEVICE_ATTACHED+action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:57:13-65:29
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:58:13-66:29
 action#android.intent.action.MAIN
-ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:58:17-69
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:59:17-69
 	android:name
-		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:58:25-66
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:59:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:60:17-77
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:61:17-77
 	android:name
-		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:60:27-74
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:61:27-74
 action#android.hardware.usb.action.USB_ACCESSORY_ATTACHED
-ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:62:17-93
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:63:17-93
 	android:name
-		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:62:25-90
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:63:25-90
 action#android.hardware.usb.action.USB_DEVICE_ATTACHED
-ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:63:17-90
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:64:17-90
 	android:name
-		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:63:25-87
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:64:25-87
 service#com.agamilabs.smartshop.services.NotificationReceiver
-ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:72:9-76:19
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:73:9-77:19
 	android:name
-		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:72:18-63
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:73:18-63
 intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
-ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:73:13-75:29
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:74:13-76:29
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:74:17-78
+ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:75:17-78
 	android:name
-		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:74:25-75
+		ADDED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:75:25-75
 uses-sdk
 INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml
@@ -450,6 +457,8 @@ MERGED from [com.google.firebase:firebase-firestore:22.1.2] C:\Users\Saruj\.grad
 MERGED from [com.google.firebase:firebase-firestore:22.1.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\b0cb62c76e324db49ec32f2c8c13ccf4\jetified-firebase-firestore-22.1.2\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:21:5-44
+MERGED from [com.google.firebase:firebase-storage:19.2.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\a907c0b5248f633011250abda8f0e1d9\jetified-firebase-storage-19.2.2\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-storage:19.2.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\a907c0b5248f633011250abda8f0e1d9\jetified-firebase-storage-19.2.2\AndroidManifest.xml:20:5-22:41
 MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\54fb852e5096b279f5f014a17dcea39d\jetified-circleimageview-3.1.0\AndroidManifest.xml:5:5-7:41
 MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\54fb852e5096b279f5f014a17dcea39d\jetified-circleimageview-3.1.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.ajithvgiri:SearchDialog:v1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\1140327d15c8debcc728654d3e8c2d76\jetified-SearchDialog-v1.0\AndroidManifest.xml:7:5-9:41
@@ -656,6 +665,8 @@ MERGED from [com.google.firebase:firebase-firestore:22.1.2] C:\Users\Saruj\.grad
 MERGED from [com.google.firebase:firebase-firestore:22.1.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\b0cb62c76e324db49ec32f2c8c13ccf4\jetified-firebase-firestore-22.1.2\AndroidManifest.xml:17:9-23:19
 MERGED from [com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:74:9-80:19
 MERGED from [com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:74:9-80:19
+MERGED from [com.google.firebase:firebase-storage:19.2.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\a907c0b5248f633011250abda8f0e1d9\jetified-firebase-storage-19.2.2\AndroidManifest.xml:30:9-36:19
+MERGED from [com.google.firebase:firebase-storage:19.2.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\a907c0b5248f633011250abda8f0e1d9\jetified-firebase-storage-19.2.2\AndroidManifest.xml:30:9-36:19
 MERGED from [com.google.firebase:firebase-iid:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\dca364ca8652be8b10574e5bb98dfcd5\jetified-firebase-iid-21.1.0\AndroidManifest.xml:29:9-35:19
 MERGED from [com.google.firebase:firebase-iid:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\dca364ca8652be8b10574e5bb98dfcd5\jetified-firebase-iid-21.1.0\AndroidManifest.xml:29:9-35:19
 MERGED from [com.google.firebase:firebase-datatransport:17.0.10] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\603babbc46d876dc2b2797c077f4c56c\jetified-firebase-datatransport-17.0.10\AndroidManifest.xml:25:9-31:19
@@ -762,6 +773,12 @@ ADDED from [com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\cac
 		ADDED from [com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:79:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-auth:20.0.4] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\44fe79d2cac19c8ecaa9a4534eb1d52c\jetified-firebase-auth-20.0.4\AndroidManifest.xml:78:17-109
+meta-data#com.google.firebase.components:com.google.firebase.storage.StorageRegistrar
+ADDED from [com.google.firebase:firebase-storage:19.2.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\a907c0b5248f633011250abda8f0e1d9\jetified-firebase-storage-19.2.2\AndroidManifest.xml:33:13-35:85
+	android:value
+		ADDED from [com.google.firebase:firebase-storage:19.2.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\a907c0b5248f633011250abda8f0e1d9\jetified-firebase-storage-19.2.2\AndroidManifest.xml:35:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-storage:19.2.2] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\a907c0b5248f633011250abda8f0e1d9\jetified-firebase-storage-19.2.2\AndroidManifest.xml:34:17-107
 activity#com.google.android.gms.common.api.GoogleApiActivity
 ADDED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\a63935de15513710d98bf227aa324a8b\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
 	android:exported

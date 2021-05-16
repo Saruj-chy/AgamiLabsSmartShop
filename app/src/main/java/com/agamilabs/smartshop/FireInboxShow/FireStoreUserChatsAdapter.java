@@ -3,19 +3,23 @@ package com.agamilabs.smartshop.FireInboxShow;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.agamilabs.smartshop.R;
 
 import com.google.firebase.Timestamp;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
@@ -41,10 +45,15 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
     static String SHARED_PREFS = "admin_store";
     String USER_ID ;
 
+    OnIntentUrl onIntentUrl;
 
-    public FireStoreUserChatsAdapter(Context mCtx, List<BatiChatMsgModel> mChatsMsgModal) {
+    List<String> imageList = new ArrayList<>() ;
+
+
+    public FireStoreUserChatsAdapter(Context mCtx, List<BatiChatMsgModel> mChatsMsgModal, OnIntentUrl onIntentUrl) {
         this.mCtx = mCtx;
         this.mChatsMsgModalList = mChatsMsgModal;
+        this.onIntentUrl = onIntentUrl;
 
     }
 
@@ -120,13 +129,7 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
             }
 
 
-
-
-
         ((FirestoreUserChatsViewHolder) holder).bind(chatMsgModel) ;
-
-
-
 
     }
 
@@ -137,9 +140,14 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
 
     class FirestoreUserChatsViewHolder extends RecyclerView.ViewHolder {
 
-      RelativeLayout mSentRelative, mReceiveRelative ;
-      TextView mSentMsgTV, mSentTimeTV, mReceiveMsgTV, mReceiveTimeTV, mDateShowTV ;
-      LinearLayout mDateLinear;
+
+        RelativeLayout mSentRelative, mReceiveRelative ;
+        RecyclerView mSentRV, mReceiveRV ;
+        TextView mSentMsgTV, mSentTimeTV, mReceiveMsgTV, mReceiveTimeTV, mDateShowTV ;
+        LinearLayout mDateLinear;
+        private NestedFirestoreUserChatsAdapter mNestedFirestoreUserChatsAdapter;
+        List<String> mNestedThumbImageList = new ArrayList<>() ;
+        List<String> mNestedRealImageList = new ArrayList<>() ;
 
 
 
@@ -148,12 +156,24 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
 
             mSentRelative = itemView.findViewById(R.id.relative_sent);
             mReceiveRelative = itemView.findViewById(R.id.relative_receive);
+
             mSentMsgTV = itemView.findViewById(R.id.text_sent);
             mSentTimeTV = itemView.findViewById(R.id.text_sent_time);
             mReceiveMsgTV = itemView.findViewById(R.id.text_receive);
             mReceiveTimeTV = itemView.findViewById(R.id.text_receive_time);
             mDateShowTV = itemView.findViewById(R.id.text_date_layout);
             mDateLinear = itemView.findViewById(R.id.linear_layout);
+
+            mSentRV = itemView.findViewById(R.id.sent_rv);
+            mReceiveRV = itemView.findViewById(R.id.receive_rv);
+            mNestedFirestoreUserChatsAdapter = new NestedFirestoreUserChatsAdapter(mCtx, mNestedThumbImageList, mNestedRealImageList, onIntentUrl);
+            GridLayoutManager manager1 = new GridLayoutManager(mCtx, 3, GridLayoutManager.VERTICAL, false);
+            GridLayoutManager manager2 = new GridLayoutManager(mCtx, 3, GridLayoutManager.VERTICAL, false);
+            mSentRV.setLayoutManager(manager1);  // set horizontal LM
+            mSentRV.setAdapter(mNestedFirestoreUserChatsAdapter);
+
+            mReceiveRV.setLayoutManager(manager2);  // set horizontal LM
+            mReceiveRV.setAdapter(mNestedFirestoreUserChatsAdapter);
 
         }
 
@@ -174,31 +194,83 @@ public class FireStoreUserChatsAdapter extends RecyclerView.Adapter<FireStoreUse
                 mDateLinear.setVisibility(View.GONE);
             }
 
+            List<String> imageThumbList  = new ArrayList<>() ;
+            List<String> imageRealList  = new ArrayList<>() ;
+            imageThumbList = chatMsgModel.getImageThumbList() ;
+            imageRealList = chatMsgModel.getImageRealList() ;
+            Log.e("image_Size", "\n msg met ========: "+ "   msg:   "+ chatMsgModel.getMessage()+"   ID:   "+chatMsgModel.getChatId() ) ;
+
             if(USER_ID.equalsIgnoreCase(chatMsgModel.getSentBy())){
 
                 mSentRelative.setVisibility(View.VISIBLE);
                 mReceiveRelative.setVisibility(View.GONE);
-                mSentMsgTV.setText(chatMsgModel.getMessage());
+                if(!chatMsgModel.getMessage().isEmpty()){
+                    mSentMsgTV.setText(chatMsgModel.getMessage());
+                    mSentMsgTV.setVisibility(View.VISIBLE);
+                }else{
+                    mSentMsgTV.setVisibility(View.GONE);
+                }
 
                 if(mapSentList.get(timeFormat)!=null && mapSentList.get(timeFormat).equalsIgnoreCase(chatMsgModel.getChatId())){
                     mSentTimeTV.setVisibility(View.VISIBLE);
                     mSentTimeTV.setText(timeFormat);
+
+
                 }else{
                     mSentTimeTV.setVisibility(View.GONE);
                 }
+                ImageViewAdapter(chatMsgModel, imageThumbList, imageRealList);
 
             }else{
                 mSentRelative.setVisibility(View.GONE);
                 mReceiveRelative.setVisibility(View.VISIBLE);
-                mReceiveMsgTV.setText(chatMsgModel.getMessage());
+                if(!chatMsgModel.getMessage().isEmpty()){
+                    mReceiveMsgTV.setText(chatMsgModel.getMessage());
+                    mReceiveMsgTV.setVisibility(View.VISIBLE);
+                }else{
+                    mReceiveMsgTV.setVisibility(View.GONE);
+                }
+//                if(chatMsgModel.getImageList().size()==0){
+//                    mReceiveRV.setVisibility(View.GONE);
+//                }
 
                 if(mapReceiveList.get(timeFormat)!=null && mapReceiveList.get(timeFormat).equalsIgnoreCase(chatMsgModel.getChatId())){
                     mReceiveTimeTV.setVisibility(View.VISIBLE);
                     mReceiveTimeTV.setText(timeFormat);
 
+
                 }else{
                     mReceiveTimeTV.setVisibility(View.GONE);
                 }
+                ImageViewAdapter(chatMsgModel, imageThumbList, imageRealList);
+            }
+
+        }
+
+        private void ImageViewAdapter(BatiChatMsgModel chatMsgModel, List<String> imageThumbList, List<String> imageRealList) {
+
+            if(imageThumbList!=null){
+                mNestedThumbImageList.clear();
+                mNestedRealImageList.clear();
+                for(int i=0; i<imageThumbList.size(); i++){
+                    this.mNestedThumbImageList.add( this.mNestedThumbImageList.size(), imageThumbList.get(i) );
+                    this.mNestedRealImageList.add( this.mNestedRealImageList.size(), imageRealList.get(i) );
+                }
+
+                mNestedFirestoreUserChatsAdapter.notifyDataSetChanged();
+
+                if(chatMsgModel.getImageThumbList().size()==0){
+                    mSentRV.setVisibility(View.GONE);
+                    mReceiveRV.setVisibility(View.GONE);
+                }else{
+                    mSentRV.setVisibility(View.VISIBLE);
+                    mReceiveRV.setVisibility(View.VISIBLE);
+                }
+            }
+            else if(imageThumbList==null){
+
+                mSentRV.setVisibility(View.GONE);
+                mReceiveRV.setVisibility(View.GONE);
             }
         }
 

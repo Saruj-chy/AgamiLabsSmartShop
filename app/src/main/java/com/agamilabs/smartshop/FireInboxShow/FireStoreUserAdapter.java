@@ -110,7 +110,12 @@ public class FireStoreUserAdapter extends RecyclerView.Adapter<FireStoreUserAdap
                        if(!batiUserChatsModal.getDocumentId().equalsIgnoreCase(mChatsMsgList.get(i).getDocumentId())){
                            for(int j=0; j<mChatsMsgList.size(); j++){
                                if(batiUserChatsModal.getDocumentId().equalsIgnoreCase(mChatsMsgList.get(j).getDocumentId())){
-                                   textViewUserStatus.setText(mChatsMsgList.get(j).getMessage());
+                                   if(!mChatsMsgList.get(i).getMessage().equalsIgnoreCase("")){
+                                       textViewUserStatus.setText(mChatsMsgList.get(i).getMessage());
+                                   }else{
+                                       textViewUserStatus.setText("sent an attachment");
+                                   }
+
 
                                    Timestamp timestamp =  (Timestamp) mChatsMsgList.get(j).getSentTime();
                                    Date date = timestamp.toDate() ;
@@ -119,7 +124,12 @@ public class FireStoreUserAdapter extends RecyclerView.Adapter<FireStoreUserAdap
                                }
                            }
                        }else{
-                           textViewUserStatus.setText(mChatsMsgList.get(i).getMessage());
+                           if(!mChatsMsgList.get(i).getMessage().equalsIgnoreCase("")){
+                               textViewUserStatus.setText(mChatsMsgList.get(i).getMessage());
+                           }else{
+                               textViewUserStatus.setText("sent an attachment");
+                           }
+
 
                            Timestamp timestamp =  (Timestamp) mChatsMsgList.get(i).getSentTime();
                            Date date = timestamp.toDate() ;

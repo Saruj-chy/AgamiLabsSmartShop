@@ -41,6 +41,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -472,15 +473,34 @@ public class FireStoreUserActivity extends AppCompatActivity {
                     return;
                 }
                 for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
-                    BatiChatMsgModel chatMsgModel = documentSnapshot.toObject(BatiChatMsgModel.class);
+//                    BatiChatMsgModel chatMsgModel = documentSnapshot.toObject(BatiChatMsgModel.class);
+//
+//                    mChatsMsgList.add(new BatiChatMsgModel(
+//                            documentId,
+//                            documentSnapshot.getId(),
+//                            chatMsgModel.getMessage(),
+//                            chatMsgModel.getSentBy(),
+//                            chatMsgModel.getSentTime()
+//                    ));
 
+//                    List<Object> imageList = (List<Object>) documentSnapshot.get("imageList");
+                    HashMap<String, Object> imageMapList = (HashMap<String, Object>) documentSnapshot.get("imageList");
+                    if(imageMapList!=null){
+                        Log.e("imageMapList", "real array:"+ imageMapList.get("real").toString() );
+                        Log.e("imageMapList", "thub array:"+ imageMapList.get("thumb")  );
+                    }
+                    Object sentTime =  documentSnapshot.get("sentTime") ;
                     mChatsMsgList.add(new BatiChatMsgModel(
                             documentId,
                             documentSnapshot.getId(),
-                            chatMsgModel.getMessage(),
-                            chatMsgModel.getSentBy(),
-                            chatMsgModel.getSentTime()
+                            documentSnapshot.get("message").toString(),
+                            documentSnapshot.get("sentBy").toString(),
+                           sentTime
                     ));
+
+
+//                    List<Object> imageList = (List<Object>) documentSnapshot.get("imageList");
+//                    Log.e("imageList", imageList.toString()+"  "+ imageList.size() );
 
 
                 }
