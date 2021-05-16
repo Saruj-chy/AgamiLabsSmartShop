@@ -146,12 +146,17 @@ public class FirestoreUserChatsActivity extends AppCompatActivity implements OnI
 
     //TODO:: onSelectImageClick
     public void onSelectImageClick(View view) {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+//        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+//        intent.setType("image/*");
+//        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+//        startActivityForResult(intent, 1);
+
+
+        Intent intent = new Intent();
         intent.setType("image/*");
         intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
-        startActivityForResult(intent, 1);
-
-
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent,"Select Picture"), 1);
 
     }
 
@@ -637,117 +642,76 @@ public class FirestoreUserChatsActivity extends AppCompatActivity implements OnI
         super.onActivityResult(requestCode, resultCode, data);
 
 
-        if (requestCode == 1) {
-            if (resultCode == RESULT_OK) {
-                ImageList.clear();
-                mRealListByte.clear();
-                mThumbListByte.clear();
+        if (requestCode == 1 && resultCode == RESULT_OK && null != data) {
+            ImageList.clear();
+            mRealListByte.clear();
+            mThumbListByte.clear();
 
-                if(data.getData()!=null){
+            if(data.getData()!=null){
+                imageuri=data.getData();
+                getImageUriResult(imageuri);
+            }
+            else{
+                if (data.getClipData() != null) {
+                    int count = data.getClipData().getItemCount();
+                    int CurrentImageSelect = 0;
+                    while (CurrentImageSelect < count) {
+                        imageuri = data.getClipData().getItemAt(CurrentImageSelect).getUri();
+                        getImageUriResult(imageuri);
 
-                    Uri mImageUri=data.getData();
-                    Log.e("bitmapSrc", "mImageUri" + mImageUri );
-
-
-                    ImageList.add(mImageUri);
-
-                    Bitmap bitmapSrc = null;
-                    try{
-                        bitmapSrc = MediaStore.Images.Media.getBitmap(FirestoreUserChatsActivity.this.getContentResolver(), mImageUri) ;
-                    } catch (Exception e){
-                        e.printStackTrace();
+                        CurrentImageSelect = CurrentImageSelect + 1;
                     }
-                    Log.e("bitmapSrc", "bitmapSrc: "+ bitmapSrc ) ;
 
-                    //===============   Real size image
-                    Bitmap RealSizeBitmap = ImageReSizer.reduceBitmapSize(bitmapSrc, 360000) ;
-                    Log.e("bitmapSrc", " fullSizeBitmap: "+ RealSizeBitmap ) ;
-                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                    RealSizeBitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-                    mRealByteData = baos.toByteArray();
-                    Log.e("bitmapSrc", " thumbData: "+ mRealByteData) ;
-                    mRealListByte.add(mRealByteData);
-
-
-                    //========  Thumbonil Image
-                    Bitmap thumbSizeBitmap = ImageReSizer.generateThumb(bitmapSrc, 6500) ;
-                    Log.e("bitmapSrc", " thumbImgBitmap: "+ thumbSizeBitmap ) ;
-                    ByteArrayOutputStream baos2 = new ByteArrayOutputStream();
-                    thumbSizeBitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos2);
-                    mThumbByteData = baos2.toByteArray();
-                    Log.e("bitmapSrc", " ImgthumbData: "+ mThumbByteData) ;
-                    mThumbListByte.add(mThumbByteData);
 
                 }
-                else{
-                    if (data.getClipData() != null) {
+            }
+            Log.e("ImageList", "ImageList: "+ ImageList.size() ) ;
 
-
-                        int count = data.getClipData().getItemCount();
-                        int CurrentImageSelect = 0;
-                        while (CurrentImageSelect < count) {
-                            imageuri = data.getClipData().getItemAt(CurrentImageSelect).getUri();
-//                        Picasso.get().load(imageuri).resize(200, 200).
-//                                centerCrop().into(postImage);
-                            ImageList.add(imageuri);
-                            Log.e("bitmapSrc", "mImageUri" + imageuri );
-
-                            Bitmap bitmapSrc = null;
-                            try{
-                                bitmapSrc = MediaStore.Images.Media.getBitmap(FirestoreUserChatsActivity.this.getContentResolver(), imageuri) ;
-                            } catch (Exception e){
-                                e.printStackTrace();
-                            }
-                            Log.e("bitmapSrc", "bitmapSrc else: "+ bitmapSrc ) ;
-
-                            //===============   Real size image
-                            Bitmap RealSizeBitmap = ImageReSizer.reduceBitmapSize(bitmapSrc, 360000) ;
-                            Log.e("bitmapSrc", " fullSizeBitmap: "+ RealSizeBitmap ) ;
-                            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                            RealSizeBitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-                            mRealByteData = baos.toByteArray();
-                            Log.e("bitmapSrc", " thumbData: "+ mRealByteData) ;
-                            mRealListByte.add(mRealByteData);
-
-
-
-                            //========  Thumbonil Image
-                            Bitmap thumbSizeBitmap = ImageReSizer.generateThumb(bitmapSrc, 6500) ;
-                            Log.e("bitmapSrc", " thumbImgBitmap: "+ thumbSizeBitmap ) ;
-                            ByteArrayOutputStream baos2 = new ByteArrayOutputStream();
-                            thumbSizeBitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos2);
-                            mThumbByteData = baos2.toByteArray();
-                            Log.e("bitmapSrc", " ImgthumbData: "+ mThumbByteData) ;
-                            mThumbListByte.add(mThumbByteData);
-
-                            CurrentImageSelect = CurrentImageSelect + 1;
-                        }
-
-                        selectImageShowRV(ImageList.size());
-                        List<String> selectImages = new ArrayList<>() ;
-                        for(int i=0; i<ImageList.size(); i++){
-                            selectImages.add(selectImages.size(), String.valueOf(ImageList.get(i)));
-                        }
-
-
-                        NestedFirestoreUserChatsAdapter productAdapter = new NestedFirestoreUserChatsAdapter(getApplicationContext(), selectImages,selectImages, this);
-                        mSelectImageRV.setAdapter(productAdapter);
-                        GridLayoutManager manager = new GridLayoutManager(getApplicationContext(), 1, GridLayoutManager.HORIZONTAL, false);
-                        mSelectImageRV.setLayoutManager(manager);
-                    }
-                }
-
-
-                Log.e("bitmapSrc", "ImageList: "+ ImageList.size() ) ;
-
-
+            selectImageShowRV(ImageList.size());
+            List<String> selectImages = new ArrayList<>() ;
+            for(int i=0; i<ImageList.size(); i++){
+                selectImages.add(selectImages.size(), String.valueOf(ImageList.get(i)));
             }
 
+            NestedFirestoreUserChatsAdapter productAdapter = new NestedFirestoreUserChatsAdapter(getApplicationContext(), selectImages,selectImages, this);
+            mSelectImageRV.setAdapter(productAdapter);
+            GridLayoutManager manager = new GridLayoutManager(getApplicationContext(), 1, GridLayoutManager.HORIZONTAL, false);
+            mSelectImageRV.setLayoutManager(manager);
         }
 
 //        if(requestCode== CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE){
 //            CropImage.ActivityResult result = CropImage.getActivityResult(data);
 //        }
+    }
+
+    private void getImageUriResult(Uri imageuri) {
+        ImageList.add(imageuri);
+
+        Bitmap bitmapSrc = null;
+        try{
+            bitmapSrc = MediaStore.Images.Media.getBitmap(FirestoreUserChatsActivity.this.getContentResolver(), imageuri) ;
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
+        //===============   Real size image
+        Bitmap RealSizeBitmap = ImageReSizer.reduceBitmapSize(bitmapSrc, 360000) ;
+        Log.e("bitmapSrc", " fullSizeBitmap: "+ RealSizeBitmap ) ;
+        ByteArrayOutputStream realByteBaos = new ByteArrayOutputStream();
+        RealSizeBitmap.compress(Bitmap.CompressFormat.JPEG, 100, realByteBaos);
+        mRealByteData = realByteBaos.toByteArray();
+        Log.e("bitmapSrc", " thumbData: "+ mRealByteData) ;
+        mRealListByte.add(mRealByteData);
+
+
+        //========  Thumbonil Image
+        Bitmap thumbSizeBitmap = ImageReSizer.generateThumb(bitmapSrc, 6500) ;
+        Log.e("bitmapSrc", " thumbImgBitmap: "+ thumbSizeBitmap ) ;
+        ByteArrayOutputStream baos2 = new ByteArrayOutputStream();
+        thumbSizeBitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos2);
+        mThumbByteData = baos2.toByteArray();
+        Log.e("bitmapSrc", " ImgthumbData: "+ mThumbByteData) ;
+        mThumbListByte.add(mThumbByteData);
     }
 
     @Override
