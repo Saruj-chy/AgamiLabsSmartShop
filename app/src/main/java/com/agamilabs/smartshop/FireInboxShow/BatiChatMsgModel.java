@@ -96,9 +96,7 @@ public class BatiChatMsgModel {
     @Override
     public String toString() {
         return "BatiChatMsgModel{" +
-                "documentId='" + documentId + '\'' +
-                ", imageRealList=" + imageRealList +
-                ", imageThumbList=" + imageThumbList +
-                '}';
+                "message='" + message + '\'' +
+                '}'+"\n";
     }
 }

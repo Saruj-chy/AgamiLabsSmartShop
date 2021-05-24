@@ -12,7 +12,6 @@
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:layout_marginBottom="4dp"
-        android:visibility="gone"
         >
         <View
             android:layout_width="wrap_content"
@@ -45,7 +44,6 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_below="@id/linear_layout"
-        android:visibility="gone"
         android:layout_marginTop="10dp"
 
         android:layout_alignParentLeft="true"
@@ -68,7 +66,6 @@
             android:paddingRight="10dp"
             android:textColor="@android:color/white"
             android:layout_below="@+id/receive_rv"
-            android:visibility="gone"
             />
         <TextView
             android:id="@+id/text_receive_time"
@@ -98,7 +95,6 @@
         android:layout_marginRight="5dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:visibility="gone"
 
         >
 
@@ -115,7 +111,6 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/sent_rv"
-            android:visibility="gone"
 
             android:background="@drawable/chats_sent_style"
             android:gravity="end"

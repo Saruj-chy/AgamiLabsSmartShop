@@ -62,7 +62,7 @@
 28-->[com.google.android.gms:play-services-measurement:18.0.3] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\e95842a214534440edcef5cce8409b37\jetified-play-services-measurement-18.0.3\AndroidManifest.xml:26:22-107
 29
 30    <application
-30-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:21:5-78:19
+30-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:21:5-80:19
 31        android:name="com.agamilabs.smartshop.controller.AppController"
 31-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:22:9-49
 32        android:allowBackup="true"
@@ -82,90 +82,92 @@
 39-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:28:9-35
 40        android:theme="@style/AppTheme" >
 40-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:29:9-40
-41
+41        <activity android:name="com.agamilabs.smartshop.FireInboxShow.activity.FirestoreChatImageActivity" />
+41-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:30:9-96
+41-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:30:19-84
 42        <!-- <activity android:name=".FireInboxShow.TestingActivity"/> -->
 43        <activity
-43-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:31:9-34:81
-44            android:name="com.agamilabs.smartshop.FireInboxShow.FirestoreUserChatsActivity"
-44-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:32:13-69
+43-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:32:9-35:90
+44            android:name="com.agamilabs.smartshop.FireInboxShow.activity.FirestoreUserChatsActivity"
+44-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:33:13-78
 45            android:launchMode="singleInstance"
-45-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:33:13-48
-46            android:parentActivityName="com.agamilabs.smartshop.FireInboxShow.FireStoreUserActivity" /> <!-- <activity android:name=".FireInboxShow.FireStoreInboxActivity"/> -->
-46-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:34:13-78
+45-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:34:13-48
+46            android:parentActivityName="com.agamilabs.smartshop.FireInboxShow.activity.FireStoreUserActivity" /> <!-- <activity android:name=".FireInboxShow.FireStoreInboxActivity"/> -->
+46-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:35:13-87
 47        <!-- <activity android:name=".aaaaaaaaaa.NetworkConnectActivity"/> -->
 48        <!-- <activity android:name=".aaaaaaaaaa.AllSiteActivity"/> -->
 49        <!-- <activity android:name=".aaaaaaaaaa.TestingSessionActivity"/> -->
 50        <!-- rofiqul -->
 51        <activity android:name="com.agamilabs.smartshop.activity.DeviceListActivity" />
-51-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:39:9-65
-51-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:39:19-62
+51-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:40:9-65
+51-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:40:19-62
 52        <activity android:name="com.agamilabs.smartshop.activity.PrintingActivity" />
-52-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:40:9-63
-52-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:40:19-60
+52-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:41:9-63
+52-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:41:19-60
 53        <activity android:name="com.agamilabs.smartshop.activity.NewCampaignActivity" />
-53-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:41:9-66
-53-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:41:19-63
+53-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:42:9-66
+53-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:42:19-63
 54        <activity android:name="com.agamilabs.smartshop.activity.CampaignActivity" /> <!-- rofiqul -->
-54-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:42:9-63
-54-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:42:19-60
+54-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:43:9-63
+54-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:43:19-60
 55        <activity android:name="com.agamilabs.smartshop.MainActivity" />
-55-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:43:9-50
-55-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:43:19-47
+55-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:44:9-50
+55-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:44:19-47
 56        <activity android:name="com.agamilabs.smartshop.activity.RechargeActivity" />
-56-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:44:9-63
-56-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:44:19-60
+56-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:45:9-63
+56-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:45:19-60
 57        <activity android:name="com.agamilabs.smartshop.activity.ShopInboxActivity" />
-57-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:45:9-64
-57-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:45:19-61
+57-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:46:9-64
+57-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:46:19-61
 58        <activity android:name="com.agamilabs.smartshop.activity.OrderReportActivity" />
-58-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:46:9-66
-58-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:46:19-63
+58-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:47:9-66
+58-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:47:19-63
 59        <activity android:name="com.agamilabs.smartshop.activity.StockReportActivity" />
-59-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:47:9-66
-59-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:47:19-63
+59-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:48:9-66
+59-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:48:19-63
 60        <activity android:name="com.agamilabs.smartshop.activity.CardShopActivity" />
-60-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:48:9-63
-60-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:48:19-60
+60-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:49:9-63
+60-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:49:19-60
 61        <activity android:name="com.agamilabs.smartshop.ShopAdminHome" />
-61-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:49:9-51
-61-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:49:19-48
+61-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:50:9-51
+61-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:50:19-48
 62        <activity android:name="com.agamilabs.smartshop.LoginActivity" />
-62-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:50:9-51
-62-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:50:19-48
+62-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:51:9-51
+62-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:51:19-48
 63        <activity android:name="com.agamilabs.smartshop.InvoiceActivity" />
-63-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:51:9-53
-63-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:51:19-50
+63-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:52:9-53
+63-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:52:19-50
 64        <activity android:name="com.agamilabs.smartshop.InvoiceViewerActivity" />
-64-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:52:9-59
-64-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:52:19-56
+64-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:53:9-59
+64-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:53:19-56
 65        <activity android:name="com.agamilabs.smartshop.BaseScannerActivity" />
-65-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:53:9-57
-65-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:53:19-54
+65-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:54:9-57
+65-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:54:19-54
 66        <activity android:name="com.agamilabs.smartshop.FullScannerActivity" /> <!-- <activity android:name=".activity.SmothViewPagerActivity"/> -->
-66-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:54:9-57
-66-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:54:19-54
+66-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:55:9-57
+66-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:55:19-54
 67        <!-- <activity android:name=".activity.SmothViewPagerActivity"> -->
-68        <activity android:name="com.agamilabs.smartshop.FireInboxShow.FireStoreUserActivity" >
-68-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:56:9-67:20
-68-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:56:19-70
+68        <activity android:name="com.agamilabs.smartshop.FireInboxShow.activity.FireStoreUserActivity" >
+68-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:57:9-69:20
+68-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:57:19-79
 69
 70            <!-- <activity android:name=".FireInboxShow.TestingActivity"> -->
 71            <intent-filter>
-71-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:58:13-66:29
+71-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:60:13-68:29
 72                <action android:name="android.intent.action.MAIN" />
-72-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:59:17-69
-72-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:59:25-66
+72-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:61:17-69
+72-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:61:25-66
 73
 74                <category android:name="android.intent.category.LAUNCHER" />
-74-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:61:17-77
-74-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:61:27-74
+74-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:63:17-77
+74-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:63:27-74
 75                <!-- rofiqul -->
 76                <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />
-76-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:63:17-93
-76-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:63:25-90
+76-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:65:17-93
+76-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:65:25-90
 77                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
-77-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:64:17-90
-77-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:64:25-87
+77-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:66:17-90
+77-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:66:25-87
 78                <!-- rofiqul -->
 79            </intent-filter>
 80        </activity> <!-- <service -->
@@ -175,13 +177,13 @@
 84        <!-- </intent-filter> -->
 85        <!-- </service> -->
 86        <service android:name="com.agamilabs.smartshop.services.NotificationReceiver" >
-86-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:73:9-77:19
-86-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:73:18-63
+86-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:75:9-79:19
+86-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:75:18-63
 87            <intent-filter>
-87-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:74:13-76:29
+87-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:76:13-78:29
 88                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-88-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:75:17-78
-88-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:75:25-75
+88-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:77:17-78
+88-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:77:25-75
 89            </intent-filter>
 90        </service>
 91
@@ -213,10 +215,10 @@
 107            android:exported="false" >
 107-->[com.google.firebase:firebase-messaging:21.1.0] C:\Users\Saruj\.gradle\caches\transforms-2\files-2.1\182300206770475f1dc109de00117671\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:44:13-37
 108            <intent-filter android:priority="-500" >
-108-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:74:13-76:29
+108-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:76:13-78:29
 109                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-109-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:75:17-78
-109-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:75:25-75
+109-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:77:17-78
+109-->D:\Android All Project Branch\AgamiLabs Project\Smart shop folder\smart-shop old\app\src\main\AndroidManifest.xml:77:25-75
 110            </intent-filter>
 111        </service>
 112        <service

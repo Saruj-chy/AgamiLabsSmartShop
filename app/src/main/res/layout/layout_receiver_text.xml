@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/linear_date_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:layout_marginBottom="4dp"
+        android:visibility="gone"
+        >
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_weight="1"
+            />
+        <TextView
+            android:id="@+id/text_date_layout"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="24 april, 2021"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="3dp"
+            android:background="@drawable/border_input"
+            />
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_receive_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Receive msg"
+        android:maxWidth="250dp"
+        android:background="@drawable/chats_receive_style"
+        android:textSize="18dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/linear_date_layout"
+
+        />
+    <TextView
+        android:id="@+id/text_time_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        android:text="4:0042 am"
+        android:gravity="end"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="4dp"
+        android:textSize="12dp"
+        android:textColor="@color/black"
+        android:layout_below="@+id/text_receive_layout"
+        android:visibility="gone"
+        />
+
+
+</RelativeLayout>

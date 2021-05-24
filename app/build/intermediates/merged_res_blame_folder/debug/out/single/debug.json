@@ -4,24 +4,24 @@
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\drawable-xxhdpi\\ic_cart.png"
     },
     {
-        "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_flash_off.png.flat",
-        "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\drawable-mdpi\\ic_flash_off.png"
-    },
-    {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_printing.xml.flat",
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\layout\\activity_printing.xml"
+    },
+    {
+        "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_flash_off.png.flat",
+        "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\drawable-mdpi\\ic_flash_off.png"
     },
     {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_baseline_cancel_24.png.flat",
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_baseline_cancel_24.png"
     },
     {
-        "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
-    },
-    {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_no_image.png.flat",
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\drawable-xxhdpi\\no_image.png"
+    },
+    {
+        "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
@@ -82,6 +82,10 @@
     {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable_smart_shop_logo.jpg.flat",
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\drawable\\smart_shop_logo.jpg"
+    },
+    {
+        "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_firestore_user_chats002.xml.flat",
+        "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\layout\\activity_firestore_user_chats002.xml"
     },
     {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_action_call.png.flat",
@@ -174,6 +178,10 @@
     {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable_product_qty_shape.xml.flat",
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\drawable\\product_qty_shape.xml"
+    },
+    {
+        "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_firestore_chats_image.xml.flat",
+        "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\layout\\fragment_firestore_chats_image.xml"
     },
     {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_brightnes_24.png.flat",
@@ -312,6 +320,10 @@
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\drawable-xhdpi\\ic_flash_off.png"
     },
     {
+        "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_chats_receive_imagebg_style.xml.flat",
+        "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\drawable-mdpi\\chats_receive_imagebg_style.xml"
+    },
+    {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_launcher_background.xml.flat",
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_launcher_background.xml"
     },
@@ -348,12 +360,12 @@
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\drawable\\ripple_effect.xml"
     },
     {
-        "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_action_preference.xml.flat",
-        "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_action_preference.xml"
-    },
-    {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\layout_dashboard_card_list.xml.flat",
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\layout\\dashboard_card_list.xml"
+    },
+    {
+        "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_action_preference.xml.flat",
+        "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_action_preference.xml"
     },
     {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_radio_button.xml.flat",
@@ -480,6 +492,10 @@
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_action_call.xml"
     },
     {
+        "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\layout_layout_sender_imagetext.xml.flat",
+        "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\layout\\layout_sender_imagetext.xml"
+    },
+    {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_baseline_credit_card_24.png.flat",
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_baseline_credit_card_24.png"
     },
@@ -522,6 +538,10 @@
     {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_launcher_background.png.flat",
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\layout_layout_receiver_text.xml.flat",
+        "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\layout\\layout_receiver_text.xml"
     },
     {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_skype.jpg.flat",
@@ -780,6 +800,10 @@
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\layout\\activity_campaign.xml"
     },
     {
+        "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\layout_layout_sender_image.xml.flat",
+        "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\layout\\layout_sender_image.xml"
+    },
+    {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_baseline_attach_file_24.png.flat",
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_baseline_attach_file_24.png"
     },
@@ -806,6 +830,14 @@
     {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable_profile_image.png.flat",
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\drawable\\profile_image.png"
+    },
+    {
+        "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\layout_layout_sender_text.xml.flat",
+        "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\layout\\layout_sender_text.xml"
+    },
+    {
+        "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_chats_sent_imagebg_style.xml.flat",
+        "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\drawable-mdpi\\chats_sent_imagebg_style.xml"
     },
     {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_focus_off.png.flat",
@@ -936,6 +968,10 @@
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\drawable-mdpi\\ic_person_search.png"
     },
     {
+        "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_baseline_clear.png.flat",
+        "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_baseline_clear.png"
+    },
+    {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
@@ -946,10 +982,6 @@
     {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_menu_search.png.flat",
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\menu_search.png"
-    },
-    {
-        "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_baseline_clear.png.flat",
-        "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_baseline_clear.png"
     },
     {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_no_image.xml.flat",
@@ -1108,6 +1140,10 @@
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_baseline_sms_24.png"
     },
     {
+        "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\layout_layout_full_image.xml.flat",
+        "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\layout\\layout_full_image.xml"
+    },
+    {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_baseline_access_time_24.png.flat",
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_baseline_access_time_24.png"
     },
@@ -1160,8 +1196,16 @@
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_baseline_sms_24.png"
     },
     {
+        "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_firestore_chat_image.xml.flat",
+        "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\layout\\activity_firestore_chat_image.xml"
+    },
+    {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\layout_app_bar_layout.xml.flat",
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\layout\\app_bar_layout.xml"
+    },
+    {
+        "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\layout_layout_receiver_image.xml.flat",
+        "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\layout\\layout_receiver_image.xml"
     },
     {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_down_arrow.xml.flat",
@@ -1402,6 +1446,10 @@
     {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_youtube.jpg.flat",
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\drawable-v24\\youtube.jpg"
+    },
+    {
+        "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\layout_layout_receiver_imagetext.xml.flat",
+        "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\layout\\layout_receiver_imagetext.xml"
     },
     {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_baseline_credit_card_24.png.flat",

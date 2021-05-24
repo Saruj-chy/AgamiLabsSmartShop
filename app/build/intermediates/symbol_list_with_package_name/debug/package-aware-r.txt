@@ -1767,7 +1767,9 @@ drawable btn_radio_on_to_off_mtrl_animation
 drawable button_tk
 drawable buttons
 drawable cardview_shop
+drawable chats_receive_imagebg_style
 drawable chats_receive_style
+drawable chats_sent_imagebg_style
 drawable chats_sent_style
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
@@ -1990,7 +1992,9 @@ id anticipate
 id anticipateOvershoot
 id app_bar_layout_firestore
 id appbar_cancelbtn
+id appbar_chat_image
 id appbar_circle_image
+id appbar_fragment
 id appbar_linear_search
 id appbar_search_edit
 id appbar_searchbtn
@@ -2174,6 +2178,7 @@ id fixed
 id flip
 id floating
 id forever
+id frame_fragment
 id frame_img_btn
 id frame_img_view
 id frame_layout
@@ -2200,10 +2205,16 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id image1_layout
+id image2_layout
+id image3_layout
+id image4_layout
+id image5_layout
 id image_btn_add
 id image_btn_timeline
 id image_call_order
 id image_facebook
+id image_full_layout
 id image_instragram
 id image_logo
 id image_logo1
@@ -2274,7 +2285,9 @@ id line3
 id linear
 id linearOutSlowIn
 id linear_date_from
+id linear_date_layout
 id linear_date_to
+id linear_image_layout
 id linear_layout
 id linear_layout_01
 id linear_layout_02
@@ -2401,6 +2414,7 @@ id postLayout
 id progress_chat_firestore
 id progress_circular
 id progress_horizontal
+id progress_sent_chat_msg
 id progress_user_firestore
 id progressbar
 id radial
@@ -2415,6 +2429,7 @@ id recycler_admin_home
 id recycler_card_shop
 id recycler_chatmsg
 id recycler_ecommerce
+id recycler_firestore_fragment
 id recycler_notification
 id recycler_order_report
 id recycler_pos
@@ -2428,10 +2443,14 @@ id recycler_view_nagation
 id recyclerview_popup
 id rel_content
 id relative_appbar
+id relative_bottom_1
+id relative_bottom_2
 id relative_chat_item
 id relative_chat_msg
+id relative_chat_msg_sent
 id relative_image
 id relative_image1
+id relative_image5_layout
 id relative_image_part
 id relative_layout_1
 id relative_layout_2
@@ -2567,6 +2586,7 @@ id text_Domain
 id text_Name
 id text_address_order
 id text_api_id
+id text_blur_layout
 id text_body_text
 id text_category
 id text_category1
@@ -2604,6 +2624,7 @@ id text_progress
 id text_promotion_title
 id text_purchase_rate
 id text_receive
+id text_receive_layout
 id text_receive_time
 id text_remaining_qty
 id text_reorder
@@ -2611,6 +2632,7 @@ id text_reorder1
 id text_reorder_point
 id text_sale_rate
 id text_sent
+id text_sent_layout
 id text_sent_time
 id text_session
 id text_shop_name
@@ -2621,6 +2643,7 @@ id text_start_date_time
 id text_status_title_order
 id text_stock_amount
 id text_time
+id text_time_layout
 id text_timeline
 id text_title
 id text_token_name
@@ -2788,7 +2811,9 @@ layout activity_campaign
 layout activity_card_shop
 layout activity_device_list
 layout activity_fire_store_user
+layout activity_firestore_chat_image
 layout activity_firestore_user_chats
+layout activity_firestore_user_chats002
 layout activity_invoice
 layout activity_invoice_viewer
 layout activity_login
@@ -2838,6 +2863,7 @@ layout drawer_header
 layout fragment_admin_dashboard
 layout fragment_admin_home
 layout fragment_campaign_statistics
+layout fragment_firestore_chats_image
 layout item_list
 layout items_view_layout
 layout layout_admin_dashboard_item
@@ -2848,8 +2874,15 @@ layout layout_category_list
 layout layout_firestore_inbox
 layout layout_firestore_inbox_user
 layout layout_firestore_msg_chats
+layout layout_full_image
 layout layout_popup
 layout layout_printers
+layout layout_receiver_image
+layout layout_receiver_imagetext
+layout layout_receiver_text
+layout layout_sender_image
+layout layout_sender_imagetext
+layout layout_sender_text
 layout layout_shimmer_effect
 layout layout_smoth_pager
 layout layout_smoth_viewpager

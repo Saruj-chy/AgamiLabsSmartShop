@@ -38,12 +38,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-
+        <activity android:name="com.agamilabs.smartshop.FireInboxShow.activity.FirestoreChatImageActivity" />
         <!-- <activity android:name=".FireInboxShow.TestingActivity"/> -->
         <activity
-            android:name="com.agamilabs.smartshop.FireInboxShow.FirestoreUserChatsActivity"
+            android:name="com.agamilabs.smartshop.FireInboxShow.activity.FirestoreUserChatsActivity"
             android:launchMode="singleInstance"
-            android:parentActivityName="com.agamilabs.smartshop.FireInboxShow.FireStoreUserActivity" /> <!-- <activity android:name=".FireInboxShow.FireStoreInboxActivity"/> -->
+            android:parentActivityName="com.agamilabs.smartshop.FireInboxShow.activity.FireStoreUserActivity" /> <!-- <activity android:name=".FireInboxShow.FireStoreInboxActivity"/> -->
         <!-- <activity android:name=".aaaaaaaaaa.NetworkConnectActivity"/> -->
         <!-- <activity android:name=".aaaaaaaaaa.AllSiteActivity"/> -->
         <!-- <activity android:name=".aaaaaaaaaa.TestingSessionActivity"/> -->
@@ -65,7 +65,7 @@
         <activity android:name="com.agamilabs.smartshop.BaseScannerActivity" />
         <activity android:name="com.agamilabs.smartshop.FullScannerActivity" /> <!-- <activity android:name=".activity.SmothViewPagerActivity"/> -->
         <!-- <activity android:name=".activity.SmothViewPagerActivity"> -->
-        <activity android:name="com.agamilabs.smartshop.FireInboxShow.FireStoreUserActivity" >
+        <activity android:name="com.agamilabs.smartshop.FireInboxShow.activity.FireStoreUserActivity" >
 
             <!-- <activity android:name=".FireInboxShow.TestingActivity"> -->
             <intent-filter>
