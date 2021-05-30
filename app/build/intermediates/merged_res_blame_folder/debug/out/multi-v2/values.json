@@ -330,23 +330,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Saruj\\.gradle\\caches\\transforms-2\\files-2.1\\49423f56174403b617fe5d767e645e05\\jetified-ImagePicker-1.1.1\\res\\values\\values.xml",
-                    "from": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "104",
-                        "endColumns": "66",
-                        "endOffsets": "166"
-                    },
-                    "to": {
-                        "startLines": "1261",
-                        "startColumns": "4",
-                        "startOffsets": "82821",
-                        "endColumns": "66",
-                        "endOffsets": "82883"
-                    }
-                },
-                {
                     "source": "C:\\Users\\Saruj\\.gradle\\caches\\transforms-2\\files-2.1\\e28844f87a6e0e5098a7cebcf9a410f3\\jetified-SearchDialog-v1.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,6,7",
@@ -380,6 +363,23 @@
                         "endLines": "289,1020,6959",
                         "endColumns": "62,46,24",
                         "endOffsets": "13154,59162,456331"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Saruj\\.gradle\\caches\\transforms-2\\files-2.1\\743a21792e0e5b5185bacf24dbe5c076\\jetified-ImagePicker-1.2.2\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "104",
+                        "endColumns": "66",
+                        "endOffsets": "166"
+                    },
+                    "to": {
+                        "startLines": "1261",
+                        "startColumns": "4",
+                        "startOffsets": "82821",
+                        "endColumns": "66",
+                        "endOffsets": "82883"
                     }
                 },
                 {

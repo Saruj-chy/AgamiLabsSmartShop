@@ -124,6 +124,10 @@
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\layout\\search_dialog_layout.xml"
     },
     {
+        "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_baseline_camera.png.flat",
+        "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_baseline_camera.png"
+    },
+    {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_calender.png.flat",
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\drawable-mdpi\\ic_calender.png"
     },
@@ -256,6 +260,10 @@
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_baseline_camera.png.flat",
+        "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_baseline_camera.png"
+    },
+    {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_focus_off.png.flat",
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\drawable-mdpi\\ic_focus_off.png"
     },
@@ -282,6 +290,10 @@
     {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_ripple_effect.xml.flat",
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\drawable-v21\\ripple_effect.xml"
+    },
+    {
+        "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_baseline_camera.png.flat",
+        "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_baseline_camera.png"
     },
     {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_baseline_date_range_24.xml.flat",
@@ -768,6 +780,10 @@
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_baseline_camera.xml.flat",
+        "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_baseline_camera.xml"
+    },
+    {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_baseline_credit_card_24.xml.flat",
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_baseline_credit_card_24.xml"
     },
@@ -1034,6 +1050,10 @@
     {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_calender.png.flat",
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_calender.png"
+    },
+    {
+        "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_baseline_camera.png.flat",
+        "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_baseline_camera.png"
     },
     {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_focus_off.png.flat",
@@ -1356,6 +1376,10 @@
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_baseline_check_circle.xml"
     },
     {
+        "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_baseline_camera.png.flat",
+        "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_baseline_camera.png"
+    },
+    {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_baseline_access_time_24.png.flat",
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_baseline_access_time_24.png"
     },
@@ -1498,5 +1522,9 @@
     {
         "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_minus.png.flat",
         "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\src\\main\\res\\drawable-xxhdpi\\ic_minus.png"
+    },
+    {
+        "merged": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_baseline_camera.png.flat",
+        "source": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_baseline_camera.png"
     }
 ]

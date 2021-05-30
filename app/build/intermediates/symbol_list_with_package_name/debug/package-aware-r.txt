@@ -1827,6 +1827,7 @@ drawable ic_arrow_down
 drawable ic_arrow_forward
 drawable ic_baseline_access_time_24
 drawable ic_baseline_attach_file_24
+drawable ic_baseline_camera
 drawable ic_baseline_cancel_24
 drawable ic_baseline_check_circle
 drawable ic_baseline_clear
@@ -2105,6 +2106,7 @@ id container
 id content
 id contentPanel
 id content_frame
+id content_main
 id contiguous
 id coordinator
 id cos
@@ -2221,6 +2223,7 @@ id image2_layout
 id image3_layout
 id image4_layout
 id image5_layout
+id imageView
 id image_btn_add
 id image_btn_timeline
 id image_call_order
@@ -2255,6 +2258,7 @@ id img_active_blue
 id img_active_gray
 id img_active_green
 id img_active_red
+id img_btn_camera
 id img_btn_select
 id img_btn_sent
 id img_slider

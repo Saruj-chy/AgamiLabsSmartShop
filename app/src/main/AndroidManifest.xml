@@ -14,9 +14,13 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" /> <!-- rofiqul -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
         android:name=".controller.AppController"
@@ -34,7 +38,6 @@
         <!-- <activity android:name=".FireInboxShow.TestingActivity"/> -->
         <activity
             android:name=".FireInboxShow.activity.FirestoreUserChatsActivity"
-            android:launchMode="singleInstance"
             android:parentActivityName=".FireInboxShow.activity.FireStoreUserActivity" />
 
         <!-- <activity android:name=".FireInboxShow.FireStoreInboxActivity"/> -->
@@ -59,19 +62,26 @@
         <activity android:name=".BaseScannerActivity" />
         <activity android:name=".FullScannerActivity" /> <!-- <activity android:name=".activity.SmothViewPagerActivity"/> -->
         <!-- <activity android:name=".activity.SmothViewPagerActivity"> -->
-        <activity android:name=".FireInboxShow.activity.FireStoreUserActivity">
 
-            <!-- <activity android:name=".FireInboxShow.TestingActivity"> -->
+
+
+
+        <activity android:name=".FireInboxShow.activity.FireStoreUserActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+
                 <!-- rofiqul -->
                 <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />
                 <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
                 <!-- rofiqul -->
             </intent-filter>
-        </activity> <!-- <service -->
+        </activity>
+
+
+
+        <!-- <service -->
         <!-- android:name=".services.TokenReceiver"> -->
         <!-- <intent-filter> -->
         <!-- <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/> -->

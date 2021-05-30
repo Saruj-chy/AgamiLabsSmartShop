@@ -9,12 +9,15 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
@@ -54,6 +57,7 @@ import com.google.firebase.storage.UploadTask;
 import com.mvc.imagepicker.ImagePicker;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.ParseException;
@@ -113,9 +117,13 @@ public class FirestoreUserChatsActivity extends AppCompatActivity implements OnI
     //FrameLayout
     FrameLayout mFrameLayout, mFragmentFrameLayout;
     ImageView mFrameImageView;
-    ImageButton mFrameImgBtn ;
+    ImageButton mFrameImgBtn, mCameraBtn ;
 
     ListenerRegistration mChatMsgListener, loadNextDataListener;
+
+
+    Uri cameraImageUri ;
+    static final int REQUEST_IMAGE_CAPTURE = 2;
 
     //TODO:: onCreate
     @Override
@@ -138,16 +146,15 @@ public class FirestoreUserChatsActivity extends AppCompatActivity implements OnI
         userChatMsgRef = mFirestoreInstance.collection("batikrom-message-collection").document("chatMessages").collection(mChatUserId);
         userChatDoc = mFirestoreInstance.collection("batikrom-message-collection").document("chats").collection("chats").document(mChatUserId);
         userChatUnseenMsgDoc = mFirestoreInstance.collection("batikrom-message-collection").document("userChats");
-        postStorageRef = FirebaseStorage.getInstance().getReference();
+        postStorageRef = FirebaseStorage.getInstance().getReference() ;
 
 
 
-        sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-
+        sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE) ;
         Initialize() ;
 
 
-        ImagePicker.setMinQuality(600, 600);
+        ImagePicker.setMinQuality(600, 600) ;
     }
     //TODO:: loadChatMsgArrayCollection
     private void loadChatMsgArrayCollection() {
@@ -557,16 +564,17 @@ public class FirestoreUserChatsActivity extends AppCompatActivity implements OnI
 
     //TODO::: onActivityResult
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+        ImageList.clear();
+        mRealListByte.clear();
+        mThumbListByte.clear();
 
         if (requestCode == 1 && resultCode == RESULT_OK && null != data) {
-            ImageList.clear();
-            mRealListByte.clear();
-            mThumbListByte.clear();
 
             if(data.getData()!=null){
+                Log.e("req_code","1 data: " + data );
                 imageuri=data.getData();
                 getImageUriResult(imageuri);
             }
@@ -584,23 +592,40 @@ public class FirestoreUserChatsActivity extends AppCompatActivity implements OnI
 
                 }
             }
-            Log.e("ImageList", "ImageList: "+ ImageList.size() ) ;
+          NestedImageViewAdapter(ImageList );
+        }
+        else if(requestCode == REQUEST_IMAGE_CAPTURE) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
 
-            selectImageShowRV(ImageList.size());
-            List<String> selectImages = new ArrayList<>() ;
-            for(int i=0; i<ImageList.size(); i++){
-                selectImages.add(selectImages.size(), String.valueOf(ImageList.get(i)));
-            }
+            cameraImageUri = getImageUri(imageBitmap) ;
+            Log.e("req_code","imageUri: " + cameraImageUri );
 
-            NestedFirestoreUserChatsAdapter productAdapter = new NestedFirestoreUserChatsAdapter(getApplicationContext(), selectImages,selectImages, this);
-            mSelectImageRV.setAdapter(productAdapter);
-            GridLayoutManager manager = new GridLayoutManager(getApplicationContext(), 1, GridLayoutManager.HORIZONTAL, false);
-            mSelectImageRV.setLayoutManager(manager);
+            getImageUriResult(cameraImageUri);
+            NestedImageViewAdapter(ImageList );
+
         }
 
-//        if(requestCode== CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE){
-//            CropImage.ActivityResult result = CropImage.getActivityResult(data);
-//        }
+    }
+
+    private void NestedImageViewAdapter(ArrayList<Uri> ImageList) {
+        selectImageShowRV(ImageList.size());
+        List<String> selectImages = new ArrayList<>() ;
+        for(int i=0; i<ImageList.size(); i++){
+            selectImages.add(selectImages.size(), String.valueOf(ImageList.get(i)));
+        }
+        NestedFirestoreUserChatsAdapter productAdapter = new NestedFirestoreUserChatsAdapter(getApplicationContext(), selectImages,selectImages, this);
+        mSelectImageRV.setAdapter(productAdapter);
+        GridLayoutManager manager = new GridLayoutManager(getApplicationContext(), 1, GridLayoutManager.HORIZONTAL, false);
+        mSelectImageRV.setLayoutManager(manager);
+    }
+
+
+    public Uri getImageUri(Bitmap inImage) {
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+        String path = MediaStore.Images.Media.insertImage(getContentResolver(), inImage, "Title", null);
+        return Uri.parse(path);
     }
     private void getImageUriResult(Uri imageuri) {
         ImageList.add(imageuri);
@@ -784,7 +809,10 @@ public class FirestoreUserChatsActivity extends AppCompatActivity implements OnI
         super.onPause();
 
 
-        mChatMsgListener.remove();
+        if(mChatMsgListener != null){
+            mChatMsgListener.remove();
+        }
+
         if(loadNextDataListener != null){
             loadNextDataListener.remove();
         }
@@ -803,6 +831,21 @@ public class FirestoreUserChatsActivity extends AppCompatActivity implements OnI
 
 
 
+
+
+
+    }
+
+
+    //TODO:: onSelectCameraClick
+    public void onSelectCameraClick(View view) {
+
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        try {
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        } catch (ActivityNotFoundException e) {
+            // display error state to the user
+        }
 
 
 
