@@ -55,7 +55,7 @@
     <string msgid="669893613918351210" name="common_signin_button_text_long">"使用 Google 帐号登录"</string>
     <string name="error_icon_content_description">错误</string>
     <string name="exposed_dropdown_menu_content_description">显示下拉菜单</string>
-    <string msgid="4133737464567140336" name="fcm_fallback_notification_channel_label">"其他"</string>
+    <string name="fcm_fallback_notification_channel_label">其他</string>
     <string name="icon_content_description">对话框图标</string>
     <string name="item_view_role_description">标签页</string>
     <string name="material_clock_toggle_content_description">选择上午或下午</string>

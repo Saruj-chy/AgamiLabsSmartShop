@@ -5,8 +5,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,11 +28,11 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
 import com.agamilabs.smartshop.FireInboxShow.BatiChatMsgModel;
-import com.agamilabs.smartshop.FireInboxShow.FireStoreUserChatsAdapter2;
-import com.agamilabs.smartshop.FireInboxShow.FirestoreChatsImageFragment;
+import com.agamilabs.smartshop.FireInboxShow.Class.ImagePicker1;
+import com.agamilabs.smartshop.FireInboxShow.adapter.FireStoreUserChatsAdapter2;
 import com.agamilabs.smartshop.FireInboxShow.ImageReSizer;
-import com.agamilabs.smartshop.FireInboxShow.NestedFirestoreUserChatsAdapter;
-import com.agamilabs.smartshop.FireInboxShow.OnIntentUrl;
+import com.agamilabs.smartshop.FireInboxShow.Interface.OnIntentUrl;
+import com.agamilabs.smartshop.FireInboxShow.adapter.NestedFirestoreUserChatsAdapter;
 import com.agamilabs.smartshop.R;
 import com.agamilabs.smartshop.controller.AppController;
 import com.agamilabs.smartshop.controller.AppImageLoader;
@@ -53,8 +51,11 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.mvc.imagepicker.ImagePicker;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -65,10 +66,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
+
 public class FirestoreUserChatsActivity extends AppCompatActivity implements OnIntentUrl {
 
-    public static String chatId;
-    String chatName;
+    public static String mChatUserId, mChatUserName;
+
     private CollectionReference userChatMsgRef;
     private FirebaseFirestore mFirestoreInstance ;
     private DocumentReference userChatDoc, userChatUnseenMsgDoc ;
@@ -112,7 +115,7 @@ public class FirestoreUserChatsActivity extends AppCompatActivity implements OnI
     ImageView mFrameImageView;
     ImageButton mFrameImgBtn ;
 
-    ListenerRegistration firstListener ;
+    ListenerRegistration mChatMsgListener, loadNextDataListener;
 
     //TODO:: onCreate
     @Override
@@ -120,8 +123,8 @@ public class FirestoreUserChatsActivity extends AppCompatActivity implements OnI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_firestore_user_chats);
 
-        chatId =  getIntent().getStringExtra("chatID");
-        chatName =  getIntent().getStringExtra("chat_name");
+        mChatUserId =  getIntent().getStringExtra("chatID");
+        mChatUserName =  getIntent().getStringExtra("chat_name");
 
         Toolbar toolbar = findViewById(R.id.firestore_user_chats_appbar);
         setSupportActionBar(toolbar);
@@ -129,11 +132,11 @@ public class FirestoreUserChatsActivity extends AppCompatActivity implements OnI
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setDisplayShowTitleEnabled(true);
-        getSupportActionBar().setTitle(chatName);
+        getSupportActionBar().setTitle(mChatUserName);
 
         mFirestoreInstance = FirebaseFirestore.getInstance();
-        userChatMsgRef = mFirestoreInstance.collection("batikrom-message-collection").document("chatMessages").collection(chatId);
-        userChatDoc = mFirestoreInstance.collection("batikrom-message-collection").document("chats").collection("chats").document(chatId);
+        userChatMsgRef = mFirestoreInstance.collection("batikrom-message-collection").document("chatMessages").collection(mChatUserId);
+        userChatDoc = mFirestoreInstance.collection("batikrom-message-collection").document("chats").collection("chats").document(mChatUserId);
         userChatUnseenMsgDoc = mFirestoreInstance.collection("batikrom-message-collection").document("userChats");
         postStorageRef = FirebaseStorage.getInstance().getReference();
 
@@ -144,13 +147,13 @@ public class FirestoreUserChatsActivity extends AppCompatActivity implements OnI
         Initialize() ;
 
 
-
+        ImagePicker.setMinQuality(600, 600);
     }
     //TODO:: loadChatMsgArrayCollection
     private void loadChatMsgArrayCollection() {
         Query first = userChatMsgRef.orderBy("sentTime", Query.Direction.DESCENDING)
                 .limit(15);
-        firstListener = first.addSnapshotListener(this, new EventListener<QuerySnapshot>() {
+        mChatMsgListener = first.addSnapshotListener(this, new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(QuerySnapshot queryDocumentSnapshots, FirebaseFirestoreException e) {
                 mChatsMsgList.clear();
@@ -324,47 +327,47 @@ public class FirestoreUserChatsActivity extends AppCompatActivity implements OnI
                         });
 
 
-                        next.addSnapshotListener(new EventListener<QuerySnapshot>() {
-                                    @Override
-                                    public void onEvent(@Nullable QuerySnapshot querySnapshot,
-                                                        @Nullable FirebaseFirestoreException e) {
-                                        if (e != null) {
-                                            Log.w("TAG", "Listen failed.", e);
-                                            return;
-                                        }
+                        loadNextDataListener = next.addSnapshotListener(new EventListener<QuerySnapshot>() {
+                            @Override
+                            public void onEvent(@Nullable QuerySnapshot querySnapshot,
+                                                @Nullable FirebaseFirestoreException e) {
+                                if (e != null) {
+                                    Log.w("TAG", "Listen failed.", e);
+                                    return;
+                                }
 
-                                        dataExistNum = querySnapshot.size() ;
-                                        Log.e("dataExistNum", "dataExistNum:"+ dataExistNum ) ;
-                                        for (QueryDocumentSnapshot documentSnapshot : querySnapshot) {
-                                            Map<String, Object> batiChatMsgdata = documentSnapshot.getData() ;
-                                            HashMap<String, Object> imageMapList = (HashMap<String, Object>) documentSnapshot.get("imageList");
-                                            List<String> imageRealList= new ArrayList<>();
-                                            List<String> imageThumbList= new ArrayList<>();
-                                            if(imageMapList!=null){
-                                                imageRealList = (List<String>) imageMapList.get("real") ;
-                                                imageThumbList = (List<String>) imageMapList.get("thumb") ;
-                                            }
-
-
-                                            mChatsMsgList.add(new BatiChatMsgModel(
-                                                    documentSnapshot.getId(),
-                                                    batiChatMsgdata.get("message").toString(),
-                                                    batiChatMsgdata.get("sentBy").toString(),
-                                                    batiChatMsgdata.get("sentTime"),
-                                                    imageRealList,
-                                                    imageThumbList
-                                            ));
-
-                                        }
-
-                                        arrayListAscToDsc(mChatsMsgList);
-
-                                        mUserChatsAdapter.notifyDataSetChanged();
-                                        Log.e("msg_list", "mChatsMsgList size:"+ mChatsMsgList.size()  ) ;
-                                        linearLayoutManager.scrollToPositionWithOffset(dataExistNum-1,  0);
-
+                                dataExistNum = querySnapshot.size();
+                                Log.e("dataExistNum", "dataExistNum:" + dataExistNum);
+                                for (QueryDocumentSnapshot documentSnapshot : querySnapshot) {
+                                    Map<String, Object> batiChatMsgdata = documentSnapshot.getData();
+                                    HashMap<String, Object> imageMapList = (HashMap<String, Object>) documentSnapshot.get("imageList");
+                                    List<String> imageRealList = new ArrayList<>();
+                                    List<String> imageThumbList = new ArrayList<>();
+                                    if (imageMapList != null) {
+                                        imageRealList = (List<String>) imageMapList.get("real");
+                                        imageThumbList = (List<String>) imageMapList.get("thumb");
                                     }
-                                });
+
+
+                                    mChatsMsgList.add(new BatiChatMsgModel(
+                                            documentSnapshot.getId(),
+                                            batiChatMsgdata.get("message").toString(),
+                                            batiChatMsgdata.get("sentBy").toString(),
+                                            batiChatMsgdata.get("sentTime"),
+                                            imageRealList,
+                                            imageThumbList
+                                    ));
+
+                                }
+
+                                arrayListAscToDsc(mChatsMsgList);
+
+                                mUserChatsAdapter.notifyDataSetChanged();
+                                Log.e("msg_list", "mChatsMsgList size:" + mChatsMsgList.size());
+                                linearLayoutManager.scrollToPositionWithOffset(dataExistNum - 1, 0);
+
+                            }
+                        });
                         loading = true ;
                         loadScrollViewRV(next);
 
@@ -381,15 +384,6 @@ public class FirestoreUserChatsActivity extends AppCompatActivity implements OnI
 
 
 
-    //TODO:: onSelectImageClick
-    public void onSelectImageClick(View view) {
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent,"Select Picture"), 1);
-
-    }
 
 
 
@@ -409,7 +403,7 @@ public class FirestoreUserChatsActivity extends AppCompatActivity implements OnI
 
         if(ImageList.size()>0){
         mSentChatProgressbar.setVisibility(View.VISIBLE);
-        mChatSentMsgRelative.setAlpha((float) 0.1);
+        mChatSentMsgRelative.setAlpha((float) 0.1) ;
 
         for (int upload_count = 0; upload_count < ImageList.size(); upload_count++) {
             final Uri IndivitualImage = ImageList.get(upload_count);
@@ -547,6 +541,18 @@ public class FirestoreUserChatsActivity extends AppCompatActivity implements OnI
 
 
 
+    //TODO:: onSelectImageClick
+    public void onSelectImageClick(View view) {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent,"Select Picture"), 1);
+
+
+
+    }
+
 
 
     //TODO::: onActivityResult
@@ -655,7 +661,7 @@ public class FirestoreUserChatsActivity extends AppCompatActivity implements OnI
         chatUnseenMsgData.put("lastupdatetime", date);
         chatUnseenMsgData.put("unseen_message", 0);
 
-        DocumentReference unseenMsgDocument =userChatUnseenMsgDoc.collection(adminId).document(chatId);
+        DocumentReference unseenMsgDocument =userChatUnseenMsgDoc.collection(adminId).document(mChatUserId);
         unseenMsgDocument.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
@@ -701,7 +707,7 @@ public class FirestoreUserChatsActivity extends AppCompatActivity implements OnI
     }
     private void initializeAdapter() {
         mChatMsgRV.setHasFixedSize(true);
-        mUserChatsAdapter = new FireStoreUserChatsAdapter2(getApplicationContext(), mChatsMsgList, this);
+        mUserChatsAdapter = new FireStoreUserChatsAdapter2(getApplicationContext(), mChatsMsgList);
         mChatMsgRV.setAdapter(mUserChatsAdapter);
         linearLayoutManager = new LinearLayoutManager(getApplicationContext()) ;
 //        linearLayoutManager.setStackFromEnd(true);
@@ -740,7 +746,7 @@ public class FirestoreUserChatsActivity extends AppCompatActivity implements OnI
     private void loadUserChatsCollection(List<String> userIdList) {
         for(int i=0; i<userIdList.size(); i++ ) {
             String userId = userIdList.get(i);
-            userChatUnseenMsgDoc.collection(userId).document(chatId).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            userChatUnseenMsgDoc.collection(userId).document(mChatUserId).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                 @Override
                 public void onSuccess(DocumentSnapshot documentSnapshot) {
                     if (documentSnapshot != null && documentSnapshot.exists()) {
@@ -757,21 +763,15 @@ public class FirestoreUserChatsActivity extends AppCompatActivity implements OnI
         Map<String, Object> chatUnseenMsgData = new HashMap<>();
         chatUnseenMsgData.put("lastupdatetime", date);
         chatUnseenMsgData.put("unseen_message", unseenCount+1);
-        userChatUnseenMsgDoc.collection(userId).document(chatId) ;
+        userChatUnseenMsgDoc.collection(userId).document(mChatUserId) ;
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
 
-        if(firstListener!=null){
-            firstListener.remove();
-        }
-    }
-
+    //TODO::  onResume
     @Override
     protected void onResume() {
         super.onResume();
+        Log.e("state", "onResume    2") ;
 
         loadChatMsgArrayCollection() ;
         initializeAdapter();
@@ -779,29 +779,27 @@ public class FirestoreUserChatsActivity extends AppCompatActivity implements OnI
 
         convertUnseenMsgByZero();
     }
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+
+        mChatMsgListener.remove();
+        if(loadNextDataListener != null){
+            loadNextDataListener.remove();
+        }
+    }
 
     //TODO::onIntentUrl
     @Override
     public void onIntentUrl(String URL) {
-        if(!URL.equalsIgnoreCase("")){
 
         mFrameLayout.setVisibility(View.VISIBLE);
-        mRecyclerRelative.setAlpha((float) 0.1);
+//        mRecyclerRelative.setAlpha((float) 0.1);
         disable(mRecyclerRelative, false);
 
         AppImageLoader.loadImageInView(URL, R.drawable.profile_image, (ImageView) mFrameImageView);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-        }else{
-
-
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        final FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        final FirestoreChatsImageFragment myFragment = new FirestoreChatsImageFragment();
-        Bundle b = new Bundle();
-//        b.putString("message", editText.getText().toString());
-        myFragment.setArguments(b);
-        fragmentTransaction.add(R.id.frame_fragment, myFragment).commit();
-        }
 
 
 

@@ -55,7 +55,7 @@
     <string msgid="669893613918351210" name="common_signin_button_text_long">"Google এর মাধ্যমে সাইন-ইন করুন"</string>
     <string name="error_icon_content_description">সমস্যা</string>
     <string name="exposed_dropdown_menu_content_description">ড্রপ-ডাউন মেনু দেখুন</string>
-    <string msgid="4133737464567140336" name="fcm_fallback_notification_channel_label">"বিবিধ"</string>
+    <string name="fcm_fallback_notification_channel_label">বিবিধ</string>
     <string name="icon_content_description">ডায়ালগ আইকন</string>
     <string name="item_view_role_description">ট্যাব</string>
     <string name="material_clock_toggle_content_description">AM অথবা PM বেছে নিন</string>

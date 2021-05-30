@@ -27,12 +27,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FireInboxShow.activity.FirestoreChatImageActivity"></activity>
+        <activity android:name=".FireInboxShow.activity.FirestoreChatImageActivity"
+            android:launchMode="singleInstance"
+            android:parentActivityName=".FireInboxShow.activity.FirestoreUserChatsActivity"
+            />
         <!-- <activity android:name=".FireInboxShow.TestingActivity"/> -->
         <activity
             android:name=".FireInboxShow.activity.FirestoreUserChatsActivity"
             android:launchMode="singleInstance"
-            android:parentActivityName=".FireInboxShow.activity.FireStoreUserActivity" /> <!-- <activity android:name=".FireInboxShow.FireStoreInboxActivity"/> -->
+            android:parentActivityName=".FireInboxShow.activity.FireStoreUserActivity" />
+
+        <!-- <activity android:name=".FireInboxShow.FireStoreInboxActivity"/> -->
         <!-- <activity android:name=".aaaaaaaaaa.NetworkConnectActivity"/> -->
         <!-- <activity android:name=".aaaaaaaaaa.AllSiteActivity"/> -->
         <!-- <activity android:name=".aaaaaaaaaa.TestingSessionActivity"/> -->

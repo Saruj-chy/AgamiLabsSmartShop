@@ -57,7 +57,7 @@
     <string msgid="669893613918351210" name="common_signin_button_text_long">"Увайсці праз Google"</string>
     <string name="error_icon_content_description">Памылка</string>
     <string name="exposed_dropdown_menu_content_description">Паказаць выпадное меню</string>
-    <string msgid="4133737464567140336" name="fcm_fallback_notification_channel_label">"Рознае"</string>
+    <string name="fcm_fallback_notification_channel_label">Рознае</string>
     <string name="icon_content_description">Значок дыялогавага акна</string>
     <string name="item_view_role_description">Укладка</string>
     <string name="material_clock_toggle_content_description">Выберыце AM (да паўдня) або PM (пасля паўдня)</string>

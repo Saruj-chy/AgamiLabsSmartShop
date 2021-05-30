@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.astrit-veliu:Smoolider:1.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c1a5cad683e9c325115835f565cbbb6a/jetified-Smoolider-1.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c1a5cad683e9c325115835f565cbbb6a/jetified-Smoolider-1.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c1a5cad683e9c325115835f565cbbb6a/jetified-Smoolider-1.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b3c240a2afab165681701b4fb87e5b17/jetified-Smoolider-1.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b3c240a2afab165681701b4fb87e5b17/jetified-Smoolider-1.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b3c240a2afab165681701b4fb87e5b17/jetified-Smoolider-1.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

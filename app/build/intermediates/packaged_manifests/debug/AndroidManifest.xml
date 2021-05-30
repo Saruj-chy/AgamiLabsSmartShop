@@ -37,13 +37,19 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.agamilabs.smartshop.FireInboxShow.activity.FirestoreChatImageActivity" />
+        <activity
+            android:name="com.agamilabs.smartshop.FireInboxShow.activity.FirestoreChatImageActivity"
+            android:launchMode="singleInstance"
+            android:parentActivityName="com.agamilabs.smartshop.FireInboxShow.activity.FirestoreUserChatsActivity" />
         <!-- <activity android:name=".FireInboxShow.TestingActivity"/> -->
         <activity
             android:name="com.agamilabs.smartshop.FireInboxShow.activity.FirestoreUserChatsActivity"
             android:launchMode="singleInstance"
-            android:parentActivityName="com.agamilabs.smartshop.FireInboxShow.activity.FireStoreUserActivity" /> <!-- <activity android:name=".FireInboxShow.FireStoreInboxActivity"/> -->
+            android:parentActivityName="com.agamilabs.smartshop.FireInboxShow.activity.FireStoreUserActivity" />
+
+        <!-- <activity android:name=".FireInboxShow.FireStoreInboxActivity"/> -->
         <!-- <activity android:name=".aaaaaaaaaa.NetworkConnectActivity"/> -->
         <!-- <activity android:name=".aaaaaaaaaa.AllSiteActivity"/> -->
         <!-- <activity android:name=".aaaaaaaaaa.TestingSessionActivity"/> -->
@@ -89,6 +95,16 @@
             </intent-filter>
         </service>
 
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.agamilabs.smartshop.provider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
         <receiver
             android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
             android:exported="true"
@@ -126,9 +142,6 @@
                 android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-            <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
@@ -136,13 +149,6 @@
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-            <!--
-                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
-                clients to use it as well, by defining this registrar in their own core/common library.
-            -->
-            <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
         </service>
 

@@ -1,6 +1,7 @@
 package com.agamilabs.smartshop.controller;
 
 import android.net.Uri;
+import android.util.Log;
 import android.widget.ImageView;
 
 import com.agamilabs.smartshop.R;
@@ -156,10 +157,10 @@ public class AppImageLoader {
             return;
         }
 
+        Log.e("url", "url:"+ url  ) ;
         Picasso.get().load(url).error(defaultResourceId).into(imageView);
     }
 
-    // new
 
     // Loading an image from string url into an imageView
     public static void loadImageInView(String url, final ImageView imageView, final IImageLoadedCallback callback) {

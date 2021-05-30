@@ -125,7 +125,7 @@
 
                 />
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/relative_image5_layout"
+                android:id="@+id/constraint_image5_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -170,7 +170,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/text_sent_layout"
+        android:id="@+id/text_receive_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:maxWidth="250dp"
@@ -199,7 +199,7 @@
         android:layout_marginBottom="4dp"
         android:textSize="12dp"
         android:textColor="@color/black"
-        android:layout_below="@+id/text_sent_layout"
+        android:layout_below="@+id/text_receive_layout"
         android:visibility="gone"
         />
 

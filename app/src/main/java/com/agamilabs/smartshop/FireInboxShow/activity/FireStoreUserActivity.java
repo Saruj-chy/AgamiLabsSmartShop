@@ -3,7 +3,6 @@ package com.agamilabs.smartshop.FireInboxShow.activity;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -12,7 +11,6 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -21,7 +19,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.agamilabs.smartshop.FireInboxShow.BatiChatMsgModel;
 import com.agamilabs.smartshop.FireInboxShow.BatiChatsModal;
@@ -31,23 +28,19 @@ import com.agamilabs.smartshop.FireInboxShow.FireStoreUserAdapter;
 import com.agamilabs.smartshop.R;
 import com.agamilabs.smartshop.controller.AppController;
 import com.agamilabs.smartshop.controller.AppImageLoader;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -55,16 +48,17 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class FireStoreUserActivity extends AppCompatActivity {
 
+    ListenerRegistration mBatiUserChatsListener, mBatiUserListener, mBatiChatsListener, mDocDetailsNameListener ;
+
+
     private TextView mAppbarTV ;
     private CircleImageView mAppbarImage ;
     private ImageButton mSearchImgBtn, mCancelImgBtn ;
     private EditText mSearchET ;
     private LinearLayout mSearchEditLinear ;
-    private Toolbar toolbar ;
     private ProgressBar mUserProgressbar ;
 
     private RecyclerView mUserChatMsgRecyclerview;
-    private CircleImageView mClientImage;
     private FireStoreUserAdapter mBatiUserAdapter;
     private LinearLayoutManager linearLayoutManager ;
     private CollectionReference userRef, userMsgRef, msgUserChatsRef, msgChatsRef ;
@@ -76,13 +70,13 @@ public class FireStoreUserActivity extends AppCompatActivity {
 //    private String USER_ID = "kobir_store_maafe419rw@batikrom.shop";
     public static String USER_ID = "rashed_shop_7q6c630wrq@batikrom.shop" ;
 
-    private String bati_name, bati_email, bati_photo ;
+    public static String mUserName;
+    private String mUserEmail, mUserPhoto;
     private List<BatiUsersDetailsModal> mBatiUsersDetailsList;
     private List<BatiUserChatsModal> mBatiUserChatsList;
     private List<BatiChatsModal> mBatiChatsList;
     private List<BatiChatMsgModel> mChatsMsgList ;
 
-    private boolean appsCreate = false;
 
     SharedPreferences sharedPreferences ;
     static String SHARED_PREFS = "admin_store";
@@ -97,6 +91,7 @@ public class FireStoreUserActivity extends AppCompatActivity {
 
     int itemCount = 0;
 
+    //TODO:: onCreate
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,8 +103,6 @@ public class FireStoreUserActivity extends AppCompatActivity {
         sharedSaved(sharedPreferences, state, USER_ID) ;
         ADMIN_USER_ID = sharedPreferences.getString("admin_user_id", USER_ID);
 
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Smart Shop Firestore");
 
 
         userRef = FirebaseFirestore.getInstance().collection("batikrom-users");
@@ -124,9 +117,7 @@ public class FireStoreUserActivity extends AppCompatActivity {
         mBatiChatsList = new ArrayList<>() ;
         mChatsMsgList = new ArrayList<>();
 
-        loadBatikromUsers();
-        loadBatiUserChatsCollection();
-        initializeAdapter() ;
+
 
         mSearchImgBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -151,8 +142,7 @@ public class FireStoreUserActivity extends AppCompatActivity {
 
     }
     private void loadBatikromUsers() {
-
-        userRef.document(USER_ID).addSnapshotListener(new EventListener<DocumentSnapshot>() {
+        mBatiUserListener = userRef.document(USER_ID).addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot snapshot,
                                 @Nullable FirebaseFirestoreException e) {
@@ -162,16 +152,15 @@ public class FireStoreUserActivity extends AppCompatActivity {
 
                 if (snapshot != null && snapshot.exists()) {
                     Map<String, Object> document = snapshot.getData();
-                    AppController.getAppController().getInAppNotifier().log("checking", document+""   );
+                    AppController.getAppController().getInAppNotifier().log("checking", document + "");
 
-                    bati_name = document.get("name")+"" ;
-                    bati_email = document.get("email")+"" ;
-                    bati_photo= document.get("photo")+"" ;
+                    mUserName = document.get("name") + "";
+                    mUserEmail = document.get("email") + "";
+                    mUserPhoto = document.get("photo") + "";
 
-                    mAppbarTV.setText(bati_name);
-                    AppImageLoader.loadImageInView(bati_photo, R.drawable.profile_image, (ImageView)mAppbarImage);
+                    mAppbarTV.setText(mUserName);
+                    AppImageLoader.loadImageInView(mUserPhoto, R.drawable.profile_image, (ImageView) mAppbarImage);
 //                        loadBatiUserChatsCollection();
-                    appsCreate=true ;
                 } else {
 //                    Log.e("TAG", "Current data: null");
                 }
@@ -182,7 +171,7 @@ public class FireStoreUserActivity extends AppCompatActivity {
         Query firstQuery = msgUserChatsRef
                 .orderBy("lastupdatetime", Query.Direction.DESCENDING)
                 .limit(15);
-        firstQuery
+        mBatiUserChatsListener = firstQuery
                 .addSnapshotListener(this, new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(QuerySnapshot queryDocumentSnapshots, FirebaseFirestoreException e) {
@@ -197,7 +186,7 @@ public class FireStoreUserActivity extends AppCompatActivity {
                         }
                         for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
                             Map<String, Object> batiUserChatsData = documentSnapshot.getData();
-                            Log.e("batiUserChatsData", "batiUserChatsData: "+ batiUserChatsData  ) ;
+                            Log.e("batiUserChatsData", "batiUserChatsData: " + batiUserChatsData);
 //                            BatiUserChatsModal products = documentSnapshot.toObject(BatiUserChatsModal.class);
 
 //                            mBatiUserChatsList.add(new BatiUserChatsModal(
@@ -209,17 +198,18 @@ public class FireStoreUserActivity extends AppCompatActivity {
                             mBatiUserChatsList.add(new BatiUserChatsModal(
                                     documentSnapshot.getId(),
                                     batiUserChatsData.get("lastupdatetime"),
-                                    Integer.parseInt(batiUserChatsData.get("unseen_message")+"")
+                                    Integer.parseInt(batiUserChatsData.get("unseen_message") + "")
                             ));
 
 
-
                         }
-                        loadBatiChatsCollection(mBatiUserChatsList) ;
-                        itemCount = itemCount + mBatiUserChatsList.size() ;
-                        if(queryDocumentSnapshots.size() <=15){
-                            loading=true;
-                            loadScrollViewRV(firstQuery) ;
+                        Log.e("user_size","mBatiUserChatsList size: "+ mBatiUserChatsList.size() ) ;
+
+                        loadBatiChatsCollection(mBatiUserChatsList);
+                        itemCount = itemCount + mBatiUserChatsList.size();
+                        if (queryDocumentSnapshots.size() <= 15) {
+                            loading = true;
+                            loadScrollViewRV(firstQuery);
                         }
 
                     }
@@ -227,25 +217,25 @@ public class FireStoreUserActivity extends AppCompatActivity {
     }
     private void loadBatiChatsCollection(List<BatiUserChatsModal> mBatiUserChatsList) {
         mBatiChatsList.clear();
-        msgChatsRef
+        mBatiChatsListener = msgChatsRef
                 .addSnapshotListener(this, new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(QuerySnapshot queryDocumentSnapshots, FirebaseFirestoreException e) {
                         if (e != null) {
                             return;
                         }
-                        for( int i=0; i<mBatiUserChatsList.size(); i++ ){
+                        for (int i = 0; i < mBatiUserChatsList.size(); i++) {
 
                             for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
                                 List<String> usersList = (List<String>) documentSnapshot.get("users");
-                                if(mBatiUserChatsList.get(i).getDocumentId().equals(documentSnapshot.getId()) ){
-                                    AppController.getAppController().getInAppNotifier().log("checking"," id: "+ documentSnapshot.getId()   );
-                                    for(int j=0; j<usersList.size(); j++){
-                                        if(!usersList.get(j).equalsIgnoreCase(USER_ID)){
+                                if (mBatiUserChatsList.get(i).getDocumentId().equals(documentSnapshot.getId())) {
+                                    AppController.getAppController().getInAppNotifier().log("checking", " id: " + documentSnapshot.getId());
+                                    for (int j = 0; j < usersList.size(); j++) {
+                                        if (!usersList.get(j).equalsIgnoreCase(USER_ID)) {
                                             mBatiChatsList.add(new BatiChatsModal(
                                                     documentSnapshot.getId(),
                                                     usersList
-                                            )) ;
+                                            ));
                                         }
                                     }
                                 }
@@ -281,7 +271,7 @@ public class FireStoreUserActivity extends AppCompatActivity {
     }
     private void loadDocumentDetailsName(String userDocumentId, String userChatName) {
         String finalUserChatName = userChatName;
-        userRef.document(userChatName).addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+        mDocDetailsNameListener =  userRef.document(userChatName).addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot document, @Nullable FirebaseFirestoreException e) {
 
@@ -475,12 +465,31 @@ public class FireStoreUserActivity extends AppCompatActivity {
                 });
     }
 
-
+//TODO:: onResume
     @Override
     protected void onResume() {
         super.onResume();
-        if(appsCreate)
-            loadBatiUserChatsCollection();
+        Log.e("state", "onResume    1") ;
+
+        loadBatikromUsers();
+        loadBatiUserChatsCollection();
+        initializeAdapter() ;
+
+    }
+
+
+//TODO:: onPause
+    @Override
+    protected void onPause() {
+        Log.e("state", "onPause    1") ;
+        super.onPause();
+
+
+        mBatiUserListener.remove();
+        mBatiUserChatsListener.remove();
+        mBatiChatsListener.remove();
+        mDocDetailsNameListener.remove();
+
     }
 
     private void Initialize() {
@@ -491,9 +500,7 @@ public class FireStoreUserActivity extends AppCompatActivity {
         mCancelImgBtn = findViewById(R.id.appbar_cancelbtn) ;
         mSearchEditLinear = findViewById(R.id.appbar_linear_search) ;
         mUserProgressbar = findViewById(R.id.progress_user_firestore) ;
-        toolbar = findViewById(R.id.firestore_toolbar);
         mUserChatMsgRecyclerview = findViewById(R.id.user_chat_recyclerview) ;
-        mClientImage = findViewById(R.id.circle_image_client) ;
     }
     private void initializeAdapter() {
         mBatiUserAdapter = new FireStoreUserAdapter(getApplicationContext(), mBatiUsersDetailsList, mChatsMsgList, mBatiUserChatsList);

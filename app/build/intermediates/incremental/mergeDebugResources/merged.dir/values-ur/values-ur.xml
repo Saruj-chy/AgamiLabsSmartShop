@@ -55,7 +55,7 @@
     <string msgid="669893613918351210" name="common_signin_button_text_long">"‏Google کے ساتھ سائن ان کریں"</string>
     <string name="error_icon_content_description">خرابی</string>
     <string name="exposed_dropdown_menu_content_description">ڈراپ ڈاؤن مینو دکھائیں</string>
-    <string msgid="4133737464567140336" name="fcm_fallback_notification_channel_label">"متفرقات"</string>
+    <string name="fcm_fallback_notification_channel_label">متفرقات</string>
     <string name="icon_content_description">ڈائیلاگ کا آئیکن</string>
     <string name="item_view_role_description">ٹیب</string>
     <string name="material_clock_toggle_content_description">AM یا PM منتخب کریں</string>

@@ -55,7 +55,7 @@
     <string msgid="669893613918351210" name="common_signin_button_text_long">"ចូលដោយប្រើ Google"</string>
     <string name="error_icon_content_description">បញ្ហា</string>
     <string name="exposed_dropdown_menu_content_description">បង្ហាញ​ម៉ឺនុយ​ធ្លាក់ចុះ</string>
-    <string msgid="4133737464567140336" name="fcm_fallback_notification_channel_label">"ផ្សេងៗ"</string>
+    <string name="fcm_fallback_notification_channel_label">ផ្សេងៗ</string>
     <string name="icon_content_description">រូប​ប្រអប់បញ្ចូល</string>
     <string name="item_view_role_description">ផ្ទាំង</string>
     <string name="material_clock_toggle_content_description">ជ្រើសរើស AM ឬ PM</string>

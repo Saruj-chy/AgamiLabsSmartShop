@@ -55,7 +55,7 @@
     <string msgid="669893613918351210" name="common_signin_button_text_long">"Logi sisse Google\'i kontoga"</string>
     <string name="error_icon_content_description">Viga</string>
     <string name="exposed_dropdown_menu_content_description">Kuva rippmenüü</string>
-    <string msgid="4133737464567140336" name="fcm_fallback_notification_channel_label">"Muu"</string>
+    <string name="fcm_fallback_notification_channel_label">Muu</string>
     <string name="icon_content_description">Dialoogi ikoon</string>
     <string name="item_view_role_description">Vaheleht</string>
     <string name="material_clock_toggle_content_description">Valige AM või PM</string>

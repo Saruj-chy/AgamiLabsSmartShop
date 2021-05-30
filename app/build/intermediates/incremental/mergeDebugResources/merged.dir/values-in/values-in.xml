@@ -55,7 +55,7 @@
     <string msgid="669893613918351210" name="common_signin_button_text_long">"Login dengan Google"</string>
     <string name="error_icon_content_description">Error</string>
     <string name="exposed_dropdown_menu_content_description">Tampilkan menu dropdown</string>
-    <string msgid="4133737464567140336" name="fcm_fallback_notification_channel_label">"Lain-Lain"</string>
+    <string name="fcm_fallback_notification_channel_label">Lain-Lain</string>
     <string name="icon_content_description">Ikon Dialog</string>
     <string name="item_view_role_description">Tab</string>
     <string name="material_clock_toggle_content_description">Pilih AM atau PM</string>

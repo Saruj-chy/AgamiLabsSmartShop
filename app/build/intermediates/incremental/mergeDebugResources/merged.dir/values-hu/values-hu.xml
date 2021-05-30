@@ -55,7 +55,7 @@
     <string msgid="669893613918351210" name="common_signin_button_text_long">"Bejelentkezés Google-fiókkal"</string>
     <string name="error_icon_content_description">Hiba</string>
     <string name="exposed_dropdown_menu_content_description">Legördülő menü megjelenítése</string>
-    <string msgid="4133737464567140336" name="fcm_fallback_notification_channel_label">"Egyéb"</string>
+    <string name="fcm_fallback_notification_channel_label">Egyéb</string>
     <string name="icon_content_description">Párbeszédpanel ikonja</string>
     <string name="item_view_role_description">Lap</string>
     <string name="material_clock_toggle_content_description">Válassza ki, hogy délelőtt vagy délután</string>

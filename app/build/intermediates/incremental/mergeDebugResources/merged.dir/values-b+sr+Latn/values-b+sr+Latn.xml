@@ -56,7 +56,7 @@
     <string msgid="669893613918351210" name="common_signin_button_text_long">"Prijavi me na Google"</string>
     <string name="error_icon_content_description">Greška</string>
     <string name="exposed_dropdown_menu_content_description">Prikaži padajući meni</string>
-    <string msgid="4133737464567140336" name="fcm_fallback_notification_channel_label">"Razno"</string>
+    <string name="fcm_fallback_notification_channel_label">Razno</string>
     <string name="icon_content_description">Ikona dijaloga</string>
     <string name="item_view_role_description">Kartica</string>
     <string name="material_clock_toggle_content_description">Izaberite pre podne ili po podne</string>

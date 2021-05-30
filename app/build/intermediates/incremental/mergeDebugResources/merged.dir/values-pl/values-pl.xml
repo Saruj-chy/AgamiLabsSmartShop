@@ -57,7 +57,7 @@
     <string msgid="669893613918351210" name="common_signin_button_text_long">"Zaloguj się przez Google"</string>
     <string name="error_icon_content_description">Błąd</string>
     <string name="exposed_dropdown_menu_content_description">Pokaż menu</string>
-    <string msgid="4133737464567140336" name="fcm_fallback_notification_channel_label">"Inne"</string>
+    <string name="fcm_fallback_notification_channel_label">Inne</string>
     <string name="icon_content_description">Ikona okna</string>
     <string name="item_view_role_description">Karta</string>
     <string name="material_clock_toggle_content_description">Wybierz: przed południem czy po południu</string>
