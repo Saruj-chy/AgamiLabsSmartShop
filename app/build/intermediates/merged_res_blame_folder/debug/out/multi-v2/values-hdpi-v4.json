@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Android studio All Folder\\AgamiLabs-Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hdpi-v4\\values-hdpi-v4.xml",
+            "outputFile": "D:\\Android All Project Branch\\AgamiLabs Project\\Smart shop folder\\smart-shop old\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hdpi-v4\\values-hdpi-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Saruj\\.gradle\\caches\\transforms-2\\files-2.1\\c7c30b616b39ba6f8d1b925e7bfd1755\\jetified-core-1.9.13\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "source": "C:\\Users\\Saruj\\.gradle\\caches\\transforms-2\\files-2.1\\37bc84c8cecba4ea070babade620ea6e\\jetified-core-1.9.13\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Saruj\\.gradle\\caches\\transforms-2\\files-2.1\\994d5787a0c5e3a9050593b6e3088631\\appcompat-1.2.0\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "source": "C:\\Users\\Saruj\\.gradle\\caches\\transforms-2\\files-2.1\\dcef7ae6485cb2ad368badb5b2d5f526\\appcompat-1.3.0\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

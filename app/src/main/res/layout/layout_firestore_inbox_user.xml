@@ -83,24 +83,106 @@
                                 android:text="Sarose Datta"
                                 android:textColor="@color/green"
                                 android:textSize="18dp"
-                                android:paddingBottom="10dp"
+
+                                android:gravity="center|start"
                                 android:textStyle="bold"
                                 android:justificationMode="inter_word"
 
                                 />
 
-
-                            <TextView
-                                android:id="@+id/text_user_status"
-                                android:layout_width="wrap_content"
+                            <RelativeLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@+id/text_category"
-                                android:text="Hey, bro. I am available "
-                                android:textColor="@android:color/holo_green_light"
-                                android:textSize="14dp"
-                                android:visibility="gone"
-                                android:layout_marginBottom="10dp"
-                                />
+                                android:layout_below="@+id/text_user_name"
+                                android:orientation="horizontal">
+                                <ImageButton
+                                    android:id="@+id/imgbtn_active"
+                                    android:layout_width="10dp"
+                                    android:layout_height="wrap_content"
+                                    android:paddingTop="5dp"
+
+                                    android:src="@drawable/ic_brightnes_24"
+                                    android:background="@android:color/transparent"
+                                    />
+                                <TextView
+                                    android:id="@+id/text_user_status"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center|start"
+                                    android:layout_marginLeft="10dp"
+
+                                    android:text="Hey, bro. I am available "
+                                    android:justificationMode="inter_word"
+                                    android:textStyle="bold|italic"
+                                    android:paddingLeft="10dp"
+                                    android:paddingEnd="5dp"
+                                    android:textColor="@color/holo_green"
+                                    android:textSize="14dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_weight="1"
+                                    android:paddingRight="5dp" />
+                                <TextView
+                                    android:id="@+id/text_user_last_time"
+                                    android:layout_width="60dp"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="start|bottom"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_below="@+id/text_user_status"
+
+                                    android:text="5:55 pm"
+                                    android:textStyle="bold|italic"
+                                    android:paddingLeft="10dp"
+                                    android:textColor="@color/holo_green"
+                                    android:textSize="10dp"
+                                    android:layout_marginBottom="10dp"
+
+                                    />
+                            </RelativeLayout>
+
+
+<!--                            <LinearLayout-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_below="@+id/text_user_name"-->
+<!--                                android:orientation="horizontal">-->
+<!--                                <ImageButton-->
+<!--                                    android:layout_width="10dp"-->
+<!--                                    android:layout_height="match_parent"-->
+
+<!--                                    android:src="@drawable/ic_brightnes_24"-->
+<!--                                    android:background="@android:color/transparent"-->
+<!--                                    />-->
+<!--                                <TextView-->
+<!--                                    android:id="@+id/text_user_status"-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:gravity="center|start"-->
+
+<!--                                    android:text="Hey, bro. I am available "-->
+<!--                                    android:textStyle="bold|italic"-->
+<!--                                    android:paddingLeft="10dp"-->
+<!--                                    android:paddingEnd="5dp"-->
+<!--                                    android:textColor="@color/holo_green"-->
+<!--                                    android:textSize="14dp"-->
+<!--                                    android:layout_marginBottom="10dp"-->
+<!--                                    android:layout_weight="1"-->
+<!--                                    android:paddingRight="5dp" />-->
+<!--                                <TextView-->
+<!--                                    android:id="@+id/text_user_last_time"-->
+<!--                                    android:layout_width="60dp"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:gravity="start|bottom"-->
+<!--                                    android:layout_marginTop="10dp"-->
+
+<!--                                    android:text="5:55 pm"-->
+<!--                                    android:textStyle="bold|italic"-->
+<!--                                    android:paddingLeft="10dp"-->
+<!--                                    android:textColor="@color/holo_green"-->
+<!--                                    android:textSize="10dp"-->
+<!--                                    android:layout_marginBottom="10dp"-->
+
+<!--                                    />-->
+<!--                            </LinearLayout>-->
                         </LinearLayout>
                     </LinearLayout>
 
@@ -112,9 +194,10 @@
                 android:id="@+id/view_stock"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@android:color/darker_gray"
+                android:background="@color/lightgray"
                 android:layout_below="@+id/relative_image_part"
                 android:layout_marginTop="5dp"
+                android:layout_marginBottom="2dp"
                 />
 
         </RelativeLayout>

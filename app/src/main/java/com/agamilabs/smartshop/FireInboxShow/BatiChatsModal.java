@@ -9,14 +9,10 @@ public class BatiChatsModal {
     String userChatId ;
     List<String> usersList  ;
 
-    public BatiChatsModal(String id, String s) {
-    }
-
     public BatiChatsModal(String userChatId, List<String> usersList) {
         this.userChatId = userChatId;
         this.usersList = usersList;
     }
-
 
 
     public String getUserChatId() {

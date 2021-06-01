@@ -3,15 +3,25 @@ package com.agamilabs.smartshop.FireInboxShow;
 import java.util.List;
 
 public class BatiUsersDetailsModal {
+    String documentId;
    String name, email, photo;
 
     public BatiUsersDetailsModal() {
     }
 
-    public BatiUsersDetailsModal(String name, String email, String photo) {
+    public BatiUsersDetailsModal(String documentId, String name, String email, String photo) {
+        this.documentId = documentId;
         this.name = name;
         this.email = email;
         this.photo = photo;
+    }
+
+    public String getDocumentId() {
+        return documentId;
+    }
+
+    public void setDocumentId(String documentId) {
+        this.documentId = documentId;
     }
 
     public String getName() {
@@ -36,5 +46,13 @@ public class BatiUsersDetailsModal {
 
     public void setPhoto(String photo) {
         this.photo = photo;
+    }
+
+    @Override
+    public String toString() {
+        return "BatiUsersDetailsModal{" +
+                "documentId='" + documentId + '\'' +
+
+                '}';
     }
 }

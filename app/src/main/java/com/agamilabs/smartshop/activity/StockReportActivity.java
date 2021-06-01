@@ -63,7 +63,7 @@ public class StockReportActivity extends AppCompatActivity implements OnClickInt
     private Button  mFilterBtn ;
     private TextView mCategoryTextView;
     private Spinner mReorderSpin ;
-    private ImageButton mImgBtnDF, mImgBtnDT;
+    private ImageButton mImgBtnDF, mImgBtnDT ;
     private RelativeLayout mRelativeLayout;
     private ShimmerFrameLayout shimmerFrameLayout;
 

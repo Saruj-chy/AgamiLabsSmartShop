@@ -20,9 +20,13 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" /> <!-- rofiqul -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
@@ -38,8 +42,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:testOnly="true"
-        android:theme="@style/Theme.MyApplication" >
-        <activity android:name="com.agamilabs.smartshop.FireInboxShow.FirestoreUserChatsActivity" />
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.agamilabs.smartshop.FireInboxShow.activity.FirestoreChatImageActivity"
+            android:launchMode="singleInstance"
+            android:parentActivityName="com.agamilabs.smartshop.FireInboxShow.activity.FirestoreUserChatsActivity" />
+        <!-- <activity android:name=".FireInboxShow.TestingActivity"/> -->
+        <activity
+            android:name="com.agamilabs.smartshop.FireInboxShow.activity.FirestoreUserChatsActivity"
+            android:parentActivityName="com.agamilabs.smartshop.FireInboxShow.activity.FireStoreUserActivity" />
+
         <!-- <activity android:name=".FireInboxShow.FireStoreInboxActivity"/> -->
         <!-- <activity android:name=".aaaaaaaaaa.NetworkConnectActivity"/> -->
         <!-- <activity android:name=".aaaaaaaaaa.AllSiteActivity"/> -->
@@ -62,17 +74,21 @@
         <activity android:name="com.agamilabs.smartshop.BaseScannerActivity" />
         <activity android:name="com.agamilabs.smartshop.FullScannerActivity" /> <!-- <activity android:name=".activity.SmothViewPagerActivity"/> -->
         <!-- <activity android:name=".activity.SmothViewPagerActivity"> -->
-        <activity android:name="com.agamilabs.smartshop.FireInboxShow.FireStoreUserActivity" >
+
+        <activity android:name="com.agamilabs.smartshop.FireInboxShow.activity.FireStoreUserActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+
                 <!-- rofiqul -->
                 <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />
                 <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
                 <!-- rofiqul -->
             </intent-filter>
-        </activity> <!-- <service -->
+        </activity>
+
+        <!-- <service -->
         <!-- android:name=".services.TokenReceiver"> -->
         <!-- <intent-filter> -->
         <!-- <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/> -->
@@ -83,6 +99,16 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.agamilabs.smartshop.provider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
 
         <receiver
             android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
@@ -118,7 +144,7 @@
                 android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
@@ -128,13 +154,6 @@
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-            <!--
-                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
-                clients to use it as well, by defining this registrar in their own core/common library.
-            -->
-            <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
         </service>
 

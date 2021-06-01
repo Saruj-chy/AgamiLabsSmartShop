@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/linear_date_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:layout_marginBottom="4dp"
+        android:visibility="gone"
+        >
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_weight="1"
+            />
+        <TextView
+            android:id="@+id/text_date_layout"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="24 april, 2021"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="3dp"
+            android:background="@drawable/border_input"
+            />
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linear_image_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="250dp"
+        android:layout_below="@+id/linear_date_layout"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:layout_alignParentRight="true"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:background="@drawable/chats_sent_imagebg_style"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/image1_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="90dp"
+                android:minHeight="90dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/profile_image"
+                android:layout_marginRight="2dp"
+                android:scaleType="fitXY"
+                android:layout_weight="1"
+                />
+            <ImageView
+                android:id="@+id/image2_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="90dp"
+                android:minHeight="90dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/profile_image"
+                android:layout_weight="1"
+                android:layout_marginLeft="2dp"
+                android:scaleType="fitXY"
+
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/image3_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="90dp"
+                android:minHeight="90dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/profile_image"
+                android:layout_weight="1"
+                android:layout_marginRight="2dp"
+                android:scaleType="fitXY"
+                />
+            <ImageView
+                android:id="@+id/image4_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="90dp"
+                android:minHeight="90dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/profile_image"
+                android:layout_weight="1"
+                android:layout_marginLeft="2dp"
+                android:scaleType="fitXY"
+
+                />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_image5_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:gravity="center"
+                android:visibility="gone"
+                >
+                <ImageView
+                    android:id="@+id/image5_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="90dp"
+                    android:minHeight="90dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/profile_image"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="2dp"
+                    android:scaleType="fitXY"
+                    android:alpha="0.4"
+
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/text_blur_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="+number"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_sent_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="250dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/linear_image_layout"
+
+        android:background="@drawable/chats_sent_style"
+        android:gravity="end"
+        android:layout_marginTop="5dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Sent msg"
+        android:textColor="@color/white"
+        android:textSize="18dp" />
+    <TextView
+        android:id="@+id/text_time_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="4:0042 am"
+        android:visibility="gone"
+        android:gravity="end"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="4dp"
+        android:textSize="12dp"
+        android:textColor="@color/black"
+        android:layout_below="@+id/text_sent_layout"
+        />
+
+
+
+</RelativeLayout>
